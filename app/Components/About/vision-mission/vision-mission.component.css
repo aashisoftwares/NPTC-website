@@ -1,0 +1,33 @@
+.mat-tab-header
+{
+   background: #e5efe3;
+   margin-bottom: 20px;
+   margin-top:20px;
+}
+/* .mat-tab-label:active
+{
+   border-bottom: 3px solid #56AE5A;
+} */
+.mat-tab-label-active {
+   min-width: 25px !important;
+   padding: 5px;
+   background-color: transparent;
+   color: red;
+   font-weight: 700;
+}
+.mat-checkbox
+{
+   margin-left: 34px !important;
+}
+.mat-button span{
+   color:#dedcdc;
+   font-size: 13px;
+}
+.mat-drawer-inner-container
+{
+   position: fixed !important;
+   left: 0px;
+   top:52px;
+   overflow: auto;
+
+}

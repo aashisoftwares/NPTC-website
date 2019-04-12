@@ -1,0 +1,60 @@
+d-md-block 
+{
+    position: absolute;
+    top:100px;
+    left: 10px;
+    color:#fff;
+}
+.carousel-caption
+{
+    text-align: left;
+    position: absolute;
+    left:15%;
+    top:100px;
+    
+}
+.carousel-caption h3{
+    font-size: 33px !important;
+    color:#4454a7 !important;
+    font-weight: normal;
+    background: #ffffff;
+    padding: 10px 15px;
+    margin-bottom:0px;
+}
+.carousel-caption p{
+    font-size: 20px !important;
+    color:#4454a7 !important;
+    background: #ffffff;
+    opacity: 0.8;
+    padding:30px 50px;
+}
+.carousel-caption
+{
+    -webkit-transition: opacity 3s ease;
+    -moz-transition: opacity 3s ease;
+    -o-transition: opacity 3s ease;
+    transition: opacity 3s ease;
+}
+.carousel-item img{
+    /* background: #000 !important; */
+    height: 700px !important;
+    display: block !important; 
+    width: 100% !important;
+}
+.carousel-indicators
+{
+    display: none;
+}
+.carousel-item .active 
+{
+    opacity: 1;
+    width: 100%;
+    -webkit-transition: opacity 3s ease;
+    -moz-transition: opacity 3s ease;
+    -o-transition: opacity 3s ease;
+    transition: opacity 3s ease;
+}
+.carousel-control-next, .carousel-control-prev
+{
+    width:5% !important;
+}
