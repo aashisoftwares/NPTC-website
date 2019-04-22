@@ -1,0 +1,10 @@
+.mat-expansion-panel-header-description, .mat-expansion-panel-header-title
+{
+    color:#2a41a2;
+}
+.institution-list a
+{
+    line-height: 30px;
+    padding-left: 30px;
+    padding-top: 10px;
+}

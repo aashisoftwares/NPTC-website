@@ -1,0 +1,169 @@
+<div id="courses-part" class="pt-20 pb-120 gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title mt-50">                        
+                   <h5>Our Departments</h5>
+                </div> <!-- section title -->                    
+            </div>
+        </div> <!-- row -->
+        <div class="row">
+            <div class="col-lg-8">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                        Core Stream
+                        </mat-panel-title>              
+                    </mat-expansion-panel-header>                                              
+                    <ul class="exam-rules">
+                        <li><a [routerLink]="['/department-view']">Mechanical Engineering</a></li>
+                        <li><a [routerLink]="['/department-view']">Automobile Engineering</a></li>
+                        <li><a [routerLink]="['/department-view']">Mechanical Engineering (Sandwich)</a></li>
+                        </ul>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                                        (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                        Circuit Stream
+                        </mat-panel-title>                                                    
+                    </mat-expansion-panel-header>
+                        <ul class="exam-rules">
+                            <li><a [routerLink]="['/department-view']">Electrical and Electronics Engineering</a></li>
+                            <li><a [routerLink]="['/department-view']">Electronics and Communication Engineering</a></li>
+                            <li><a [routerLink]="['/department-view']">Computer Engineering</a></li>
+                            <li><a [routerLink]="['/department-view']">Automobile Engineering</a></li>
+
+                        </ul>
+                        
+                    </mat-expansion-panel>
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                                        (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                        others Stream
+                        </mat-panel-title>                                                    
+                    </mat-expansion-panel-header>
+                        <ul class="exam-rules">
+                            <li><a [routerLink]="['/department-view']">Textile Technology</a></li>
+                        </ul>
+                    </mat-expansion-panel>               
+                </mat-accordion>  
+            </div>
+            <div class="col-mg-4">                                          
+                <div class="department-list">
+                    <div class="header-list">
+                        <h4>Departments</h4>
+                    </div>
+                    <div class="content-detail">
+                        <ul>
+                                <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Automobile Engineering</a></li>
+                            <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Civil Engineering</a></li>
+                            <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Computer Applications</a></li>
+                            <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Computer Science &amp; engineering</a></li>
+                            <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Electrical & Electronics Engineering</a></li>
+                            <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Electronics & Communication Engineering</a></li>
+                            <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Electronics and Instrumentation Engineering</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="courses-grid" role="tabpanel" aria-labelledby="courses-grid-tab">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="singel-course mt-30">
+                            <div class="thum">
+                                <div class="image">
+                                    <img src="../../../../assets/images/course/electrical.png" alt="Department">
+                                </div>                                   
+                            </div>
+                            <div class="cont">                                    
+                                <a [routerLink]="['/department-view']"><h4>Electrical Engineering</h4></a>
+                                
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="singel-course mt-30">
+                            <div class="thum">
+                                <div class="image">
+                                    <img src="../../../../assets/images/course/mechanical.jpg" alt="Department">
+                                </div>
+                             
+                            </div>
+                            <div class="cont">                                   
+                                <a [routerLink]="['/department-view']"><h4>Mechanical Engineering</h4></a>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="singel-course mt-30">
+                            <div class="thum">
+                                <div class="image">
+                                    <img src="../../../../assets/images/course/automobile.png" alt="Department">
+                                </div>
+                                
+                            </div>
+                            <div class="cont">
+                               
+                                <a [routerLink]="['/department-view']"><h4>Automobile Engineering</h4></a>
+                                
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="singel-course mt-30">
+                            <div class="thum">
+                                <div class="image">
+                                    <img src="../../../../assets/images/course/textile.jpg" alt="Department">
+                                </div>
+                                
+                            </div>
+                            <div class="cont">
+                                
+                                <a [routerLink]="['/department-view']"><h4>Textile Technology</h4></a>
+                               
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="singel-course mt-30">
+                            <div class="thum">
+                                <div class="image">
+                                    <img src="../../../../assets/images/course/civil.jpg" alt="Department">
+                                </div>
+                               
+                            </div>
+                            <div class="cont">
+                                
+                                <a [routerLink]="['/department-view']"><h4>Civil Engineering</h4></a>
+                                
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="singel-course mt-30">
+                            <div class="thum">
+                                <div class="image">
+                                    <img src="../../../../assets/images/course/ece.jpg" alt="Department">
+                                </div>
+                               
+                            </div>
+                            <div class="cont">
+                               
+                                <a [routerLink]="['/department-view']"><h4>Electronics &amp; Communication Engineering</h4></a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+           
+        </div> -->
+       
+    </div> <!-- container -->
+</div>

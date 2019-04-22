@@ -1,0 +1,13 @@
+.institution-list
+{
+    margin-left: 30px;
+}
+.institution-list li a
+{
+    color:#2a41a2;
+    line-height: 30px;
+}
+.institution-list li
+{
+    list-style-type: circle;
+}

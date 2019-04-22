@@ -1,0 +1,24 @@
+.facilities-list
+{
+    background: #edf1f5;
+
+}
+.facilities-list li
+{
+    padding:5px 10px;
+    line-height: 40px;    
+    border-bottom:1px solid #f5f6f7;
+}
+.facilities-list li a
+{
+    font-size: 15px;
+    color:#3c3e99;
+}
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    font-size: 20px;
+    z-index: 1002;
+    width:100%;
+}
