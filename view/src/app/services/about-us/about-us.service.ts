@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { map, catchError, retry } from 'rxjs/operators';
 
 
-const apiUrl = "http://localhost:5500/api/app/";
+const apiUrl = 'http://localhost:5500/api/app/';
 
 
 @Injectable({
@@ -50,7 +50,6 @@ export class AboutUsService {
     return this.http.post(apiUrl + 'founder/list', info)
     .pipe(map(response => response), catchError(error => of(error)));
   }
-  
   // ---------------------------- Chairman Service --------------------------------
   // chairman list
   public chairmanList(info: any): Observable<any[]> {
