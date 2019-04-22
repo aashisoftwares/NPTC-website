@@ -1,5 +1,5 @@
 {
-    "PORT" : "5500",
+    "PORT" : "5000",
     "DATABASE" : "mongodb://aashitechno:aashi#123@ds149557.mlab.com:49557/nptl",
     "DECRYPT_KEY" : "PrivateKeyIn#123",
     "ENCRYPT_KEY" : "PrivateKeyOut#123",

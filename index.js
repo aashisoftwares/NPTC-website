@@ -5,6 +5,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
+const config = require('./config.json');
 
 // port and middleware
 const port = process.env.PORT || config.PORT;
