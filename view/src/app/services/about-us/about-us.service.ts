@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError, retry } from 'rxjs/operators';
 
-
-const apiUrl = 'http://localhost:5500/api/app/';
-
+const apiUrl = 'http://206.189.131.244:5500/api/app/';
 
 @Injectable({
   providedIn: 'root'
@@ -145,11 +143,6 @@ export class AboutUsService {
   }
 
   // ---------------------------- womenEmpowermentCell Service --------------------------------
-  // womenEmpowermentCell update
-  public womenEmpowermentCellUpdate(info: any): Observable<any[]> {
-    return this.http.post(apiUrl + 'womenEmpowermentCell/update', info)
-    .pipe(map(response => response), catchError(error => of(error)));
-  }
 
   // womenEmpowermentCell list
   public womenEmpowermentCellList(info: any): Observable<any[]> {

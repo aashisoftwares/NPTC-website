@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app.routing.module';
@@ -10,7 +11,12 @@ import { MatMenuModule} from '@angular/material/menu';
 import { MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule, MatIconModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FormBuilder, FormControl, FormsModule } from '@angular/forms';
+import { NgxLoadingModule } from 'ngx-loading';
 import { MatFormFieldModule, MatFormFieldControl } from '@angular/material/form-field';
+
+
+// ---------- Custom Components  ----------------//
+
 import { AboutOverviewComponent } from './Components/About/about-overview/about-overview.component';
 import { AboutActivitiesComponent } from './Components/About/about-activities/about-activities.component';
 import { AboutAntiRaggingCommitteeComponent } from './Components/About/about-anti-ragging-committee/about-anti-ragging-committee.component';
@@ -83,6 +89,7 @@ import { PlacementRecordComponent } from './Components/Admissions/placement-reco
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule,
     AppRoutingModule,
     MatMenuModule,
@@ -97,6 +104,7 @@ import { PlacementRecordComponent } from './Components/Admissions/placement-reco
     MatExpansionModule,
     MatFormFieldModule,
     CarouselModule.forRoot(),
+    NgxLoadingModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]

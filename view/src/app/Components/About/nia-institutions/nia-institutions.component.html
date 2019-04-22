@@ -6,14 +6,7 @@
                   <div class="col-lg-12 col-md-12 col-sm-12">
                       <div class="about-singel-items mt-30">                        
                           <h4>Enlighten Through Education</h4>
-                          <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit sollicitudirem 
-                            quibibendum auci Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci 
-                            elit sollicitudirem quibibendum auciLorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem 
-                            quibibendum auci elit sollicitudirem quibibendum auciLorem ipsum gravida nibh vel velit auctor 
-                            aliquetn sollicitudirem quibibendum auci elit sollicitudirem quibibendum auciLorem ipsum gravida 
-                            nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit sollicitudirem quibibendum 
-                            auciLorem ipsum gravida snibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit sollicitudirem quibibendum auci</p>
-                          <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit sollicitudirem quibibendum auci</p>
+                         <div [innerHTML]="enlightendata?.content">
                       </div> <!-- about singel -->
                   </div>
               </div> <!-- row -->
@@ -30,16 +23,10 @@
         </div>
         <div class="row">          
           <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
-              <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit sollicitudirem quibibendum auci</p>
-              <ul class="institution-list">
-                <li><a href="#">NPT  : Nachimuthu Polytechnic College</a></li>
-                <li><a href="#">NPT  : Nachimuthu Polytechnic College</a></li>
-                <li><a href="#">NPT  : Nachimuthu Polytechnic College</a></li>
-                <li><a href="#">NPT  : Nachimuthu Polytechnic College</a></li>
-              </ul>
+              <div [innerHTML]="collegedata?.content">
           </div>
           <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-            <img src="../../../../assets/images/slider_3.jpg" />
+            <img src="{{collegeimageUrl}}" />
           </div>
         </div> <!-- row -->                
     </div> <!-- container -->
@@ -51,17 +38,10 @@
         </div>
         <div class="row">
           <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-            <img src="../../../../assets/images/slider_3.jpg" />
+            <img src="{{schoolimageUrl}}" />
           </div>          
           <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
-              <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit sollicitudirem quibibendum auciLorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit sollicitudirem quibibendum auci.
-                  Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit sollicitudirem quibibendum auci</p>
-              <ul class="institution-list">
-                <li><a href="#">NPT  : Nachimuthu Polytechnic College</a></li>
-                <li><a href="#">NPT  : Nachimuthu Polytechnic College</a></li>
-                <li><a href="#">NPT  : Nachimuthu Polytechnic College</a></li>
-                <li><a href="#">NPT  : Nachimuthu Polytechnic College</a></li>
-              </ul>
+              <div [innerHTML]="schooldata?.content">
           </div>            
         </div> <!-- row -->                
     </div> <!-- container -->
@@ -73,17 +53,10 @@
         </div>
         <div class="row">          
           <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
-              <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit sollicitudirem quibibendum auci.
-                  Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem uibibendum auci elit sollicitudirem quibibendum auci</p>
-              <ul class="institution-list">
-                <li><a href="#">NPT  : Nachimuthu Polytechnic College</a></li>
-                <li><a href="#">NPT  : Nachimuthu Polytechnic College</a></li>
-                <li><a href="#">NPT  : Nachimuthu Polytechnic College</a></li>
-                <li><a href="#">NPT  : Nachimuthu Polytechnic College</a></li>
-              </ul>
+             <div [innerHTML]="socialactivitydata?.content">
           </div>
           <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-            <img src="../../../../assets/images/slider_3.jpg" />
+            <img src="{{socialActivityimageUrl}}}" />
           </div>
         </div> <!-- row -->                
     </div> <!-- container -->

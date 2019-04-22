@@ -14,11 +14,8 @@
                   AICTE Approval 2018 - 19
                 </mat-panel-title>              
               </mat-expansion-panel-header>                                              
-              <ul class="institution-list">
-                  <li><a href="#">EOA Report_2018-19</a></li>
-                  <li><a href="#">EOA Report_2018-19</a></li>
-                  <li><a href="#">EOA Report_2018-19</a></li>
-                </ul>
+               <div [innerHTML]="aictedata?.content"></div>
+               <a href="{{aictefileUrl}}" target="_blank">{{aictefileUrl}}</a>
             </mat-expansion-panel>
             <mat-expansion-panel (opened)="panelOpenState = true"
                                 (closed)="panelOpenState = false">
@@ -27,9 +24,8 @@
                   Anti Ragging Committee
                 </mat-panel-title>                                                    
               </mat-expansion-panel-header>
-              <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit sollicitudirem quibibendum auciLorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit sollicitudirem quibibendum auci.
-                  Lorem ipsum gravida</p>
-                  
+              <div [innerHTML]="antiraggingdata?.content"></div>    
+              <a href="{{antiraggingfileUrl}}" target="_blank">{{antiraggingfileUrl}}</a>              
             </mat-expansion-panel>
             <mat-expansion-panel (opened)="panelOpenState = true"
                                 (closed)="panelOpenState = false">
@@ -38,8 +34,8 @@
                   Women Empowerment Cell
                 </mat-panel-title>                                                    
               </mat-expansion-panel-header>
-              <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit sollicitudirem quibibendum auciLorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit sollicitudirem quibibendum auci.
-                  Lorem ipsum gravida</p>
+             <div [innerHTML]="womenempowermentdata?.content"></div>
+             <a href="{{womenempowermentfileUrl}}">{{womenempowermentfileUrl}}</a>
             </mat-expansion-panel>
             <mat-expansion-panel (opened)="panelOpenState = true"
                                 (closed)="panelOpenState = false">
@@ -48,9 +44,8 @@
                   Sexual Harassment Redressal Committee
                 </mat-panel-title>                                                    
               </mat-expansion-panel-header>
-              <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit sollicitudirem quibibendum 
-                auciLorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit sollicitudirem quibibendum auci.
-                  Lorem ipsum gravida</p>
+              <div [innerHTML]="harassmentdata?.content"></div>
+              <a href="{{harassmentfileUrl}}">{{harassmentdata}}</a>
             </mat-expansion-panel>
         </mat-accordion>   
       </div> 
