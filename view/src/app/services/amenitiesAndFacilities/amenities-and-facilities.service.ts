@@ -38,11 +38,6 @@ export class AmenitiesAndFacilitiesService {
 
 
   // ---------------------------- hostel Service --------------------------------
-  // hostel update
-  public hostelUpdate(info: any): Observable<any[]> {
-      return this.http.post(apiUrl + 'hostel/update', info)
-        .pipe(map(response => response), catchError(error => of(error)));
-  }
 
   // hostel list
   public hostelList(info: any): Observable<any[]> {
@@ -60,18 +55,12 @@ export class AmenitiesAndFacilitiesService {
 
 
   // ---------------------------- iste Service --------------------------------
-  // iste update
-  public isteUpdate(info: any): Observable<any[]> {
-      return this.http.post(apiUrl + 'iste/update', info)
-        .pipe(map(response => response), catchError(error => of(error)));
-  }
-
+  
   // iste list
   public isteList(info: any): Observable<any[]> {
       return this.http.post(apiUrl + 'iste/list', info)
         .pipe(map(response => response), catchError(error => of(error)));
   }
-
 
   // ---------------------------- library Service --------------------------------
   // library list
@@ -82,11 +71,6 @@ export class AmenitiesAndFacilitiesService {
 
 
   // ---------------------------- ncc Service --------------------------------
-  // ncc update
-  public nccUpdate(info: any): Observable<any[]> {
-      return this.http.post(apiUrl + 'ncc/update', info)
-        .pipe(map(response => response), catchError(error => of(error)));
-  }
 
   // ncc list
   public nccList(info: any): Observable<any[]> {
@@ -101,7 +85,6 @@ export class AmenitiesAndFacilitiesService {
       return this.http.post(apiUrl + 'nss/list', info)
         .pipe(map(response => response), catchError(error => of(error)));
   }
-
 
   // ---------------------------- physicalEducation Service --------------------------------
   // physicalEducation list

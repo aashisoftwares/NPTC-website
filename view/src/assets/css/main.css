@@ -462,7 +462,7 @@ p {
 	left: 0;
 	width: 100%;
 	background: linear-gradient(135deg, #cc2655 0%, #2a41a2 100%);
-	z-index: 999;
+	z-index: 1005;
     border-bottom: 1px solid #cecece;
     -webkit-box-shadow: 0px 0px 191px 0px rgba(0,0,0,0.06);
     box-shadow: 0px 0px 191px 0px rgba(0,0,0,0.06);

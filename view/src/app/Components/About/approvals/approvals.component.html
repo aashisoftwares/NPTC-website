@@ -15,7 +15,7 @@
                 </mat-panel-title>              
               </mat-expansion-panel-header>                                              
                <div [innerHTML]="aictedata?.content"></div>
-               <a href="{{aictefileUrl}}" target="_blank">{{aictefileUrl}}</a>
+               <a href="{{aictefileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>       
             </mat-expansion-panel>
             <mat-expansion-panel (opened)="panelOpenState = true"
                                 (closed)="panelOpenState = false">
@@ -25,7 +25,7 @@
                 </mat-panel-title>                                                    
               </mat-expansion-panel-header>
               <div [innerHTML]="antiraggingdata?.content"></div>    
-              <a href="{{antiraggingfileUrl}}" target="_blank">{{antiraggingfileUrl}}</a>              
+              <a href="{{antiraggingfileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>       
             </mat-expansion-panel>
             <mat-expansion-panel (opened)="panelOpenState = true"
                                 (closed)="panelOpenState = false">
@@ -35,7 +35,7 @@
                 </mat-panel-title>                                                    
               </mat-expansion-panel-header>
              <div [innerHTML]="womenempowermentdata?.content"></div>
-             <a href="{{womenempowermentfileUrl}}">{{womenempowermentfileUrl}}</a>
+             <a href="{{womenempowermentfileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>            
             </mat-expansion-panel>
             <mat-expansion-panel (opened)="panelOpenState = true"
                                 (closed)="panelOpenState = false">
@@ -45,7 +45,7 @@
                 </mat-panel-title>                                                    
               </mat-expansion-panel-header>
               <div [innerHTML]="harassmentdata?.content"></div>
-              <a href="{{harassmentfileUrl}}">{{harassmentdata}}</a>
+              <a href="{{harassmentfileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>
             </mat-expansion-panel>
         </mat-accordion>   
       </div> 

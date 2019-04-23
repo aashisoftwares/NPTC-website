@@ -57,13 +57,14 @@
     color:#fff;
     font-size: 16px;
 }
-.sticky {
+.sticky1 {
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: 60px;
     font-size: 20px;
     z-index: 1002;
-    width:100%;
+    width: 97.4%;
+    margin-left: 1.4%;
 }
 .gray-bg
 {

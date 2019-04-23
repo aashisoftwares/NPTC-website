@@ -25,12 +25,9 @@
                         <mat-panel-title>
                             Curriculam &amp; Syllabus
                         </mat-panel-title>              
-                        </mat-expansion-panel-header>                                              
-                        <ul class="institution-list">
-                            <li><p>Syllabus for 2018 - 19 <span><a href="#"><mat-icon>picture_as_pdf</mat-icon> 2018-19 Syllabus</a></span></p></li>
-                            <li><p>Syllabus for 2017 - 18<span><a href="#"><mat-icon>picture_as_pdf</mat-icon> 2017-18 Syllabus</a></span></p></li>
-                            <li><p>Syllabus for 2016 - 17<span><a href="#"><mat-icon>picture_as_pdf</mat-icon> 2016-17 Syllabus</a></span></p></li>
-                        </ul>
+                        </mat-expansion-panel-header> 
+                        <div [innerHTML]="syllabusdata?.content"></div>                        
+                             <a href="{{syllabusfileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>                        
                     </mat-expansion-panel>
                     <mat-expansion-panel (opened)="panelOpenState = true"
                                         (closed)="panelOpenState = false">
@@ -39,10 +36,9 @@
                             Regulations
                         </mat-panel-title>                                                    
                         </mat-expansion-panel-header>
-                            <li><p>Regulations for 2018 - 19 <span><a href="#"><mat-icon>picture_as_pdf</mat-icon> 2018-19 Regulations</a></span></p></li>
-                            <li><p>Regulations for 2017 - 18<span><a href="#"><mat-icon>picture_as_pdf</mat-icon> 2017-18 Regulations</a></span></p></li>
-                            <li><p>Regulations for 2016 - 17<span><a href="#"><mat-icon>picture_as_pdf</mat-icon> 2016-17 Regulations</a></span></p></li>
-                            
+                        <div *ngFor="let file of regulationdata; let i=index;">
+                            {{file?.content}}  &nbsp; <a href="{{file.fileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>                                    
+                        </div>
                     </mat-expansion-panel>
                     <mat-expansion-panel (opened)="panelOpenState = true"
                                         (closed)="panelOpenState = false">
@@ -51,7 +47,9 @@
                             Circulars
                         </mat-panel-title>                                                    
                         </mat-expansion-panel-header>
-                        <li><p>Circular<span><a href="#"><mat-icon>picture_as_pdf</mat-icon> Circular</a></span></p></li>
+                        <div *ngFor="let file of circulardata; let i=index;">
+                              {{file?.content}}  &nbsp; <a href="{{file.fileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>                                    
+                          </div>
                     </mat-expansion-panel>
                     <mat-expansion-panel (opened)="panelOpenState = true"
                                         (closed)="panelOpenState = false">
@@ -60,10 +58,9 @@
                             Downloads
                         </mat-panel-title>                                                    
                         </mat-expansion-panel-header>
-                        <li><p>Downloads<span><a href="#"><mat-icon>picture_as_pdf</mat-icon> Download File Name</a></span></p></li>
-                        <li><p>Downloads<span><a href="#"><mat-icon>picture_as_pdf</mat-icon> Download File Name</a></span></p></li>
-                        <li><p>Downloads<span><a href="#"><mat-icon>picture_as_pdf</mat-icon> Download File Name</a></span></p></li>
-                        <li><p>Downloads<span><a href="#"><mat-icon>picture_as_pdf</mat-icon> Download File Name</a></span></p></li>
+                        <div *ngFor="let file of downloadsdata; let i=index;">
+                              {{file?.content}}  &nbsp; <a href="{{file.fileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>                                    
+                          </div>
                     </mat-expansion-panel>
                     <mat-expansion-panel (opened)="panelOpenState = true"
                                         (closed)="panelOpenState = false">
@@ -72,7 +69,9 @@
                             Results
                         </mat-panel-title>                                                    
                         </mat-expansion-panel-header>
-                        <li><p>Results for Academic year 2016-2019<span><a href="#"><mat-icon>picture_as_pdf</mat-icon> Download Results</a></span></p></li>
+                        <div *ngFor="let file of resultsdata; let i=index;">
+                              {{file?.content}}  &nbsp; <a href="{{file.fileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>                                    
+                          </div>
                     </mat-expansion-panel>
                 </mat-accordion> 
             </div> <!-- about cont -->
