@@ -12,8 +12,10 @@
                             <p>
                             As per Government of Tamilnadu Norms and Single Window Counseling by Anna University, Chennai, as per their norms.<br />                   
                             The minimum eligibility marks for various categories are listed below:</p>
-                            
-                            <h5 class="pt-30">Aided Diploma Programmes</h5>
+                            <div *ngFor="let data of programmedata;">
+                                    <h5 class="pt-30"> {{data?.name}}</h5>
+                            </div>
+                            <!-- <h5 class="pt-30">Aided Diploma Programmes</h5>
                             <ul class="exam-rules">
                                 <li>Civil Engineering</li>
                                 <li>Mechanical Engineering</li>
@@ -38,7 +40,7 @@
                             <h5 class="pt-30">Post Diploma Programmes</h5>
                             <ul class="exam-rules">
                                 <li>Automobile Engineering</li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                     <div class="col-mg-4">                                                                                 

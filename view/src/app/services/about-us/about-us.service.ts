@@ -9,7 +9,6 @@ const apiUrl = 'http://206.189.131.244:5500/api/app/';
   providedIn: 'root'
 })
 export class AboutUsService {
-  headers;
   constructor(
     private http: HttpClient,
   ) {}

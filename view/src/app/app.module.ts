@@ -98,7 +98,6 @@ import { PlacementRecordComponent } from './Components/Admissions/placement-reco
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-    MatIconModule,
     MatButtonModule,
     BrowserAnimationsModule,
     MatExpansionModule,
