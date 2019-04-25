@@ -177,7 +177,7 @@ a.mat-menu-item:hover{
    margin-top:20px;
 }
 .mat-tab-label-active {
-   min-width: 25px !important;
+   min-width: 20px !important;
    padding: 5px;
    background:#3c3e96;
    color: #fff;
@@ -185,7 +185,7 @@ a.mat-menu-item:hover{
 .mat-tab-label
 {
    opacity: 1 !important;
-   width:50% !important;
+   width:20% !important;
 } 
 .mat-checkbox
 {
@@ -202,4 +202,34 @@ a.mat-menu-item:hover{
    top:52px;
    overflow: auto;
 
+}
+.mat-expansion-panel
+{  
+   margin-bottom: 10px !important;
+}
+.mat-expansion-panel-header
+{
+   background: #3666af !important;
+   border-radius: 0px !important;
+}
+.mat-expansion-indicator::after
+{
+   color:#ffffff !important;
+}
+.mat-expansion-panel-content
+{
+   padding-top: 10px !important;
+   border: 1px solid #3666af !important;
+}
+.mat-accordion .mat-expansion-panel:first-of-type
+{
+   border-radius: 0px !important;
+}
+.mat-expansion-panel-header-description, .mat-expansion-panel-header-title
+{
+   color:#ffffff !important
+}
+.mat-expansion-indicator::after
+{
+   color:#ffffff !important;
 }

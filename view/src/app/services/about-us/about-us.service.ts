@@ -117,6 +117,12 @@ export class AboutUsService {
     .pipe(map(response => response), catchError(error => of(error)));
   }
 
+  // ---------------------------- approval ------------------------
+  //
+  public approvalList(info: any): Observable<any[]> {
+   return this.http.post(apiUrl + 'approval/list', info)
+   .pipe(map(response => response), catchError(error => of(error)));
+ }
 
   // ---------------------------- aicteApproval Service --------------------------------
   // aicteApproval list

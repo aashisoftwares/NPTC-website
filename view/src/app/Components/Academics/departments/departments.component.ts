@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as cryptojs from 'crypto-js';
 
 // ------- service ----------//
@@ -16,7 +17,7 @@ export class DepartmentsComponent implements OnInit {
   streamid : any;
   deptlist: any;
 
-  constructor( private academicsService: AcademicsService) {
+  constructor( private academicsService: AcademicsService, private router: Router) {
     this.service();
    }
 
@@ -34,18 +35,13 @@ export class DepartmentsComponent implements OnInit {
       }
     });    
   }
-  changestream(data) {
-    console.log(data);
-    this.streamid = data._id;    
-    const info = { streamID : this.streamid}
-    this.academicsService.departmentListfilterbystream({'info':info}).subscribe(response => {
-      console.log(response);
-    //   if (response['status'] === 200) {
-    //     this.deptlist = response['info'];
-    //     console.log(this.deptlist);
-    //   } else {
-    //     alert('Something went wrong!. Please refresh the page')
-    //   }
-    });    
+  changestream(data) {    
+    this.academicsService.departmentListFilterByStream({streamID: data._id}).subscribe(response => {
+      if (response['status'] === 200) {
+         this.deptlist = response['info'];
+       } else {
+         alert('Something went wrong!. Please refresh the page')
+       }
+    });
   }
 }

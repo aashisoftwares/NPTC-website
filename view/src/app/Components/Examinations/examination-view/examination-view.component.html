@@ -2,32 +2,26 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <div class="section-title mt-50">                        
-                    <h5>Office of Controller of Examinations </h5>
-                </div> <!-- section title -->
-                <div class="about-cont">
-                    <p>The Exam Cell and office of Controller of Examinations is an all in one setup. This office is responsible for the following activities of which some are unique to autonomous and some are common to autonomous and affiliated systems in vogue.</p>
-                    <p><i class="fa fa-graduation-cap" aria-hidden="true"></i> Organization and Conduct of</p>
-                    <ul class="exam-rules">
-                        <li>Internal assessment of all courses of all programmes.</li>
-                        <li>End Semester Examinations (ESE) – theory and practical.</li>
-                        <li>Valuation of ESE theory scripts.</li>
-                        <li>Meetings on examination related matters.</li>
-                    </ul>                        
-                    <p class="exam-content"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Processing of results, announcement of results and printing of grade sheets.</p>
-                    <p class="exam-content"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Recommendation for award of degree from Anna University.</p>
-                    <p class="exam-content"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Addressing grievances of administration, faculty, staff and students on examination related issues.</p>
-                    <p class="exam-content"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Planning and execution of all developmental activities of this office.</p>                        
-                </div>
+               <div class="section-title mt-50">                        
+                  <h5>Office of Controller of Examinations </h5>
+               </div> <!-- section title -->
+               <div class="about-cont" [innerHTML]="examdata?.content">                    
+               </div>
+            </div>
+            <div class="col-lg-4 mt-50">
                 <mat-accordion>
                     <mat-expansion-panel>
                         <mat-expansion-panel-header>
                         <mat-panel-title>
                             Curriculam &amp; Syllabus
                         </mat-panel-title>              
-                        </mat-expansion-panel-header> 
-                        <div [innerHTML]="syllabusdata?.content"></div>                        
-                             <a href="{{syllabusfileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>                        
+                        </mat-expansion-panel-header>
+                        <div class="row" >
+                           <div class="col-lg-2">
+                                 <a href="{{syllabusfileUrl}}" target="_blank"><img src="../../../../assets/images/pdf-icon.png" /></a>                        
+                           </div>
+                           <div [innerHTML]="syllabusdata?.content" class="col-lg-10"></div>  
+                        </div>                                              
                     </mat-expansion-panel>
                     <mat-expansion-panel (opened)="panelOpenState = true"
                                         (closed)="panelOpenState = false">
@@ -36,8 +30,9 @@
                             Regulations
                         </mat-panel-title>                                                    
                         </mat-expansion-panel-header>
-                        <div *ngFor="let file of regulationdata; let i=index;">
-                            {{file?.content}}  &nbsp; <a href="{{file.fileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>                                    
+                        <div class="row" *ngFor="let file of regulationdata; let i=index;">
+                           <a href="{{file.fileUrl}}" target="_blank" class="col-lg-2"><img src="../../../assets/images/pdf-icon.png" /></a>                                    
+                           <p class="col-lg-10">{{file?.content}} </p>                         
                         </div>
                     </mat-expansion-panel>
                     <mat-expansion-panel (opened)="panelOpenState = true"
@@ -47,9 +42,10 @@
                             Circulars
                         </mat-panel-title>                                                    
                         </mat-expansion-panel-header>
-                        <div *ngFor="let file of circulardata; let i=index;">
-                              {{file?.content}}  &nbsp; <a href="{{file.fileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>                                    
-                          </div>
+                        <div class="row" *ngFor="let file of circulardata; let i=index;">
+                           <a href="{{file.fileUrl}}" target="_blank" class="col-lg-2"><img src="../../../assets/images/pdf-icon.png" /></a>                                    
+                           <p class="col-lg-10">{{file?.content}}</p>
+                        </div>
                     </mat-expansion-panel>
                     <mat-expansion-panel (opened)="panelOpenState = true"
                                         (closed)="panelOpenState = false">
@@ -58,8 +54,9 @@
                             Downloads
                         </mat-panel-title>                                                    
                         </mat-expansion-panel-header>
-                        <div *ngFor="let file of downloadsdata; let i=index;">
-                              {{file?.content}}  &nbsp; <a href="{{file.fileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>                                    
+                        <div class="row" *ngFor="let file of downloadsdata; let i=index;">
+                           <a href="{{file.fileUrl}}" target="_blank" class="col-lg-2"><img src="../../../../assets/images/pdf-icon.png" /></a>                                    
+                           <p class="col-lg-10"> {{file?.content}}</p>
                           </div>
                     </mat-expansion-panel>
                     <mat-expansion-panel (opened)="panelOpenState = true"
@@ -69,28 +66,15 @@
                             Results
                         </mat-panel-title>                                                    
                         </mat-expansion-panel-header>
-                        <div *ngFor="let file of resultsdata; let i=index;">
-                              {{file?.content}}  &nbsp; <a href="{{file.fileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>                                    
+                        <div class="row" *ngFor="let file of resultsdata; let i=index;">
+                              <p class="col-lg-10">{{file?.content}}</p>
+                              <a href="{{file.fileUrl}}" target="_blank" class="col-lg-2"><img src="../../../assets/images/pdf-icon.png" /></a>                                    
                           </div>
                     </mat-expansion-panel>
                 </mat-accordion> 
             </div> <!-- about cont -->
-            <div class="col-mg-4 mt-50">                      
-                <!-- <div class="department-list">
-                    <div class="header-list">
-                        <h4>COE Office &amp; Exam Cell</h4>
-                    </div>
-                    <div class="content-detail">
-                        <ul>
-                            <li><a href="#">Curriculam &amp; Syllabus</a></li>
-                            <li><a href="#">Regulations</a></li>
-                            <li><a href="#">Circulars</a></li>
-                            <li><a href="#">Downloads</a></li>
-                            <li><a href="#">Results</a></li>                                
-                        </ul>
-                    </div>
-                </div> -->
-                 <div class="department-list">
+            <!-- <div class="col-mg-4 mt-50">                                      
+                <div class="department-list">
                     <div class="header-list">
                         <h4>Departments</h4>
                     </div>
@@ -106,7 +90,7 @@
                         </ul>
                     </div>
                 </div>
-           </div>
+           </div> -->
 
         </div> <!-- row -->
         

@@ -15,6 +15,12 @@ export class ExaminstionsService {
 
   // ---------------------------- curriculumAndSyllabus Service --------------------------------
   // curriculum and syllabus list
+  public examinationsList(info: any): Observable<any[]> {
+   return this.http.post(apiUrl + 'examinations/list', info)
+     .pipe(map(response => response), catchError(error => of(error)));
+}
+  
+  // curriculum and syllabus list
   public curriculumAndSyllabusList(info: any): Observable<any[]> {
       return this.http.post(apiUrl + 'curriculumAndSyllabus/list', info)
         .pipe(map(response => response), catchError(error => of(error)));

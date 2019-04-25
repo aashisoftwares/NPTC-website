@@ -86,7 +86,7 @@ const appRoutes: Routes = [
       component: DepartmentsComponent,
     },
     {
-      path: 'department-view',
+      path: 'department-view/:deptId',
       component: DepartmentViewComponent,
     },
     {

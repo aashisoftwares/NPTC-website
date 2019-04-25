@@ -4,31 +4,20 @@
             <div class="col-lg-12">
                <div class="section-title mt-50"> 
                   <h4>Careers</h4>
-                  <p>Thank you for taking an interest in the opportunities at the NPTC</p>
-                  <p>The college prides itself on embracing diversity and promoting equality and welcomes applications from all the eligible candidates.</p>
-                  <p>If you are looking to work for a highly respected college that offers great opportunities and benefits for staff, please apply to us</p>
+                  <div [innerHTML]="careercontent?.career?.content"></div>
                </div>
                <h4>Current Openings</h4>
                <mat-accordion>
+                  <div *ngFor="let data of careercontent?.careerData">                  
                   <mat-expansion-panel>
                     <mat-expansion-panel-header>
                       <mat-panel-title>
-                        Designation : Professor
+                        Designation : {{data?.name}}
                       </mat-panel-title>              
                     </mat-expansion-panel-header>                                              
-                     Exp : +2 years of Experience
-                     Area of Specialization : Machine Drawing, Manufacturing, RDBMS
+                    <p [innerHTML]="data?.content"></p>
                   </mat-expansion-panel>
-                  <mat-expansion-panel (opened)="panelOpenState = true"
-                                      (closed)="panelOpenState = false">
-                    <mat-expansion-panel-header>
-                      <mat-panel-title>
-                        Designation : Asst Lecterure
-                      </mat-panel-title>                                                    
-                    </mat-expansion-panel-header>
-                     Exp : +2 years of Experience
-                     Area of Specialization : Machine Drawing, Manufacturing, RDBMS
-                  </mat-expansion-panel>
+                  </div>
                  
               </mat-accordion>  
             </div>

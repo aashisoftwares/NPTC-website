@@ -21,10 +21,11 @@ export class AcademicsService {
         .pipe(map(response => response), catchError(error => of(error)));
   }
 
-  public departmentListfilterbystream(info: any): Observable<any[]> {
+  // department list filter by stream
+   public departmentListFilterByStream(info: any): Observable<any[]> {
     return this.http.post(apiUrl + 'department/list-by-stream', info)
       .pipe(map(response => response), catchError(error => of(error)));
-} 
+   } 
   // ---------------------------- faculty Service --------------------------------
   // list
   public facultyList(info: any): Observable<any[]> {
@@ -44,5 +45,12 @@ export class AcademicsService {
       return this.http.post(apiUrl + 'stream/list', info)
         .pipe(map(response => response), catchError(error => of(error)));
   }
+
+  // ---------------------------- department Service --------------------------------
+  // view
+  public departmentView(info: any): Observable<any[]> {
+   return this.http.post(apiUrl + 'department/view', info)
+     .pipe(map(response => response), catchError(error => of(error)));
+}
 }
 

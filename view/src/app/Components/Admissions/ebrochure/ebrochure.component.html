@@ -3,11 +3,11 @@
         <div class="row">
             <div class="col-lg-8">
                   <div class="section-title mt-50">                        
-                     <h5>E-Brochure </h5>
+                     <h5>E-Brochure</h5>
                   </div> <!-- section title -->
                   <div class="about-cont" [innerHTML]="data?.content"></div>
-                  <div *ngFor="let file of brochurefileUrl; let i=index;">
-                        File {{i+1}} &nbsp; <a href="{{file}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>                                    
+                  <div *ngFor="let file of brochurefileUrl; let i=index;" class="row">                        
+                     <a class="col-lg-7 downloadlink" href="{{file}}" target="_blank"><img src="../../../../assets/images//pdf-icon.png" /><span class="download">Click here to download </span></a>                                    
                   </div>
             </div> <!-- about cont -->
             <div class="col-mg-4 mt-50">                                   
@@ -30,13 +30,13 @@
                 </div>
                 <div class="content-detail">
                     <ul>
-                          <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Automobile Engineering</a></li>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Civil Engineering</a></li>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Computer Applications</a></li>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Computer Science &amp; engineering</a></li>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Electrical & Electronics Engineering</a></li>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Electronics & Communication Engineering</a></li>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Electronics and Instrumentation Engineering</a></li>
+                        <li><a href="department-view.html">Automobile Engineering</a></li>
+                        <li><a href="department-view.html">Civil Engineering</a></li>
+                        <li><a href="department-view.html">Computer Applications</a></li>
+                        <li><a href="department-view.html">Computer Science &amp; engineering</a></li>
+                        <li><a href="department-view.html">Electrical & Electronics Engineering</a></li>
+                        <li><a href="department-view.html">Electronics & Communication Engineering</a></li>
+                        <li><a href="department-view.html">Electronics and Instrumentation Engineering</a></li>
                     </ul>
                 </div>
               </div>

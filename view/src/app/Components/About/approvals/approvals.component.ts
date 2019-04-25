@@ -11,6 +11,7 @@ import { AboutUsService } from '../../../services/about-us/about-us.service';
 })
 export class ApprovalsComponent implements OnInit {
   panelOpenState: boolean;
+  data : any;
   aictedata : any;
   antiraggingdata : any;
   womenempowermentdata : any;
@@ -28,6 +29,17 @@ export class ApprovalsComponent implements OnInit {
   }
   service(){
      const Data = { type:'test'};
+     
+     this.aboutUsService.approvalList(Data).subscribe(response => {
+      console.log(response);
+       if (response['status'] === 200) {
+       this.data = response['info'];       
+       } else {
+          alert('Something went wrong!. Please refresh the page');
+       }
+    });
+
+
      this.aboutUsService.aicteApprovalList(Data).subscribe(response => {
         console.log(response);
          if (response['status'] === 200) {

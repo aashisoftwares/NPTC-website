@@ -1063,9 +1063,28 @@ p {
 .about-bg img{
     width: 100%;
 }
-
+.about-cont
+{
+   margin-bottom: 20px;
+}
 .about-cont p{
     padding-top: 10px;
+    margin-bottom: 0px;
+}
+.about-cont ul li{
+   list-style-image: url('../../../../assets/images/tick3.png') !important;
+   line-height: 35px;
+   margin-left: 25px;
+}
+.about-cont ol{
+   list-style-image: url('../../../../assets/images/tick1.png') !important;
+   margin-left:55px;
+}
+.about-cont h5{
+   color:#395498;
+}
+.about-cont h4 {
+   color:#bd1b1b;
 }
 
 .about-event{
@@ -1113,7 +1132,10 @@ p {
     color: #ffc600;
 }
 
-
+.content-detail li
+{
+   list-style-image: url('../../../../assets/images/tick2.png');
+}
 
 
 /*=====================================================
@@ -4007,7 +4029,7 @@ p.form-message.error {
 }
 .content-detail
 {
-    border:1px solid #f6f7f7;
+    /* border:1px solid #f6f7f7; */
     margin-top:-8px;
 }
 .content-detail ul li

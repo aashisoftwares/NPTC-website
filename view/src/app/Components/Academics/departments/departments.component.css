@@ -1,0 +1,14 @@
+.mat-expansion-panel
+{
+   background: #3666af !important;
+   margin-bottom: 20px !important;
+
+}
+.mat-expansion-panel-header-description, .mat-expansion-panel-header-title
+{
+   color:#ffffff !important
+}
+.mat-expansion-indicator::after
+{
+   color:#ffffff !important;
+}

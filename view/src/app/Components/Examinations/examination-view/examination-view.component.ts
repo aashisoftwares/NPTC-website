@@ -11,6 +11,7 @@ import { ExaminstionsService } from '../../../services/examinations/examinstions
 })
 export class ExaminationViewComponent implements OnInit {
    panelOpenState: boolean;
+   examdata : any
    syllabusdata : any;
    syllabusfileUrl : any;
    regulationdata : any;
@@ -31,6 +32,15 @@ export class ExaminationViewComponent implements OnInit {
   }
   service(){
      const Data = {type:'test'};
+     this.examinationService.examinationsList(Data).subscribe(response => {      
+        console.log(response);
+      if(response['status'] === 200){
+         this.examdata = response['info']
+      }
+      else{
+         alert('Something went wrong!. Please refresh the page')
+      }
+   });
      this.examinationService.curriculumAndSyllabusList(Data).subscribe(response => {      
         if(response['status'] === 200){
            this.syllabusdata = response['info']

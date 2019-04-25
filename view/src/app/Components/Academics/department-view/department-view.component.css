@@ -19,7 +19,7 @@
 {
     padding: 5px;
 }
-#about
+/* #about
 {
     min-height: 300px;
 }
@@ -38,7 +38,7 @@
 #valueadded
 {
     min-height: 300px;
-}
+} */
 .menu-spacer {
     flex: 1 1 auto;
 }
@@ -80,13 +80,15 @@
 .faculty
 {
     padding:10px;
-    background:#edf5f7;
-    margin:15px;
+    background:#395498;
+    margin:15px;    
+    width:100%;
 }
 .faculty p
 {
     font-size:15px; 
-    line-height:28px;    
+    line-height:28px;   
+    color:#ffffff;
 }
 @media (min-width:992px)
 {

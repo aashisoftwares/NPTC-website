@@ -4,66 +4,86 @@
       <h4>Approvals</h4>
     </div>
     <div class="row">
-      <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
-        <p>auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris</p>
-        <p>auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauriauci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris</p>
-        <mat-accordion>
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  AICTE Approval 2018 - 19
-                </mat-panel-title>              
-              </mat-expansion-panel-header>                                              
-               <div [innerHTML]="aictedata?.content"></div>
-               <a href="{{aictefileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>       
-            </mat-expansion-panel>
-            <mat-expansion-panel (opened)="panelOpenState = true"
-                                (closed)="panelOpenState = false">
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  Anti Ragging Committee
-                </mat-panel-title>                                                    
-              </mat-expansion-panel-header>
-              <div [innerHTML]="antiraggingdata?.content"></div>    
-              <a href="{{antiraggingfileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>       
-            </mat-expansion-panel>
-            <mat-expansion-panel (opened)="panelOpenState = true"
-                                (closed)="panelOpenState = false">
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  Women Empowerment Cell
-                </mat-panel-title>                                                    
-              </mat-expansion-panel-header>
-             <div [innerHTML]="womenempowermentdata?.content"></div>
-             <a href="{{womenempowermentfileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>            
-            </mat-expansion-panel>
-            <mat-expansion-panel (opened)="panelOpenState = true"
-                                (closed)="panelOpenState = false">
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  Sexual Harassment Redressal Committee
-                </mat-panel-title>                                                    
-              </mat-expansion-panel-header>
-              <div [innerHTML]="harassmentdata?.content"></div>
-              <a href="{{harassmentfileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon></a>
-            </mat-expansion-panel>
-        </mat-accordion>   
-      </div> 
-      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-          <div class="department-list">
-              <div class="header-list">
-                  <h4>Quick Links</h4>
-              </div>
-              <div class="content-detail">
-                  <ul>
-                      <li><i class="fa fa-angle-double-right"></i> <a href="#">Courses Offered</a></li>
-                      <li><i class="fa fa-angle-double-right"></i> <a href="#">Placements</a></li>
-                      <li><i class="fa fa-angle-double-right"></i> <a href="#">NIA Family</a></li>
-                      <li><i class="fa fa-angle-double-right"></i> <a href="#">Gallery</a></li>                              
-                  </ul>
-              </div>
-          </div>
+      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12" [innerHTML]="data?.content">
       </div>
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+            <mat-accordion>
+                  <mat-expansion-panel>
+                     <mat-expansion-panel-header>
+                        <mat-panel-title>
+                           AICTE Approval 2018 - 19
+                        </mat-panel-title>              
+                     </mat-expansion-panel-header>                            
+                     <div class="row">                        
+                        <div [innerHTML]="aictedata?.content" class="col-lg-10"></div>                        
+                        <div class="col-lg-2">
+                           <a href="{{aictefileUrl}}" target="_blank"><img src="../../../../assets/images/pdf-icon.png" /></a>       
+                        </div>
+                     </div>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel (opened)="panelOpenState = true"
+                                      (closed)="panelOpenState = false">
+                     <mat-expansion-panel-header>
+                        <mat-panel-title>
+                           Anti Ragging Committee
+                        </mat-panel-title>                                                    
+                     </mat-expansion-panel-header>
+                     <div class="row">
+                        <div [innerHTML]="antiraggingdata?.content" class="col-lg-10"></div> 
+                        <div class="col-lg-2">   
+                           <a href="{{antiraggingfileUrl}}" target="_blank"><img src="../../../assets/images/pdf-icon.png" /></a>       
+                        </div>
+                     </div>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel (opened)="panelOpenState = true"
+                                      (closed)="panelOpenState = false">
+                     <mat-expansion-panel-header>
+                        <mat-panel-title>
+                           Women Empowerment Cell
+                        </mat-panel-title>                                                    
+                     </mat-expansion-panel-header>
+                     <div class="row">  
+                        <div [innerHTML]="womenempowermentdata?.content" class="col-lg-10"></div>
+                        <div class="col-lg-2"> 
+                           <a href="{{womenempowermentfileUrl}}" target="_blank"><img src="../../../assets/images/pdf-icon.png" /></a>            
+                        </div>
+                     </div>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel (opened)="panelOpenState = true"
+                                      (closed)="panelOpenState = false">
+                     <mat-expansion-panel-header>
+                        <mat-panel-title>
+                           Sexual Harassment Redressal Committee
+                        </mat-panel-title>                                                    
+                     </mat-expansion-panel-header>
+                     <div class="row">  
+                        <div [innerHTML]="harassmentdata?.content" class="col-lg-10"></div>
+                        <div class="col-lg-2">
+                           <a href="{{harassmentfileUrl}}" target="_blank"><img src="../../../assets/images/pdf-icon.png" /></a>
+                        </div>
+                     </div>
+                  </mat-expansion-panel>
+              </mat-accordion>   
+            <!-- <div class="department-list">
+                <div class="header-list">
+                    <h4>Quick Links</h4>
+                </div>
+                <div class="content-detail">
+                    <ul>
+                        <li><i class="fa fa-angle-double-right"></i> <a href="#">Courses Offered</a></li>
+                        <li><i class="fa fa-angle-double-right"></i> <a href="#">Placements</a></li>
+                        <li><i class="fa fa-angle-double-right"></i> <a href="#">NIA Family</a></li>
+                        <li><i class="fa fa-angle-double-right"></i> <a href="#">Gallery</a></li>                              
+                    </ul>
+                </div>
+            </div> -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+        
+      </div> 
+      
     </div>
   </div>
 </div>

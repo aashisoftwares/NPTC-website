@@ -11,52 +11,20 @@
             <div class="col-lg-8">
                 <mat-accordion>
                     <div *ngFor="let data of streamdata;">
-                      <span (click)="changestream(data)"> 
+                      <div (click)="changestream(data)"> 
                           <mat-expansion-panel>
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
                                 {{data?.name}}
                                 </mat-panel-title>              
                             </mat-expansion-panel-header> 
-                                <!-- <div *ngFor="let info of deptlist;">
-                                    {{info?.name}}
-                                </div> -->
+                                <div *ngFor="let info of deptlist;">
+                                   <a  [routerLink]="['/department-view', info._id]">{{info?.name}}</a>
+                                </div>
                             </mat-expansion-panel>      
-                        </span>               
+                        </div>               
                     </div>                        
-                    <!-- <ul class="exam-rules">
-                        <li><a [routerLink]="['/department-view']">Mechanical Engineering</a></li>
-                        <li><a [routerLink]="['/department-view']">Automobile Engineering</a></li>
-                        <li><a [routerLink]="['/department-view']">Mechanical Engineering (Sandwich)</a></li>
-                        </ul> -->
-                    
-                    <!-- <mat-expansion-panel (opened)="panelOpenState = true"
-                                        (closed)="panelOpenState = false">
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                        Circuit Stream
-                        </mat-panel-title>                                                    
-                    </mat-expansion-panel-header>
-                        <ul class="exam-rules">
-                            <li><a [routerLink]="['/department-view']">Electrical and Electronics Engineering</a></li>
-                            <li><a [routerLink]="['/department-view']">Electronics and Communication Engineering</a></li>
-                            <li><a [routerLink]="['/department-view']">Computer Engineering</a></li>
-                            <li><a [routerLink]="['/department-view']">Automobile Engineering</a></li>
-
-                        </ul>
-                        
-                    </mat-expansion-panel>
-                    <mat-expansion-panel (opened)="panelOpenState = true"
-                                        (closed)="panelOpenState = false">
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                        others Stream
-                        </mat-panel-title>                                                    
-                    </mat-expansion-panel-header>
-                        <ul class="exam-rules">
-                            <li><a [routerLink]="['/department-view']">Textile Technology</a></li>
-                        </ul>
-                    </mat-expansion-panel>                -->
+                   
                 </mat-accordion>  
             </div>
             <div class="col-mg-4">                                          
@@ -66,13 +34,13 @@
                     </div>
                     <div class="content-detail">
                         <ul>
-                                <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Automobile Engineering</a></li>
-                            <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Civil Engineering</a></li>
-                            <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Computer Applications</a></li>
-                            <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Computer Science &amp; engineering</a></li>
-                            <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Electrical & Electronics Engineering</a></li>
-                            <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Electronics & Communication Engineering</a></li>
-                            <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Electronics and Instrumentation Engineering</a></li>
+                            <li><a href="department-view.html">Automobile Engineering</a></li>
+                            <li><a href="department-view.html">Civil Engineering</a></li>
+                            <li><a href="department-view.html">Computer Applications</a></li>
+                            <li><a href="department-view.html">Computer Science &amp; engineering</a></li>
+                            <li><a href="department-view.html">Electrical & Electronics Engineering</a></li>
+                            <li><a href="department-view.html">Electronics & Communication Engineering</a></li>
+                            <li><a href="department-view.html">Electronics and Instrumentation Engineering</a></li>
                         </ul>
                     </div>
                 </div>

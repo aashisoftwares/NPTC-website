@@ -1,0 +1,8 @@
+.content-detail li
+{
+   list-style-image: url('../../../../assets/images/tick2.png');
+}
+.mt-80
+{
+   margin-top: 80px;
+}
