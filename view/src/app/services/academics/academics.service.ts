@@ -26,6 +26,13 @@ export class AcademicsService {
     return this.http.post(apiUrl + 'department/list-by-stream', info)
       .pipe(map(response => response), catchError(error => of(error)));
    } 
+
+  // department list filter by programme
+  public departmentListFilterByProgramme(info: any): Observable<any[]> {
+    return this.http.post(apiUrl + 'department/list-by-programme', info)
+      .pipe(map(response => response), catchError(error => of(error)));
+    } 
+
   // ---------------------------- faculty Service --------------------------------
   // list
   public facultyList(info: any): Observable<any[]> {

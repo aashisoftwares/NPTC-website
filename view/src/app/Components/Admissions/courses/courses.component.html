@@ -9,54 +9,28 @@
                     <div class="col-lg-8">
                         <div class="about-cont pt-20">
                         <h4> Our Courses</h4>
-                            <p>
-                            As per Government of Tamilnadu Norms and Single Window Counseling by Anna University, Chennai, as per their norms.<br />                   
+                            <p> As per Government of Tamilnadu Norms and Single Window Counseling by Anna University, Chennai, as per their norms.<br />                   
                             The minimum eligibility marks for various categories are listed below:</p>
                             <div *ngFor="let data of programmedata;">
-                                    <h5 class="pt-30"> {{data?.name}}</h5>
-                            </div>
-                            <!-- <h5 class="pt-30">Aided Diploma Programmes</h5>
-                            <ul class="exam-rules">
-                                <li>Civil Engineering</li>
-                                <li>Mechanical Engineering</li>
-                                <li>Electrical and Electronics Engineering</li>
-                                <li>Electronics and Communication Engineering</li>
-                                <li>Automobile Engineering</li>
-                                <li>Textile Technology</li>
-                                <li>Mechanical Engineering (Refrigeration and Air Conditioning)</li>
-                            </ul>
-                            <h5 class="pt-30">Self-Supporting Diploma Programmes</h5>
-                            <ul class="exam-rules">
-                                <li>Civil Engineering</li>
-                                <li>Mechanical Engineering</li>
-                                <li>Electrical and Electronics Engineering</li>
-                                <li>Electronics and Communication Engineering</li>
-                                <li>Automobile Engineering</li>
-                                <li>Computer Engineering</li>
-                                <li>Printing Technology</li>
-                                <li>Instrumental and Control Engineering</li>
-                                <li>Mechanical Engineering (Sandwich)</li>
-                            </ul>
-                            <h5 class="pt-30">Post Diploma Programmes</h5>
-                            <ul class="exam-rules">
-                                <li>Automobile Engineering</li>
-                            </ul> -->
+                                <h5 class="pt-30"> {{data?.name}}</h5>
+                                <ul>
+                                    <div *ngFor="let info of courseData">
+                                        <li>{{info?.name}}</li>
+                                    </div>
+                                </ul>
+                            </div>                                                    
                         </div>
                     </div>
-                    <div class="col-mg-4">                                                                                 
+                    <div class="col-lg-4">                                                                                 
                         <div class="department-list mt-40">
                             <div class="header-list">
                                 <h4>Departments</h4>
                             </div>
                             <div class="content-detail">
                                 <ul>
-                                    <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Automobile Engineering</a></li>
-                                    <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Civil Engineering</a></li>
-                                    <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Computer Applications</a></li>
-                                    <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Computer Science &amp; engineering</a></li>
-                                    <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Electrical & Electronics Engineering</a></li>
-                                    <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Electronics & Communication Engineering</a></li>
-                                    <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Electronics and Instrumentation Engineering</a></li>
+                                    <div *ngFor="let data of departmentlist">
+                                        <li><a [routerLink]="['/department-view', data._id]">{{data?.name}}</a></li>
+                                    </div>                           
                                 </ul>
                             </div>
                         </div>

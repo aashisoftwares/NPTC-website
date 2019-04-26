@@ -22,3 +22,32 @@
     z-index: 1002;
     width:100%;
 }
+.menu-spacer {
+    flex: 1 1 auto;
+}
+.mat-button, .mat-flat-button, .mat-icon-button, .mat-stroked-button
+{
+    width:130px !important;
+}
+.mat-toolbar-row, .mat-toolbar-single-row
+{
+    background:#cc2655 !important;
+    height: 50px !important;
+}
+.toolbar-menu
+{
+    padding: 6px 15px !important;
+    color:#fff;
+    font-size: 14px;
+}
+.sticky1 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 60px;
+    z-index: 1002;
+    width: 100%;
+}
+.mat-toolbar-row, .mat-toolbar-single-row
+{
+    padding:0px 8px !important;
+}

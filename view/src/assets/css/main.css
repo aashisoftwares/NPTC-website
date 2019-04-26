@@ -1135,6 +1135,7 @@ p {
 .content-detail li
 {
    list-style-image: url('../../../../assets/images/tick2.png');
+   margin-left: 2px;
 }
 
 
@@ -2593,7 +2594,7 @@ p {
 ======================================================*/
 
 .corses-singel-left{
-    padding: 45px 50px;
+    padding: 45px 15px;
     background-color: #fff;
 }
 
@@ -4034,9 +4035,9 @@ p.form-message.error {
 }
 .content-detail ul li
 {
-    line-height: 35px;    
+    /* line-height: 35px;     */
     padding:5px 8px;
-    margin-left: 25px;
+    margin-left: 44px;
     margin-right: 25px;
 }
 .content-detail ul li a

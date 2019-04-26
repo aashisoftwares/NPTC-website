@@ -3,7 +3,7 @@ import * as cryptojs from 'crypto-js';
 
 // ----- service -----------//
 import { AdmissionService } from '../../../services/admission/admission.service';
-
+import { AcademicsService } from '../../../services/academics/academics.service';
 @Component({
   selector: 'app-ebrochure',
   templateUrl: './ebrochure.component.html',
@@ -12,7 +12,8 @@ import { AdmissionService } from '../../../services/admission/admission.service'
 export class EbrochureComponent implements OnInit {
    data : any;
    brochurefileUrl : any;
-  constructor(private admissionService: AdmissionService) {
+   departmentlist : any;
+  constructor(private admissionService: AdmissionService, private academicsService: AcademicsService) {
      this.service();
    }
 
@@ -27,5 +28,12 @@ export class EbrochureComponent implements OnInit {
            this.brochurefileUrl = this.data.fileUrl
         }
      });
+     this.academicsService.departmentList(Data).subscribe(response => {
+      if(response['status'] === 200) { 
+        this.departmentlist = response['info']
+      } else {
+        alert('Something went wrong!. Please refresh the page')
+      }
+    }); 
   }
 }

@@ -3,6 +3,7 @@ import * as cryptojs from 'crypto-js';
 
 // ------ service ------------ //
 import { LifeAtNptcService } from '../../../services/lifeAtNptc/life-at-nptc.service';
+import { AcademicsService } from '../../../services/academics/academics.service';
 
 @Component({
   selector: 'app-staff',
@@ -11,7 +12,8 @@ import { LifeAtNptcService } from '../../../services/lifeAtNptc/life-at-nptc.ser
 })
 export class StaffComponent implements OnInit {
    data : any;
-  constructor(private lifeAtNpcService: LifeAtNptcService) { 
+   departmentlist : any;
+  constructor(private lifeAtNpcService: LifeAtNptcService, private academicsService: AcademicsService) { 
      this.service();
   }
 
@@ -28,5 +30,12 @@ export class StaffComponent implements OnInit {
            alert('Something went wrong!. Please refresh the page')
         }
      });
+     this.academicsService.departmentList(Data).subscribe(response => {
+      if(response['status'] === 200) { 
+        this.departmentlist = response['info']
+      } else {
+        alert('Something went wrong!. Please refresh the page')
+      }
+    }); 
   }
 }

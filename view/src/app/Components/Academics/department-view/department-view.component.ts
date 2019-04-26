@@ -31,12 +31,8 @@ export class DepartmentViewComponent implements OnInit {
       console.log(response);
       this.aboutdata = response['info'];
       this.splitArray(this.aboutdata.faculty,3);
-      console.log(this.facultyArray);
    });
-
   }
-
-
   ngOnInit() {
     this.panelOpenState = false;
   }

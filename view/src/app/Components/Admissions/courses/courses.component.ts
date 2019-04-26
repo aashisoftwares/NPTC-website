@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as cryptojs from 'crypto-js';
+import { FormGroup, Validators, FormControl, AbstractControl, FormBuilder, FormArray } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 
 // ------ service -----------//
 import { AcademicsService } from '../../../services/academics/academics.service';
@@ -11,10 +13,15 @@ import { AcademicsService } from '../../../services/academics/academics.service'
 })
 export class CoursesComponent implements OnInit {
   programmedata : any;
-  constructor( private academicsService: AcademicsService) {
+  courseData : any;
+  departmentlist : any;
+  programmeId = this.active_route.snapshot.params['programmeId']
+  constructor( public router: Router,
+    private active_route: ActivatedRoute,
+    private academicsService: AcademicsService) {
     this.service();
+    this.programmeId = this.active_route.snapshot.params['programmeId'];   
    }
-
   ngOnInit() {
   }
   service(){
@@ -22,9 +29,25 @@ export class CoursesComponent implements OnInit {
     this.academicsService.programmesList(Data).subscribe(response => {
       if(response['status'] === 200) {
         this.programmedata = response['info']
+         console.log(response['info']);
+        // this.academicsService.departmentListFilterByProgramme({programmeID: this.programmedata._id}).subscribe(response => {
+        //   console.log(response);
+        //   if (response['status'] === 200) {
+        //      this.courseData = response['info'];
+        //    } else {
+        //      alert('Something went wrong!. Please refresh the page')
+        //    }
+        // });
       } else {
         alert('Something went wrong. please refresh the page')
       }
     });
+    this.academicsService.departmentList(Data).subscribe(response => {
+      if(response['status'] === 200) { 
+        this.departmentlist = response['info']
+      } else {
+        alert('Something went wrong!. Please refresh the page')
+      }
+    }); 
   }
 }

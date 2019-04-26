@@ -233,4 +233,7 @@ a.mat-menu-item:hover{
 {
    color:#ffffff !important;
 }
-
+.mat-expansion-panel-body
+{
+   line-height: 35px !important;
+}

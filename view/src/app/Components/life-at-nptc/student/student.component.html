@@ -8,38 +8,21 @@
                <div class="about-cont" [innerHTML]="data?.content">                                            
                </div>
                <h5 class="side-title">Achievements</h5>
-               <a href="{{achievementsFileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon> Achievers List</a>
+               <a href="{{achievementsFileUrl}}" target="_blank"><img src="../../../../assets/images/pdf-icon.png" /> Click here to download Achievers List</a>
                <h5 class="side-title">University Rank Holders</h5>
-               <a href="{{rankHoldersFileUrl}}" target="_blank"><mat-icon>picture_as_pdf</mat-icon> Rank Holders list</a>
+               <a href="{{rankHoldersFileUrl}}" target="_blank"><img src="../../../../assets/images/pdf-icon.png" /> Click here to download Rank Holders list</a>
           </div> <!-- about cont -->
-         <div class="col-mg-4 mt-50">
-              <div class="department-list">
-                  <div class="header-list">
-                      <h4>Quick Links</h4>
-                  </div>
-                  <div class="content-detail">
-                      <ul>
-                          <li><i class="fa fa-angle-double-right"></i> <a href="#">Courses Offered</a></li>
-                          <li><i class="fa fa-angle-double-right"></i> <a href="#">Placements</a></li>
-                          <li><i class="fa fa-angle-double-right"></i> <a href="#">NIA Family</a></li>
-                          <li><i class="fa fa-angle-double-right"></i> <a href="#">Gallery</a></li>                              
-                      </ul>
-                  </div>
-              </div>
+         <div class="col-lg-4 mt-50">              
                <div class="department-list">
                   <div class="header-list">
                       <h4>Departments</h4>
                   </div>
                   <div class="content-detail">
-                      <ul>
-                           <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Automobile Engineering</a></li>
-                          <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Civil Engineering</a></li>
-                          <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Computer Applications</a></li>
-                          <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Computer Science &amp; engineering</a></li>
-                          <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Electrical & Electronics Engineering</a></li>
-                          <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Electronics & Communication Engineering</a></li>
-                          <li><i class="fa fa-angle-double-right"></i> <a href="department-view.html">Electronics and Instrumentation Engineering</a></li>
-                      </ul>
+                    <ul>
+                        <div *ngFor="let data of departmentlist">
+                            <li><a [routerLink]="['/department-view', data._id]">{{data?.name}}</a></li>
+                        </div>                           
+                    </ul>
                   </div>
               </div>
          </div> 

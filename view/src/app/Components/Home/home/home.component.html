@@ -396,142 +396,28 @@
           </div> <!-- row -->
           <div class="row course-slied mt-30">
               <carousel>
-                  <slide>
-                      <div class="col-lg-12">
-                          <div class="col-lg-3" style="float:left;">
-                              <div class="singel-course">
-                                  <div class="thum">
-                                      <div class="image">
-                                          <div class="testimonial-thum" style="position: relative;">
-                                              <img src="../../../../assets/images/course/automobile.png" alt="first slide" style="height: 180px !important;">                                            
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="cont">                           
-                                      <a href="course-view.html"><h4>Automobile Engineering</h4></a>
-                                      <div class="course-teacher">                               
-                                      </div>
-                                  </div>
-                              </div>                                
-                          </div>  
-                          <div class="col-lg-3" style="float:left;">
-                              <div class="singel-course">
-                                  <div class="thum">
-                                      <div class="image">
-                                          <div class="testimonial-thum" style="position: relative;">
-                                              <img src="../../../../assets/images/course/automobile.png" alt="first slide" style="height: 180px !important;">                                            
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="cont">                           
-                                      <a href="course-view.html"><h4>Automobile Engineering</h4></a>
-                                      <div class="course-teacher">                               
-                                      </div>
-                                  </div>
-                              </div>                                
-                          </div>  
-                          <div class="col-lg-3" style="float:left;">
-                              <div class="singel-course">
-                                  <div class="thum">
-                                      <div class="image">
-                                          <div class="testimonial-thum" style="position: relative;">
-                                              <img src="../../../../assets/images/course/electrical.png" alt="first slide" style="height: 180px !important;">                                            
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="cont">                           
-                                      <a href="course-view.html"><h4>Electrical and Electronical Engineering</h4></a>
-                                      <div class="course-teacher">                               
-                                      </div>
-                                  </div>
-                              </div>                                
-                          </div>  
-                          <div class="col-lg-3" style="float:left;">
-                              <div class="singel-course">
-                                  <div class="thum">
-                                      <div class="image">
-                                          <div class="testimonial-thum" style="position: relative;">
-                                              <img src="../../../../assets/images/course/mechanical.jpg" alt="first slide" style="height: 180px !important;">                                            
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="cont">                           
-                                      <a href="course-view.html"><h4>Mechanical Engineering</h4></a>
-                                      <div class="course-teacher">                               
-                                      </div>
-                                  </div>
-                              </div>                                
-                          </div>    
-                      </div>
-                  </slide>
-                  <slide>
-                      <div class="col-lg-12">                         
-                          <div class="col-lg-3" style="float:left;">
-                              <div class="singel-course">
-                                  <div class="thum">
-                                      <div class="image">
-                                          <div class="testimonial-thum" style="position: relative;">
-                                              <img src="../../../../assets/images/course/textile.jpg" alt="first slide" style="height: 180px !important;">                                            
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="cont">                           
-                                      <a href="course-view.html"><h4>Textile Technology</h4></a>
-                                      <div class="course-teacher">                               
-                                      </div>
-                                  </div>
-                              </div>                                
-                          </div>  
-                          <div class="col-lg-3" style="float:left;">
-                              <div class="singel-course">
-                                  <div class="thum">
-                                      <div class="image">
-                                          <div class="testimonial-thum" style="position: relative;">
-                                              <img src="../../../../assets/images/course/electrical.png" alt="first slide" style="height: 180px !important;">                                            
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="cont">                           
-                                      <a href="course-view.html"><h4>Electrical and Electronical Engineering</h4></a>
-                                      <div class="course-teacher">                               
-                                      </div>
-                                  </div>
-                              </div>                                
-                          </div> 
-                          <div class="col-lg-3" style="float:left;">
-                              <div class="singel-course">
-                                  <div class="thum">
-                                      <div class="image">
-                                          <div class="testimonial-thum" style="position: relative;">
-                                              <img src="../../../../assets/images/course/mechanical.jpg" alt="first slide" style="height: 180px !important;">                                            
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="cont">                           
-                                      <a href="course-view.html"><h4>Mechanical Engineering</h4></a>
-                                      <div class="course-teacher">                               
-                                      </div>
-                                  </div>
-                              </div>                                
-                          </div> 
-                          <div class="col-lg-3" style="float:left;">
-                                  <div class="singel-course">
-                                      <div class="thum">
-                                          <div class="image">
-                                              <div class="testimonial-thum" style="position: relative;">
-                                                  <img src="../../../../assets/images/course/automobile.png" alt="first slide" style="height: 180px !important;">                                            
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="cont">                           
-                                          <a href="course-view.html"><h4>Automobile Engineering</h4></a>
-                                          <div class="course-teacher">                               
-                                          </div>
-                                      </div>
-                                  </div>                                
-                              </div>    
-                      </div>
-                  </slide>                        
+                    <div *ngFor="let info of deptArray">  
+                        <slide>
+                            <div class="col-lg-12">
+                                <div class="col-lg-3" style="float:left;" *ngFor="let data of info">
+                                    <div class="singel-course">
+                                        <div class="thum">
+                                            <div class="image">
+                                                <div class="testimonial-thum" style="position: relative;">
+                                                    <img src="../../../../assets/images/course/automobile.png" alt="first slide" style="height: 180px !important;">                                            
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cont">                           
+                                            <a [routerLink]="['/department-view', data._id]"><h4>{{data?.name}}</h4></a>
+                                            <div class="course-teacher">                               
+                                            </div>
+                                        </div>
+                                    </div>                                
+                                </div>                            
+                            </div>
+                        </slide>  
+                    </div>                                     
               </carousel>                                  
           </div> 
       </div> <!-- container -->

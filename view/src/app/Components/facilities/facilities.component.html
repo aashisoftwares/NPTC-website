@@ -7,127 +7,268 @@
                       <h3>Facilities</h3>
                   </div> <!-- title --> 
                   <div class="row">
-                    <div class="col-lg-8">
-                      <div id="Hostel">
-                          <div class="row">
-                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <div class="sticky1">
+                            <mat-toolbar color="primary">
+                                <mat-toolbar-row>                                                                   
+                                    <div fxShow="true" fxHide.lt-md>                                                
+                                        <a href="http://localhost:4200/facilities#Hostel" class="toolbar-menu">Hostel</a>
+                                        <a href="http://localhost:4200/facilities#Library" class="toolbar-menu">Library</a>
+                                        <a href="http://localhost:4200/facilities#PhysicalEducation" class="toolbar-menu">Physical Education</a>
+                                        <a href="http://localhost:4200/facilities#SGS" class="toolbar-menu">SGS</a>
+                                        <a href="http://localhost:4200/facilities#NCC" class="toolbar-menu">NCC</a>
+                                        <a href="http://localhost:4200/facilities#NSS" class="toolbar-menu">NSS</a>
+                                        <a href="http://localhost:4200/facilities#IIPC" class="toolbar-menu">IIPC</a>
+                                        <a href="http://localhost:4200/facilities#Education" class="toolbar-menu">Continuing Education Centre</a>
+                                        <a href="http://localhost:4200/facilities#RRC" class="toolbar-menu">Red Ribbon Club</a>
+                                        <a href="http://localhost:4200/facilities#EMDC" class="toolbar-menu">EMDC</a>
+                                        <a href="http://localhost:4200/facilities#ISTE" class="toolbar-menu">ISTE</a>
+                                        <a href="http://localhost:4200/facilities#YRC" class="toolbar-menu">Youth Red Cross</a>
+                                        <a href="http://localhost:4200/facilities#CDTP" class="toolbar-menu">CDTP</a>
+                                    </div>       
+                                </mat-toolbar-row>                                    
+                            </mat-toolbar>
+                        </div>
+                    <div class="col-lg-12">
+                        <div class="">
+                            <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .Nam nec tellus .</p>
+                            <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .Nam nec tellus .</p>
+                        </div>
+                        <div id="Hostel">
+                            <div class="row">
+                                <div class="col-xl-8">
                                     <h4>Hostel </h4> 
-                                 <div class="course-features" [innerHTML]="hosteldata?.content">                                    
-                                  </div> <!-- course features -->
-                              </div>
+                                    <div class="course-features" [innerHTML]="hosteldata?.content">                                    
+                                    </div> <!-- course features -->
+                                </div>
+                                <div class="col-lg-4 mt-50">
+                                    <carousel>
+                                        <div *ngFor="let info of hostelimageUrl">
+                                        <slide>
+                                            <img src="{{info}}" alt="first slide" >                                      
+                                        </slide> 
+                                        </div>                                 
+                                    </carousel>
+                                </div>
                           </div>
                       </div>   
                       <div id="Library">
                           <div class="row">
-                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                              <div class="col-xl-8">
                                  <h4>Library</h4>      
                                  <div class="course-features" [innerHTML]="librarydata?.content">
                                   </div> <!-- course features -->
                               </div>
+                              <div class="col-lg-4 mt-50">
+                                <carousel>
+                                    <div *ngFor="let info of libraryimageUrl">
+                                    <slide>
+                                        <img src="{{info}}" alt="first slide" >                                      
+                                    </slide> 
+                                    </div>                                 
+                                </carousel>
+                            </div>
                           </div> 
                       </div>
                       <div id="PhysicalEducation">
                           <div class="row">
-                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                              <div class="col-xl-8">
                                     <h4>PhysicalEducation</h4>
-                                  <div class="course-features" [innerHTML]="physicaleducationdata?.content">
-                                                                            
+                                  <div class="course-features" [innerHTML]="physicaleducationdata?.content">                                                                            
                                   </div> <!-- course features -->
                               </div>
+                              <div class="col-lg-4 mt-50">
+                                <carousel>
+                                    <div *ngFor="let info of physicaleducationimageUrl">
+                                    <slide>
+                                        <img src="{{info}}" alt="first slide" >                                      
+                                    </slide> 
+                                    </div>                                 
+                                </carousel>
+                            </div>
                           </div>                          
                       </div> 
                       <div id="SGS">
                           <div class="row">
-                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                              <div class="col-xl-8">
                                     <h4>SGS </h4> 
                                  <div class="course-features" [innerHTML]="sgsdata?.content">                                     
                                   </div> <!-- course features -->
                               </div>
+                              <div class="col-lg-4 mt-50">
+                                <carousel>
+                                    <div *ngFor="let info of sgsimageUrl">
+                                    <slide>
+                                        <img src="{{info}}" alt="first slide" >                                      
+                                    </slide> 
+                                    </div>                                 
+                                </carousel>
+                            </div>
                           </div>                          
                       </div> 
                       <div id="NCC">
                           <div class="row">
-                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                              <div class="col-xl-8">
                                     <h4>NCC</h4> 
                                  <div class="course-features" [innerHTML]="nccdata?.content">   
                                   </div>                                                                 
                               </div>
+                              <div class="col-lg-4 mt-50">
+                                <carousel>
+                                    <div *ngFor="let info of nccimageUrl">
+                                    <slide>
+                                        <img src="{{info}}" alt="first slide" >                                      
+                                    </slide> 
+                                    </div>                                 
+                                </carousel>
+                            </div>
                           </div>                          
                       </div> 
                       <div id="NSS">
                            <div class="row">
-                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                               <div class="col-xl-8">
                                     <h4>NSS</h4>  
                                  <div class="course-features" [innerHTML]="nssdata?.content">
                                    </div>                                                                 
                                </div>
+                               <div class="col-lg-4 mt-50">
+                                <carousel>
+                                    <div *ngFor="let info of nssimageUrl">
+                                    <slide>
+                                        <img src="{{info}}" alt="first slide" >                                      
+                                    </slide> 
+                                    </div>                                 
+                                </carousel>
+                            </div>
                            </div>                          
                        </div>  
                        <div id="IIPC">
                            <div class="row">
-                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                               <div class="col-xl-8">
                                     <h4>IIPC</h4>  
                                  <div class="course-features" [innerHTML]="iipcdata?.content">  
                                  </div>                                                                 
                                </div>
+                               <div class="col-lg-4 mt-50">
+                                <carousel>
+                                    <div *ngFor="let info of iipcimageUrl">
+                                    <slide>
+                                        <img src="{{info}}" alt="first slide" >                                      
+                                    </slide> 
+                                    </div>                                 
+                                </carousel>
+                            </div>
                            </div>                          
                        </div> 
                        <div id="Education">
                            <div class="row">
-                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                               <div class="col-xl-8">
                                  <h4>Continuing Education Centre</h4>  
                                  <div class="course-features" [innerHTML]="educationdata?.content">
                                    </div>                                                                 
                                </div>
+                               <div class="col-lg-4 mt-50">
+                                <carousel>
+                                    <div *ngFor="let info of educationimageUrl">
+                                    <slide>
+                                        <img src="{{info}}" alt="first slide" >                                      
+                                    </slide> 
+                                    </div>                                 
+                                </carousel>
+                            </div>
                            </div>                          
                        </div> 
                        <div id="RRC">
                            <div class="row">
-                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                               <div class="col-xl-8">
                                     <h4>Red Ribbon Club</h4>  
                                  <div class="course-features" [innerHTML]="rrcdata?.content">                                           
                                    </div>                                                                 
                                </div>
+                               <div class="col-lg-4 mt-50">
+                                <carousel>
+                                    <div *ngFor="let info of rrcimageUrl">
+                                    <slide>
+                                        <img src="{{info}}" alt="first slide" >                                      
+                                    </slide> 
+                                    </div>                                 
+                                </carousel>
+                            </div>
                            </div>                          
                        </div>  
                        <div id="EMDC">
                            <div class="row">
-                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                               <div class="col-xl-8">
                                     <h4>EMDC</h4>  
                                  <div class="course-features" [innerHTML]="emdcdata?.content">
                                    </div>                                                                 
                                </div>
+                               <div class="col-lg-4 mt-50">
+                                <carousel>
+                                    <div *ngFor="let info of emdcimageUrl">
+                                    <slide>
+                                        <img src="{{info}}" alt="first slide" >                                      
+                                    </slide> 
+                                    </div>                                 
+                                </carousel>
+                            </div>
                            </div>                          
                        </div> 
                        <div id="ISTE">
                            <div class="row">
-                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                               <div class="col-xl-8">
                                     <h4>ISTE</h4>  
                                  <div class="course-features" [innerHTML]="istedata?.content">                                           
                                    </div>                                                                 
                                </div>
+                               <div class="col-lg-4 mt-50">
+                                <carousel>
+                                    <div *ngFor="let info of isteimageurl">
+                                    <slide>
+                                        <img src="{{info}}" alt="first slide" >                                      
+                                    </slide> 
+                                    </div>                                 
+                                </carousel>
+                            </div>
                            </div>                          
                        </div> 
                        <div id="YRC">
                            <div class="row">
-                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                               <div class="col-xl-8">
                                     <h4>Youth Red Cross</h4>  
                                  <div class="course-features" [innerHTML]="yrcdata?.content">                                           
                                    </div>                                                                 
                                </div>
+                               <div class="col-lg-4 mt-50">
+                                <carousel>
+                                    <div *ngFor="let info of yrcimageUrl">
+                                    <slide>
+                                        <img src="{{info}}" alt="first slide" >                                      
+                                    </slide> 
+                                    </div>                                 
+                                </carousel>
+                            </div>
                            </div>                          
                        </div> 
                        <div id="CDTP">
                            <div class="row">
-                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                               <div class="col-xl-8">
                                     <h4>CDTP</h4>  
                                  <div class="course-features" [innerHTML]="cdtpdata?.content">      
                                    </div>                                                                 
                                </div>
+                               <div class="col-lg-4 mt-50">
+                                <carousel>
+                                    <div *ngFor="let info of cdtpimageUrl">
+                                    <slide>
+                                        <img src="{{info}}" alt="first slide">                                      
+                                    </slide> 
+                                    </div>                                 
+                                </carousel>
+                            </div>
                            </div>                          
                        </div>     
                     </div>
-                    <div class="col-lg-4 sticky">
+                    <!-- <div class="col-lg-4">
                       <ul class="facilities-list">
                         <li><a href="http://206.189.131.244:5000/facilities#Hostel" routerlink="['/facilities/hostel']">Hostel</a></li>
                         <li><a href="http://206.189.131.244:5000/facilities#Library">Library</a></li>
@@ -142,7 +283,9 @@
                         <li><a href="http://206.189.131.244:5000/facilities#ISTE">ISTE</a></li>
                         <li><a href="http://206.189.131.244:5000/facilities#YRC">Youth Red Cross</a></li>
                         <li><a href="http://206.189.131.244:5000/facilities#CDTP">CDTP</a></li>
-                      </ul>50                   </div>50                 </div>
+                      </ul>                
+                    </div>                -->
+                </div>
               </div>
           </div> <!-- corses singel left -->                       
       </div> <!-- row -->

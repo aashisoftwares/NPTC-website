@@ -10,33 +10,16 @@
                      <a class="col-lg-7 downloadlink" href="{{file}}" target="_blank"><img src="../../../../assets/images//pdf-icon.png" /><span class="download">Click here to download </span></a>                                    
                   </div>
             </div> <!-- about cont -->
-            <div class="col-mg-4 mt-50">                                   
-              <div class="header-list">
-                  <h4>COE Office &amp; Exam Cell</h4>
-              </div>
-              <div class="content-detail">
-                  <ul>
-                      <li><a href="#">Curriculam &amp; Syllabus</a></li>
-                      <li><a href="#">Regulations</a></li>
-                      <li><a href="#">Circulars</a></li>
-                      <li><a href="#">Downloads</a></li>
-                      <li><a href="#">Results</a></li>                                
-                  </ul>
-              </div>
-            
+            <div class="col-lg-4 mt-50">                                   
               <div class="department-list">
                 <div class="header-list">
                     <h4>Departments</h4>
                 </div>
                 <div class="content-detail">
                     <ul>
-                        <li><a href="department-view.html">Automobile Engineering</a></li>
-                        <li><a href="department-view.html">Civil Engineering</a></li>
-                        <li><a href="department-view.html">Computer Applications</a></li>
-                        <li><a href="department-view.html">Computer Science &amp; engineering</a></li>
-                        <li><a href="department-view.html">Electrical & Electronics Engineering</a></li>
-                        <li><a href="department-view.html">Electronics & Communication Engineering</a></li>
-                        <li><a href="department-view.html">Electronics and Instrumentation Engineering</a></li>
+                        <div *ngFor="let data of departmentlist">
+                            <li><a [routerLink]="['/department-view', data._id]">{{data?.name}}</a></li>
+                        </div>                           
                     </ul>
                 </div>
               </div>
