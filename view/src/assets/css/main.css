@@ -1088,8 +1088,8 @@ p {
 }
 
 .about-event{
-    -webkit-box-shadow: 0px 0px 191px 0px rgba(0,0,0,0.06);
-    box-shadow: 0px 0px 191px 0px rgba(0,0,0,0.06);
+    /*-webkit-box-shadow: 0px 0px 191px 0px rgba(0,0,0,0.06); 
+    box-shadow: 0px 0px 191px 0px rgba(0,0,0,0.06); */
     padding: 15px 40px 10px;
     background-color: rgba(255, 255, 255, 0.95);
 }
@@ -1172,10 +1172,25 @@ p {
     color: #fff;
     padding-bottom: 45px;
 }
+
 .apply .apply-cont .main-btn:hover{
     border-color: #ffc600;
 }
-
+.admission-cont {
+    padding: 45px 50px 50px;
+}
+.admission-cont h3{
+    font-size: 30px;
+    color: #fff;
+    padding-bottom: 15px;
+}
+.admission-cont p{
+    color: #fff;
+    padding-bottom: 15px;
+}
+.admission-cont .main-btn:hover{
+    border-color: #ffc600;
+}
 
 /*=====================================================
     7. COURSE css 

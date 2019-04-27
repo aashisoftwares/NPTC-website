@@ -3,7 +3,7 @@ import * as cryptojs from 'crypto-js';
 
 // ------ service --------//
 import { AdmissionService } from '../../../services/admission/admission.service';
-
+import { AcademicsService } from '../../../services/academics/academics.service';
 @Component({
   selector: 'app-scholarships',
   templateUrl: './scholarships.component.html',
@@ -11,7 +11,8 @@ import { AdmissionService } from '../../../services/admission/admission.service'
 })
 export class ScholarshipsComponent implements OnInit {
    data : any;
-  constructor( private admissionService: AdmissionService) {
+   departmentlist : any;
+  constructor( private admissionService: AdmissionService, private academicsService: AcademicsService) {
      this.service();
    }
 
@@ -27,5 +28,12 @@ export class ScholarshipsComponent implements OnInit {
            alert('Something went wrong!. Please refresh the page')
         }
      });
+     this.academicsService.departmentList(Data).subscribe(response => {
+      if(response['status'] === 200) { 
+        this.departmentlist = response['info']
+      } else {
+        alert('Something went wrong!. Please refresh the page')
+      }
+    }); 
   }
 }

@@ -31,6 +31,7 @@ import { ScholarshipsComponent } from './Components/Admissions/scholarships/scho
 import { EbrochureComponent } from './Components/Admissions/ebrochure/ebrochure.component';
 import { StudentFacilitiesComponent } from './Components/Admissions/student-facilities/student-facilities.component';
 import { FacilitiesComponent } from './Components/facilities/facilities.component';
+import { MilestonesComponent } from './Components/About/milestones/milestones.component';
 
 const appRoutes: Routes = [
     {
@@ -60,6 +61,10 @@ const appRoutes: Routes = [
     {
       path: 'institution-organogram',
       component: InstitutionOrganogramComponent,
+    },
+    {
+      path: 'milestones',
+      component: MilestonesComponent
     },
     {
       path: 'vision-mission',

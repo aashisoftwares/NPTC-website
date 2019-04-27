@@ -29,6 +29,7 @@ export class CoursesComponent implements OnInit {
     this.academicsService.programmesList(Data).subscribe(response => {
       if(response['status'] === 200) {
         this.programmedata = response['info']
+        
          console.log(response['info']);
         // this.academicsService.departmentListFilterByProgramme({programmeID: this.programmedata._id}).subscribe(response => {
         //   console.log(response);

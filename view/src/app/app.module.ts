@@ -13,7 +13,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { FormBuilder, FormControl, FormsModule } from '@angular/forms';
 import { NgxLoadingModule } from 'ngx-loading';
 import { MatFormFieldModule, MatFormFieldControl } from '@angular/material/form-field';
-
+import { NgxTimelineModule } from 'ngx-timeline';
 
 // ---------- Custom Components  ----------------//
 
@@ -50,6 +50,7 @@ import { EbrochureComponent } from './Components/Admissions/ebrochure/ebrochure.
 import { StudentFacilitiesComponent } from './Components/Admissions/student-facilities/student-facilities.component';
 import { FacilitiesComponent } from './Components/facilities/facilities.component';
 import { PlacementRecordComponent } from './Components/Admissions/placement-record/placement-record.component';
+import { MilestonesComponent } from './Components/About/milestones/milestones.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,7 +86,8 @@ import { PlacementRecordComponent } from './Components/Admissions/placement-reco
     EbrochureComponent,
     StudentFacilitiesComponent,
     FacilitiesComponent,
-    PlacementRecordComponent
+    PlacementRecordComponent,
+    MilestonesComponent
   ],
   imports: [
     BrowserModule,
@@ -102,6 +104,7 @@ import { PlacementRecordComponent } from './Components/Admissions/placement-reco
     BrowserAnimationsModule,
     MatExpansionModule,
     MatFormFieldModule,
+    NgxTimelineModule,
     CarouselModule.forRoot(),
     NgxLoadingModule.forRoot({})
   ],
