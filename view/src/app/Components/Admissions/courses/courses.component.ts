@@ -29,16 +29,18 @@ export class CoursesComponent implements OnInit {
     this.academicsService.programmesList(Data).subscribe(response => {
       if(response['status'] === 200) {
         this.programmedata = response['info']
-        
-         console.log(response['info']);
-        // this.academicsService.departmentListFilterByProgramme({programmeID: this.programmedata._id}).subscribe(response => {
-        //   console.log(response);
-        //   if (response['status'] === 200) {
-        //      this.courseData = response['info'];
-        //    } else {
-        //      alert('Something went wrong!. Please refresh the page')
-        //    }
-        // });
+        const programid = this.programmedata.map(object => {
+//          console.log(object._id)
+          this.academicsService.departmentListFilterByProgramme({programmeID: object._id}).subscribe(response => {
+            console.log(response);
+            if (response['status'] === 200) {
+              this.courseData = response['info'];
+            } else {
+              alert('Something went wrong!. Please refresh the page')
+            }
+          });
+        })
+       
       } else {
         alert('Something went wrong. please refresh the page')
       }
