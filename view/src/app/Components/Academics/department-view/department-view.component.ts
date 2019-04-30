@@ -28,7 +28,6 @@ export class DepartmentViewComponent implements OnInit {
   ) {
    this.departmentId = this.active_route.snapshot.params['deptId'];
    this.academicsService.departmentView({'departmentID': this.departmentId }).subscribe(response => {
-      console.log(response);
       this.aboutdata = response['info'];
       this.splitArray(this.aboutdata.faculty,3);
    });
@@ -40,8 +39,6 @@ export class DepartmentViewComponent implements OnInit {
    let arrayLength = arrayData.length;
    for (let i = 0; i < arrayLength; i+=size) {
       this.facultyArray.push(this.aboutdata.faculty.slice(i, i+size))
-
-      
    }
   }
 }

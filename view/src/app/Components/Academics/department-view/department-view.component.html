@@ -1,9 +1,9 @@
 <div id="corses-singel" class="pb-60 gray-bg">
       <carousel>
-         <slide>
-            <img src="../../../../assets/images/slider/event1.jpg" alt="first slide">                  
+         <slide *ngFor="let image of aboutdata?.department?.departmentImageUrl; let i = index">
+            <img src="{{image}}" alt="{{i}} slide">                  
          </slide>
-         <slide>
+         <!-- <slide>
             <img src="../../../../assets/images/slider/event5.jpeg" alt="second slide">                  
          </slide>
          <slide>
@@ -11,7 +11,7 @@
          </slide>
          <slide>
             <img src="../../../../assets/images/slider/event6.jpg" alt="third slide">                   
-         </slide>
+         </slide> -->
       </carousel>
   <div class="container">
       <div class="row" style="height: 720px">   
