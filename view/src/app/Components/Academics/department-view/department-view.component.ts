@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl, AbstractControl, FormBuilder, FormArray } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import * as config from '../../../../../../config.json';
 
 // ------- service ----------//
 import { AcademicsService } from '../../../services/academics/academics.service';
@@ -21,6 +22,11 @@ export class DepartmentViewComponent implements OnInit {
   occdata : any;
   departmentId : any;
   facultyArray: any = [];
+
+   toShow: any = 'about';
+  // URL LINK
+  linkUrl = config['LINK_URL'];
+
   constructor(
    public router: Router,
    private active_route: ActivatedRoute,
@@ -40,5 +46,9 @@ export class DepartmentViewComponent implements OnInit {
    for (let i = 0; i < arrayLength; i+=size) {
       this.facultyArray.push(this.aboutdata.faculty.slice(i, i+size))
    }
+  }
+
+  changeTab(value) {
+     this.toShow = value;
   }
 }

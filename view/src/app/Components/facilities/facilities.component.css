@@ -5,7 +5,7 @@
 }
 .facilities-list li
 {
-    line-height: 40px;    
+    line-height: 31px;    
     border-bottom:1px solid #f5f6f7;
     /* background-color:#B9285E; */
     background-image: linear-gradient(to right, #B9285E , #B9285E);
@@ -67,3 +67,23 @@
 .sidebar-nav {
     margin-top: 30px;
 }
+
+/* width */
+#boxscroll::-webkit-scrollbar {
+   width: 2px;
+ }
+ 
+ /* Track */
+#boxscroll::-webkit-scrollbar-track {
+   background: #f1f1f1; 
+ }
+  
+ /* Handle */
+#boxscroll::-webkit-scrollbar-thumb {
+   background: #C62758; 
+ }
+ 
+ /* Handle on hover */
+#boxscroll::-webkit-scrollbar-thumb:hover {
+   background: #323E9E; 
+ }

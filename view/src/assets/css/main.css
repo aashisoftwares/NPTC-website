@@ -496,6 +496,38 @@ p {
     padding: 0;
 }
 
+
+/* .sidenav {
+   width: 250px;
+   position: fixed;
+   left: 10px;
+   overflow-x: hidden;
+   padding: 8px 0;
+}
+.main {
+   margin-left: 140px;
+  padding: 0px 10px;
+}
+.sidetop {
+   animation: customAnimations_1 1s;
+   top: 55px
+}
+.sidedown {
+   animation: customAnimations_2 1s;
+   top: 540px
+} */
+
+
+@keyframes customAnimations_1 {
+   0% {top: 540px}
+   100% {top: 55px}
+}
+
+@keyframes customAnimations_2 {
+   0% {top: 55px}
+   100% {top: 540px}
+}
+
 .navigation .navbar .navbar-nav{}
 .navigation .navbar .navbar-nav li{
     /*margin-right: 27px;*/

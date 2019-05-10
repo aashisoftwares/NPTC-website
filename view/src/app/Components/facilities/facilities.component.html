@@ -1,34 +1,30 @@
-<div id="corses-singel" class="pb-60 gray-bg">
+<div id="corses-singel" class="gray-bg">
   <div class="container-fluid">
-      <div class="row" style="height: 720px">
-        <div class="col-lg-3 sidebar-nav">
+      <div class="row" style="height: 670px">
+        <div class="col-lg-3 sidebar-nav" style="height: 611px">
             <ul class="facilities-list">
-                <li><a href="http://206.189.131.244:5000/facilities#Hostel" >Hostel</a></li>
-                <li><a href="http://206.189.131.244:5000/facilities#Library">Library</a></li>
-                <li><a href="http://206.189.131.244:5000/facilities#PhysicalEducation">Physical Education</a></li>
-                <li><a href="http://206.189.131.244:5000/facilities#SGS">SGS</a></li>
-                <li><a href="http://206.189.131.244:5000/facilities#NCC">NCC</a></li>
-                <li><a href="http://206.189.131.244:5000/facilities#NSS">NSS</a></li>
-                <li><a href="http://206.189.131.244:5000/facilities#IIPC">IIPC</a></li>
-                <li><a href="http://206.189.131.244:5000/facilities#Education">Continuing Education centre</a></li>
-                <li><a href="http://206.189.131.244:5000/facilities#RRC">Red Ribbon Club</a></li>
-                <li><a href="http://206.189.131.244:5000/facilities#EMDC">EMDC</a></li>
-                <li><a href="http://206.189.131.244:5000/facilities#ISTE">ISTE</a></li>
-                <li><a href="http://206.189.131.244:5000/facilities#YRC">Youth Red Cross</a></li>
-                <li><a href="http://206.189.131.244:5000/facilities#CDTP">CDTP</a></li>
+                <li *ngIf="hosteldata && hosteldata !== null"><a (click)="changeTab('Hostel')">Hostel</a></li>
+                <li *ngIf="librarydata && librarydata !== null"><a (click)="changeTab('Library')">Library</a></li>
+                <li *ngIf="physicaleducationdata && physicaleducationdata !== null"><a (click)="changeTab('PE')">Physical Education</a></li>
+                <li *ngIf="sgsdata && sgsdata !== null"><a (click)="changeTab('SGS')">SGS</a></li>
+                <li *ngIf="nccdata && nccdata !== null"><a (click)="changeTab('NCC')">NCC</a></li>
+                <li *ngIf="nssdata && nssdata !== null"><a (click)="changeTab('NSS')">NSS</a></li>
+                <li *ngIf="iipcdata && iipcdata !== null"><a (click)="changeTab('IIPC')">IIPC</a></li>
+                <li *ngIf="educationdata && educationdata !== null"><a (click)="changeTab('CEC')">Continuing Education centre</a></li>
+                <li *ngIf="rrcdata && rrcdata !== null"><a (click)="changeTab('RRC')">Red Ribbon Club</a></li>
+                <li *ngIf="emdcdata && emdcdata !== null"><a (click)="changeTab('EMDC')">EMDC</a></li>
+                <li *ngIf="istedata && istedata !== null"><a (click)="changeTab('ISTE')">ISTE</a></li>
+                <li *ngIf="yrcdata && yrcdata !== null"><a (click)="changeTab('YRC')">Youth Red Cross</a></li>
+                <li *ngIf="cdtpdata && cdtpdata !== null"><a (click)="changeTab('CDTP')">CDTP</a></li>
             </ul>                
         </div>  
-          <div class="col-lg-9" style="height: 726px; overflow: scroll; margin-top: 30px">
+          <div id="boxscroll" class="col-lg-9" style="height: 611px; overflow-y: auto; margin-top: 30px">
               <div class="corses-singel-left mt-30" style="margin-top: 0">
                 <div class="title">
                     <h3>Facilities</h3>
                 </div>
                 <div>
-                        <div class="">
-                            <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .Nam nec tellus .</p>
-                            <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .Nam nec tellus .</p>
-                        </div>
-                        <div id="Hostel">
+                        <div id="Hostel" *ngIf="toShow === 'Hostel'">
                             <div class="row">
                                 <div class="col-xl-8">
                                     <h4>Hostel </h4> 
@@ -46,7 +42,7 @@
                                 </div>
                           </div>
                       </div>   
-                      <div id="Library">
+                      <div id="Library" *ngIf="toShow === 'Library'">
                           <div class="row">
                               <div class="col-xl-8">
                                  <h4>Library</h4>      
@@ -64,7 +60,7 @@
                             </div>
                           </div> 
                       </div>
-                      <div id="PhysicalEducation">
+                      <div id="PhysicalEducation" *ngIf="toShow === 'PE'">
                           <div class="row">
                               <div class="col-xl-8">
                                     <h4>PhysicalEducation</h4>
@@ -82,7 +78,7 @@
                             </div>
                           </div>                          
                       </div> 
-                      <div id="SGS">
+                      <div id="SGS" *ngIf="toShow === 'SGS'">
                           <div class="row">
                               <div class="col-xl-8">
                                     <h4>SGS </h4> 
@@ -100,7 +96,7 @@
                             </div>
                           </div>                          
                       </div> 
-                      <div id="NCC">
+                      <div id="NCC" *ngIf="toShow === 'NCC'">
                           <div class="row">
                               <div class="col-xl-8">
                                     <h4>NCC</h4> 
@@ -118,7 +114,7 @@
                             </div>
                           </div>                          
                       </div> 
-                      <div id="NSS">
+                      <div id="NSS" *ngIf="toShow === 'NSS'">
                            <div class="row">
                                <div class="col-xl-8">
                                     <h4>NSS</h4>  
@@ -136,7 +132,7 @@
                             </div>
                            </div>                          
                        </div>  
-                       <div id="IIPC">
+                       <div id="IIPC" *ngIf="toShow === 'IIPC'">
                            <div class="row">
                                <div class="col-xl-8">
                                     <h4>IIPC</h4>  
@@ -154,7 +150,7 @@
                             </div>
                            </div>                          
                        </div> 
-                       <div id="Education">
+                       <div id="Education" *ngIf="toShow === 'CEC'">
                            <div class="row">
                                <div class="col-xl-8">
                                  <h4>Continuing Education Centre</h4>  
@@ -172,7 +168,7 @@
                             </div>
                            </div>                          
                        </div> 
-                       <div id="RRC">
+                       <div id="RRC" *ngIf="toShow === 'RRC'">
                            <div class="row">
                                <div class="col-xl-8">
                                     <h4>Red Ribbon Club</h4>  
@@ -190,7 +186,7 @@
                             </div>
                            </div>                          
                        </div>  
-                       <div id="EMDC">
+                       <div id="EMDC" *ngIf="toShow === 'EMDC'">
                            <div class="row">
                                <div class="col-xl-8">
                                     <h4>EMDC</h4>  
@@ -208,7 +204,7 @@
                             </div>
                            </div>                          
                        </div> 
-                       <div id="ISTE">
+                       <div id="ISTE" *ngIf="toShow === 'ISTE'">
                            <div class="row">
                                <div class="col-xl-8">
                                     <h4>ISTE</h4>  
@@ -226,7 +222,7 @@
                             </div>
                            </div>                          
                        </div> 
-                       <div id="YRC">
+                       <div id="YRC" *ngIf="toShow === 'YRC'">
                            <div class="row">
                                <div class="col-xl-8">
                                     <h4>Youth Red Cross</h4>  
@@ -244,7 +240,7 @@
                             </div>
                            </div>                          
                        </div> 
-                       <div id="CDTP">
+                       <div id="CDTP" *ngIf="toShow === 'CDTP'">
                            <div class="row">
                                <div class="col-xl-8">
                                     <h4>CDTP</h4>  

@@ -27,12 +27,17 @@ window.onscroll = function() {myFunction()};
 
 var header = document.getElementById("myHeader");
 var sticky = header.offsetTop;
+var sidenav = document.getElementById("sidenav");
 
 function myFunction() {
   if (window.pageYOffset > sticky) {
     header.classList.add("sticky");
+   //  sidenav.classList.remove("sidedown");
+   //  sidenav.classList.add("sidetop");
   } else {
     header.classList.remove("sticky");
+   //  sidenav.classList.remove("sidetop");
+   //  sidenav.classList.add("sidedown");
   }
 //   if(header.has("sticky1"))
 //   {

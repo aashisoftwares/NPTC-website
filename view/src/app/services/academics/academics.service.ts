@@ -5,7 +5,10 @@ import { map, catchError, retry } from 'rxjs/operators';
 import * as cryptojs from 'crypto-js';
 
 
-const apiUrl = 'http://206.189.131.244:5500/api/app/';
+// config
+import  * as config from '../../../../../config.json';
+
+const apiUrl = config['API_URL'];
 
 @Injectable({
   providedIn: 'root'
