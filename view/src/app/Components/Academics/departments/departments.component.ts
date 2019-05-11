@@ -15,7 +15,7 @@ export class DepartmentsComponent implements OnInit {
   streamdata: any;
   departmentid: any;
   streamid : any;
-  deptlist: any;
+  deptlist: any = [];
   departmentlist : any;
 
   constructor( private academicsService: AcademicsService, private router: Router) {
@@ -28,7 +28,6 @@ export class DepartmentsComponent implements OnInit {
   service() {
     const Data = { type: 'test'};
     this.academicsService.streamList(Data).subscribe(response => {
-      console.log(response);
       if (response['status'] === 200) {
         this.streamdata = response['info'];
       } else {
@@ -43,7 +42,8 @@ export class DepartmentsComponent implements OnInit {
       }
     }); 
   }
-  changestream(data) {    
+  changestream(data) {
+     this.deptlist = []; 
     this.academicsService.departmentListFilterByStream({streamID: data._id}).subscribe(response => {
       if (response['status'] === 200) {
          this.deptlist = response['info'];

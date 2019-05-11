@@ -1166,7 +1166,7 @@ p {
 
 .content-detail li
 {
-   list-style-image: url('../../../../assets/images/tick2.png');
+   list-style-image: none;
    margin-left: 2px;
 }
 

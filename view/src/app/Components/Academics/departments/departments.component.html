@@ -19,7 +19,7 @@
                                 </mat-panel-title>              
                             </mat-expansion-panel-header> 
                                 <div *ngFor="let info of deptlist;">
-                                   <a [routerLink]="['/department-view', info._id]"><img class="deptlist" src="../../../../assets/images/tick3.png" />{{info?.name}}</a>
+                                   <a [routerLink]="['/department-view', info._id]"><span style="margin-right: 10px;">-</span>{{info?.name}}</a>
                                 </div>
                             </mat-expansion-panel>      
                         </div>               
@@ -35,7 +35,7 @@
                     <div class="content-detail">
                         <ul>
                             <div *ngFor="let data of departmentlist">
-                                <li><a [routerLink]="['/department-view', data._id]">{{data?.name}}</a></li>
+                                <li><a [routerLink]="['/department-view', data._id]"><span style="margin-right: 10px;">-</span>{{data?.name}}</a></li>
                             </div>                           
                         </ul>
                     </div>
@@ -137,5 +137,5 @@
            
         </div> -->
        
-    </div> <!-- container -->
+    </div>
 </div>
