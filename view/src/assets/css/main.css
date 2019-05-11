@@ -3038,6 +3038,12 @@ p {
     font-size: 30px;
     color: #07294d;
 }
+.course-features ol li {
+   list-style-type: circle;
+}
+.course-features ol li {
+   list-style-type: circle;
+}
 
 .course-features{
     background-color: #fff;
