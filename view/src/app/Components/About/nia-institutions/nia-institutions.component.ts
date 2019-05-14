@@ -50,7 +50,6 @@ export class NiaInstitutionsComponent implements OnInit {
       }
    });
    this.aboutUsService.socialDAList(Data).subscribe(response => {
-      console.log(response);
       if (response['status'] === 200) {
       this.socialactivitydata = response['info'];
       this.socialActivityimageUrl = this.socialactivitydata.imageUrl

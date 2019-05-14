@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import * as cryptojs from 'crypto-js';
 
+
+import { HttpClient } from '@angular/common/http';
+import { FileSaverService } from 'ngx-filesaver';
+
 // ------------- service ------------//
 import { LifeAtNptcService } from '../../../services/lifeAtNptc/life-at-nptc.service';
 import { AcademicsService } from '../../../services/academics/academics.service';
@@ -15,7 +19,10 @@ export class StudentComponent implements OnInit {
    rankHoldersFileUrl : any;
    departmentlist : any;
 
-  constructor(private lifeAtNptService: LifeAtNptcService, private academicsService: AcademicsService) { 
+  constructor(private lifeAtNptService: LifeAtNptcService,
+   private academicsService: AcademicsService,
+   private _httpClient: HttpClient,
+   private _FileSaverService: FileSaverService) { 
      this.service();
   }
 
@@ -24,7 +31,6 @@ export class StudentComponent implements OnInit {
   service(){
      const Data = {type:'test'};
      this.lifeAtNptService.studentList(Data).subscribe(response =>{
-        console.log(response);
         if(response['status'] === 200){
             this.data = response['info']
             this.achievementsFileUrl = this.data.achievementsFileUrl
@@ -42,4 +48,12 @@ export class StudentComponent implements OnInit {
       }
     }); 
   }
+  download(url: string) {
+      this._httpClient.get(url, {
+      observe: 'response',
+      responseType: 'blob'
+      }).subscribe(res => {
+         this._FileSaverService.save(res.body, "file.pdf");
+      });
+   }
 }

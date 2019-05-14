@@ -4127,3 +4127,15 @@ p.form-message.error {
     padding-bottom: 10px;
 }
     
+
+.link-tag {
+   background-color: transparent;
+   color: #3666AF;
+}
+.link-tag i {
+   color: #C4285A;
+}
+.link-tag:hover {
+   background-color: #3666AF;
+   color: #ffffff;
+}

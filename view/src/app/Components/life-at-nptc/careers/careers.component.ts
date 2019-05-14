@@ -22,7 +22,6 @@ export class CareersComponent implements OnInit {
   service() {
      const Data = {type:'test'};
      this.lifeAtNptcService.careerList(Data).subscribe(response => {
-        console.log(response);
       if(response['status'] === 200) {
          this.careercontent = response['info']
       } else {

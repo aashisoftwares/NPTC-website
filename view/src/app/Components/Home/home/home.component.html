@@ -217,7 +217,9 @@
                     <div class="admission-cont apply-color-1">
                         <h3>Admission Form 2019</h3>
                         <p [innerHTML]="admissioncontent?.content"></p>
-                        <a href="{{admissionfileUrl}}" class="main-btn" download><i class="fa fa-file-pdf-o"></i> Download PDF</a>
+                        <button *ngIf="admissionfileUrl" mat-stroked-button class="link-button" (click)="download(admissionfileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>
+
+                        <!-- <a href="{{admissionfileUrl}}" class="main-btn" download><i class="fa fa-file-pdf-o"></i> Download PDF</a> -->
                     </div> <!-- apply cont -->
                 </div>
                 <div class="col-lg-6">

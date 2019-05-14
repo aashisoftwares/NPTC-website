@@ -3,10 +3,76 @@
     <div class="section-title mt-40">
       <h4>Approvals</h4>
     </div>
-    <div class="row">
-      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12" [innerHTML]="data?.content">
+    <div [innerHTML]="data?.content">
+   </div>
+   <div style="width: 100%">
+      <mat-accordion>
+         <mat-expansion-panel>
+            <mat-expansion-panel-header>
+               <mat-panel-title>
+                  AICTE Approval 2018 - 19
+               </mat-panel-title>              
+            </mat-expansion-panel-header>                            
+            <div class="row">                        
+               <div [innerHTML]="aictedata?.content" class="col-lg-10"></div>                        
+               <div *ngIf="aictedata?.fileUrl !== null && aictedata?.fileUrl !== ''" class="col-lg-2 download-style">
+               <button *ngIf="aictefileUrl" mat-stroked-button class="link-tag" (click)="download(aictefileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>
+                  <!-- <a href="{{aictefileUrl}}" target="_blank"><img src="../../../../assets/images/pdf-icon.png" /></a>        -->
+               </div>
+            </div>
+         </mat-expansion-panel>
+         <mat-expansion-panel (opened)="panelOpenState = true"
+                              (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+               <mat-panel-title>
+                  Anti Ragging Committee
+               </mat-panel-title>                                                    
+            </mat-expansion-panel-header>
+            <div class="row">
+               <div [innerHTML]="antiraggingdata?.content" class="col-lg-10"></div> 
+               <div *ngIf="antiraggingdata?.fileUrl !== null && antiraggingdata?.fileUrl !== ''" class="col-lg-2">   
+               <button *ngIf="antiraggingfileUrl" mat-stroked-button class="link-tag" (click)="download(antiraggingfileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>
+
+                  <!-- <a href="{{antiraggingfileUrl}}" target="_blank"><img src="../../../assets/images/pdf-icon.png" /></a>        -->
+               </div>
+            </div>
+         </mat-expansion-panel>
+         <mat-expansion-panel (opened)="panelOpenState = true"
+                              (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+               <mat-panel-title>
+                  Women Empowerment Cell
+               </mat-panel-title>                                                    
+            </mat-expansion-panel-header>
+            <div class="row">  
+               <div [innerHTML]="womenempowermentdata?.content" class="col-lg-10"></div>
+               <div *ngIf="womenempowermentdata?.fileUrl !== null && womenempowermentdata?.fileUrl !== ''" class="col-lg-2"> 
+               <button *ngIf="womenempowermentfileUrl" mat-stroked-button class="link-tag" (click)="download(womenempowermentfileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>
+                  <!-- <a href="{{womenempowermentfileUrl}}" target="_blank"><img src="../../../assets/images/pdf-icon.png" /></a>             -->
+               </div>
+            </div>
+         </mat-expansion-panel>
+         <mat-expansion-panel (opened)="panelOpenState = true"
+                              (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+               <mat-panel-title>
+                  Sexual Harassment Redressal Committee
+               </mat-panel-title>                                                    
+            </mat-expansion-panel-header>
+            <div class="row">  
+               <div [innerHTML]="harassmentdata?.content" class="col-lg-10"></div>
+               <div *ngIf="harassmentdata?.fileUrl !== null && harassmentdata?.fileUrl !== ''" class="col-lg-2">
+               <button *ngIf="harassmentfileUrl" mat-stroked-button class="link-tag" (click)="download(harassmentfileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>
+                  <!-- <a href="{{harassmentfileUrl}}" target="_blank"><img src="../../../assets/images/pdf-icon.png" /></a> -->
+               </div>
+            </div>
+         </mat-expansion-panel>
+      </mat-accordion>   
+   </div>
+    <!-- <div class="row">
+      <div class="col-xl-12" [innerHTML]="data?.content">
       </div>
-      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+      <div class="col-xl-12">
             <mat-accordion>
                   <mat-expansion-panel>
                      <mat-expansion-panel-header>
@@ -64,21 +130,8 @@
                      </div>
                   </mat-expansion-panel>
               </mat-accordion>   
-            <!-- <div class="department-list">
-                <div class="header-list">
-                    <h4>Quick Links</h4>
-                </div>
-                <div class="content-detail">
-                    <ul>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="#">Courses Offered</a></li>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="#">Placements</a></li>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="#">NIA Family</a></li>
-                        <li><i class="fa fa-angle-double-right"></i> <a href="#">Gallery</a></li>                              
-                    </ul>
-                </div>
-            </div> -->
       </div>
-    </div>
+    </div> -->
     <div class="row">
       <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
         

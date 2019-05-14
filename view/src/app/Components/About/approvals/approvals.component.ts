@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import * as cryptojs from 'crypto-js';
 
+import { HttpClient } from '@angular/common/http';
+import { FileSaverService } from 'ngx-filesaver';
+
 // ------service -------------//
 import { AboutUsService } from '../../../services/about-us/about-us.service';
 
@@ -21,7 +24,10 @@ export class ApprovalsComponent implements OnInit {
   womenempowermentfileUrl : any;
   harassmentfileUrl : any;
 
-  constructor( private aboutUsService: AboutUsService) {
+  constructor(
+   private aboutUsService: AboutUsService,
+   private _httpClient: HttpClient,
+   private _FileSaverService: FileSaverService) {
      this.service();
    }
   ngOnInit() {
@@ -31,7 +37,6 @@ export class ApprovalsComponent implements OnInit {
      const Data = { type:'test'};
      
      this.aboutUsService.approvalList(Data).subscribe(response => {
-      console.log(response);
        if (response['status'] === 200) {
        this.data = response['info'];       
        } else {
@@ -41,7 +46,6 @@ export class ApprovalsComponent implements OnInit {
 
 
      this.aboutUsService.aicteApprovalList(Data).subscribe(response => {
-        console.log(response);
          if (response['status'] === 200) {
          this.aictedata = response['info'];
          this.aictefileUrl = this.aictedata.fileUrl;
@@ -74,4 +78,13 @@ export class ApprovalsComponent implements OnInit {
          }
       });
   }
+
+  download(url: string) {
+      this._httpClient.get(url, {
+      observe: 'response',
+      responseType: 'blob'
+      }).subscribe(res => {
+         this._FileSaverService.save(res.body, "file.pdf");
+      });
+   }
 }

@@ -5,6 +5,10 @@ import * as cryptojs from 'crypto-js';
 import { FormGroup, Validators, FormControl, AbstractControl, FormBuilder, FormArray } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { HttpClient } from '@angular/common/http';
+import { FileSaverService } from 'ngx-filesaver';
+
+
 // ----------- service ---------------
 import { AcademicsService } from '../../../services/academics/academics.service';
 import { HomeService} from '../../../services/home.service';
@@ -42,7 +46,9 @@ export class HomeComponent implements OnInit {
     private active_route: ActivatedRoute,
     private academicsService: AcademicsService,
     private homeService: HomeService,
-    private aboutUsService: AboutUsService) { 
+    private aboutUsService: AboutUsService,
+    private _httpClient: HttpClient,
+   private _FileSaverService: FileSaverService) { 
     this.service();
   }
 
@@ -69,7 +75,7 @@ export class HomeComponent implements OnInit {
     this.homeService.admissionList(Data).subscribe(response => {      
       if(response['status'] === 200) {
         this.admissioncontent = response['info']
-        this.admissionfileUrl = this.admissioncontent.fileUrl
+        this.admissionfileUrl = this.admissioncontent.fileUrl;
       } else {
         alert('something went wrong!. please refresh the page')
       }
@@ -82,7 +88,6 @@ export class HomeComponent implements OnInit {
       }
     });
     this.homeService.sliderList(Data).subscribe(response => {   
-      console.log(response);
       if(response['status'] === 200) {
         this.sliderContent = response['info']
         this.sliderimageUrl = this.sliderContent.imageurl
@@ -91,7 +96,6 @@ export class HomeComponent implements OnInit {
       }
     });
     this.homeService.recruitersList(Data).subscribe(response => {   
-      console.log(response);
       if(response['status'] === 200) {
         this.recruitersdata = response['info']
         this.recruiterimageUrl = this.recruitersdata.imageurl
@@ -152,5 +156,14 @@ export class HomeComponent implements OnInit {
       for (let i = 0; i < arrayLength; i+=size) {
          this.recruitersArray.push(this.recruitersdata.slice(i, i+size))            
       }
-     }     
+     } 
+     
+     download(url: string) {
+         this._httpClient.get(url, {
+         observe: 'response',
+         responseType: 'blob'
+         }).subscribe(res => {
+            this._FileSaverService.save(res.body, "file.pdf");
+         });
+      }
 }

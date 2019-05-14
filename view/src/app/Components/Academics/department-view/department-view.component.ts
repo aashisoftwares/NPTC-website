@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl, AbstractControl, FormBuilder, FormArray } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
+
+import { HttpClient } from '@angular/common/http';
+import { FileSaverService } from 'ngx-filesaver';
+
+
 import * as config from '../../../../../../config.json';
 
 // ------- service ----------//
@@ -30,7 +35,9 @@ export class DepartmentViewComponent implements OnInit {
   constructor(
    public router: Router,
    private active_route: ActivatedRoute,
-   private academicsService: AcademicsService
+   private academicsService: AcademicsService,
+   private _httpClient: HttpClient,
+   private _FileSaverService: FileSaverService
   ) {
    this.departmentId = this.active_route.snapshot.params['deptId'];
    this.academicsService.departmentView({'departmentID': this.departmentId }).subscribe(response => {
@@ -51,4 +58,12 @@ export class DepartmentViewComponent implements OnInit {
   changeTab(value) {
      this.toShow = value;
   }
+  download(url: string) {
+      this._httpClient.get(url, {
+      observe: 'response',
+      responseType: 'blob'
+      }).subscribe(res => {
+         this._FileSaverService.save(res.body, "file.pdf");
+      });
+   }
 }

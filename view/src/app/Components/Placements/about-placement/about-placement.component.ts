@@ -20,7 +20,6 @@ export class AboutPlacementComponent implements OnInit {
   service() {
      const Data = {type:'test'};
      this.placementService.placementsList(Data).subscribe(response => {
-      console.log(response);
       if(response['status'] === 200){
          this.placementdata = response['info']
       }

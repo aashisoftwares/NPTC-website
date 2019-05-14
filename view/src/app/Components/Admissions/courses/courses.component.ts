@@ -30,9 +30,7 @@ export class CoursesComponent implements OnInit {
       if(response['status'] === 200) {
         this.programmedata = response['info']
         const programid = this.programmedata.map(object => {
-//          console.log(object._id)
           this.academicsService.departmentListFilterByProgramme({programmeID: object._id}).subscribe(response => {
-            console.log(response);
             if (response['status'] === 200) {
               this.courseData = response['info'];
             } else {

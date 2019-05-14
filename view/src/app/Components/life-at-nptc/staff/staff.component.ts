@@ -22,7 +22,6 @@ export class StaffComponent implements OnInit {
   service(){
      const Data = { type : 'test'};
      this.lifeAtNpcService.facultyAndStaffList(Data).subscribe(response => {
-        console.log(response);
         if(response['status'] === 200){
            this.data = response['info']
         }

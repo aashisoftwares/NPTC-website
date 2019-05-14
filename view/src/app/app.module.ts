@@ -14,6 +14,8 @@ import { FormBuilder, FormControl, FormsModule } from '@angular/forms';
 import { NgxLoadingModule } from 'ngx-loading';
 import { MatFormFieldModule, MatFormFieldControl } from '@angular/material/form-field';
 import { NgxTimelineModule } from 'ngx-timeline';
+import { FileSaverModule } from 'ngx-filesaver';
+
 
 // ---------- Custom Components  ----------------//
 
@@ -92,6 +94,7 @@ import { MilestonesComponent } from './Components/About/milestones/milestones.co
   imports: [
     BrowserModule,
     HttpClientModule,
+    FileSaverModule,
     RouterModule,
     AppRoutingModule,
     MatMenuModule,

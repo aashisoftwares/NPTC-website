@@ -58,3 +58,12 @@ d-md-block
 {
     width:5% !important;
 }
+
+.link-button {
+   background-color: transparent;
+   color: #ffffff;
+}
+.link-button:hover {
+   background-color: #ffffff;
+   color: #AB254C;
+}

@@ -19,7 +19,6 @@ export class EligibilityCriteriaComponent implements OnInit {
   service(){
      const Data = {type:'test'};
      this.admissionService.eligibilityList(Date).subscribe(respone => {
-        console.log(respone);
         if(respone['status'] === 200){
            this.data=respone['info']
         }

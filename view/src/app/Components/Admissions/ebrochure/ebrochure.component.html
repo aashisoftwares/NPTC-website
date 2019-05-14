@@ -6,8 +6,9 @@
                      <h5>E-Brochure</h5>
                   </div> <!-- section title -->
                   <div class="about-cont" [innerHTML]="data?.content"></div>
-                  <div *ngFor="let file of brochurefileUrl; let i=index;" class="row">                        
-                     <a class="col-lg-7 downloadlink" href="{{file}}" target="_blank"><img src="../../../../assets/images//pdf-icon.png" /><span class="download">Click here to download </span></a>                                    
+                  <div *ngFor="let file of brochurefileUrl; let i=index;" class="row"> 
+                        <button *ngIf="file" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>                       
+                     <!-- <a class="col-lg-7 downloadlink" href="{{file}}" target="_blank"><img src="../../../../assets/images//pdf-icon.png" /><span class="download">Click here to download </span></a>                                     -->
                   </div>
             </div> <!-- about cont -->
             <div class="col-lg-4 mt-50">                                   

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import * as cryptojs from 'crypto-js';
 
+
+import { HttpClient } from '@angular/common/http';
+import { FileSaverService } from 'ngx-filesaver';
+
 // -------- service ----------//
 import { ExaminstionsService } from '../../../services/examinations/examinstions.service';
 
@@ -23,7 +27,9 @@ export class ExaminationViewComponent implements OnInit {
    resultsdata : any;
    resultsfileUrl : any;
 
-  constructor(private examinationService: ExaminstionsService) {
+  constructor(private examinationService: ExaminstionsService,
+   private _httpClient: HttpClient,
+   private _FileSaverService: FileSaverService) {
      this.service();
    }
 
@@ -33,7 +39,6 @@ export class ExaminationViewComponent implements OnInit {
   service(){
      const Data = {type:'test'};
      this.examinationService.examinationsList(Data).subscribe(response => {      
-        console.log(response);
       if(response['status'] === 200){
          this.examdata = response['info']
       }
@@ -87,4 +92,12 @@ export class ExaminationViewComponent implements OnInit {
         }
      });
   }
+  download(url: string) {
+      this._httpClient.get(url, {
+      observe: 'response',
+      responseType: 'blob'
+      }).subscribe(res => {
+         this._FileSaverService.save(res.body, "file.pdf");
+      });
+   }
 }

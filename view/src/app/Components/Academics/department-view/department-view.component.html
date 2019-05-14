@@ -13,8 +13,9 @@
                <li *ngIf="aboutdata?.department?.aboutUs && aboutdata?.department?.aboutUs !== null && aboutdata?.department?.aboutUs !== ''"><a (click)="changeTab('about')">About us</a></li>
                <li *ngIf="(aboutdata?.department?.peo && aboutdata?.department?.peo !== null && aboutdata?.department?.peo !== '') || (aboutdata?.department?.po && aboutdata?.department?.po !== null && aboutdata?.department?.po !== '') || (aboutdata?.department?.pso && aboutdata?.department?.pso !== null && aboutdata?.department?.pso !== '')"><a (click)="changeTab('ppp')">PEOs, POs and PSOs</a></li>
                <li *ngIf="aboutdata?.department?.course && aboutdata?.department?.course !== null && aboutdata?.department?.course !== ''"><a (click)="changeTab('course')">Courses</a></li>
-               <li *ngIf="facultyArray !== null"><a (click)="changeTab('faculty')">Faculty</a></li>
-               <li *ngIf="aboutdata?.department?.valueAddedCourse && aboutdata?.department?.valueAddedCourse !== null && aboutdata?.department?.valueAddedCourse !== ''"><a (click)="changeTab('valueAddedCourse')">Value Added Courses / OCC</a></li>
+               <!-- <li *ngIf="facultyArray !== null"><a (click)="changeTab('faculty')">Faculty</a></li> -->
+               <li *ngIf="aboutdata?.department?.faculty && aboutdata?.department?.faculty !== null && aboutdata?.department?.faculty !== ''"><a (click)="changeTab('faculty')">Faculty</a></li>
+               <li *ngIf="(aboutdata?.department?.valueAddedCourse && aboutdata?.department?.valueAddedCourse !== null && aboutdata?.department?.valueAddedCourse !== '') || (aboutdata?.department?.oneCreditedCourse && aboutdata?.department?.oneCreditedCourse !== null && aboutdata?.department?.oneCreditedCourse !== '')"><a (click)="changeTab('valueAddedCourse')">Value Added Courses / OCC</a></li>
                <li *ngIf="aboutdata?.department?.student && aboutdata?.department?.student !== null && aboutdata?.department?.student !== ''"><a (click)="changeTab('student')">Student</a></li>
                <li *ngIf="aboutdata?.department?.facilities && aboutdata?.department?.facilities !== null && aboutdata?.department?.facilities !== ''"><a (click)="changeTab('facilities')">Facilities</a></li>
                <li *ngIf="aboutdata?.department?.fdp && aboutdata?.department?.fdp !== null && aboutdata?.department?.fdp !== ''"><a (click)="changeTab('fdp')">FDP</a></li>
@@ -67,12 +68,25 @@
                                     <h4>Courses and Regulations</h4>
                                     <div class="course-features" [innerHTML]="aboutdata?.department?.course">                                      
                                     </div>
-                                       <a href="{{aboutdata?.department?.courseFileUrl}}" target="_blank">click here to download
-                                       <img src="../../../../assets/images/pdf-icon.png" /></a>
+                                       <!-- <a href="{{aboutdata?.department?.courseFileUrl}}" target="_blank">click here to download
+                                       <img src="../../../../assets/images/pdf-icon.png" /></a> -->
                                  </div>
+                                 <br>
+                                 <span *ngFor="let url of aboutdata?.department?.courseFileUrl">
+                                    <button *ngIf="url" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(url)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>
+                                 </span>
                               </div>                          
                         </div> 
                         <div id="faculty" *ngIf="toShow === 'faculty'">
+                              <div *ngIf="aboutdata?.department?.faculty && aboutdata?.department?.faculty !== null && aboutdata?.department?.faculty !== ''" class="row">
+                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <h4>Faculty</h4>
+                                    <div class="course-features" [innerHTML]="aboutdata?.department?.faculty">                                      
+                                    </div>
+                                 </div>
+                              </div>                          
+                        </div> 
+                        <!-- <div id="faculty" *ngIf="toShow === 'faculty'">
                               <div *ngIf="facultyArray !== null" class="row">
                                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                     <h4>Faculty</h4>
@@ -96,7 +110,7 @@
                                     </div>
                                  </div>
                               </div>                          
-                        </div> 
+                        </div>  -->
                         <div id="valueadded" *ngIf="toShow === 'valueAddedCourse'">
                               <div class="row">
                                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
