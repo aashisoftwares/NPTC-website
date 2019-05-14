@@ -21,6 +21,7 @@
                                 <div *ngFor="let info of deptlist;">
                                    <a [routerLink]="['/department-view', info._id]"><span style="margin-right: 10px;">-</span>{{info?.name}}</a>
                                 </div>
+                               <p *ngIf="depatmntLoader">Please wait ...</p>
                             </mat-expansion-panel>      
                         </div>               
                     </div>                        
