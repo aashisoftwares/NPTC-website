@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   admissioncontent : any;
   admissionfileUrl : any;
   councilcontent : any;
+  countList: any;
   mgmtContent : any;
   founderdata : any;
   chairmandata : any;
@@ -42,6 +43,8 @@ export class HomeComponent implements OnInit {
   recruitersdata : any;
   recruiterimageUrl : any;
   recruitersArray: any = [];
+   chairmanEmritusdata: any;
+   chairmanEmritusimageUrl: any;
   constructor( public router: Router,
     private active_route: ActivatedRoute,
     private academicsService: AcademicsService,
@@ -59,7 +62,8 @@ export class HomeComponent implements OnInit {
      const Data = {type:'test'}
      this.academicsService.departmentList(Data).subscribe(response => {
        if(response['status'] === 200) {
-         this.deptlist = response['info']
+         this.deptlist = response['info'];
+         console.log(this.deptlist);
          this.splitArray(this.deptlist,4);
        } else {
          alert('something went wrong!. please refresh the page')
@@ -83,6 +87,13 @@ export class HomeComponent implements OnInit {
     this.homeService.councilList(Data).subscribe(response => {      
       if(response['status'] === 200) {
         this.councilcontent = response['info']
+      } else {
+        alert('something went wrong!. please refresh the page')
+      }
+    });
+    this.aboutUsService.countList(Data).subscribe(response => {      
+      if(response['status'] === 200) {
+        this.countList = response['info']
       } else {
         alert('something went wrong!. please refresh the page')
       }
@@ -116,6 +127,14 @@ export class HomeComponent implements OnInit {
       if(response['status'] === 200) {
         this.chairmandata = response['info']
         this.chairmanimageUrl = this.chairmandata.imageUrl
+      } else {
+        alert('something went wrong!. please refresh the page')
+      }
+    });
+    this.aboutUsService.chairmanEmritusList(Data).subscribe(response => {      
+      if(response['status'] === 200) {
+        this.chairmanEmritusdata = response['info']
+        this.chairmanEmritusimageUrl = this.chairmanEmritusdata.imageUrl
       } else {
         alert('something went wrong!. please refresh the page')
       }

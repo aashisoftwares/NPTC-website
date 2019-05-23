@@ -67,3 +67,72 @@ d-md-block
    background-color: #ffffff;
    color: #AB254C;
 }
+
+.fixed-background {
+   background-image: url('../../../../assets/images/background_1.jpg');
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   min-height: 65vh;
+   padding-top: 25vh;
+   padding-bottom: 50px;
+}
+
+.content_1, .content_2, .content_3, .content_4 {
+   border: 2px solid #ffffff;
+   padding: 15%;
+   text-align: center;
+   margin-top: 60px;
+   opacity: 0.9;
+   background-color: #ffffff;
+   -webkit-transition: background-color 0.5s ease-out;
+   -moz-transition: background-color 0.5s ease-out;
+   -o-transition: background-color 0.5s ease-out;
+}
+.content_1 {
+   color: #AB254C;
+   -webkit-transition: color 0.5s ease-out;
+   -moz-transition: color 0.5s ease-out;
+   -o-transition: color 0.5s ease-out;
+}
+.content_2 {
+   color: #923075;
+   -webkit-transition: color 0.5s ease-out;
+   -moz-transition: color 0.5s ease-out;
+   -o-transition: color 0.5s ease-out;
+}
+.content_3 {
+   color: #60398C;
+   -webkit-transition: color 0.5s ease-out;
+   -moz-transition: color 0.5s ease-out;
+   -o-transition: color 0.5s ease-out;
+}
+.content_4 {
+   color: #323F9F;
+   -webkit-transition: color 0.5s ease-out;
+   -moz-transition: color 0.5s ease-out;
+   -o-transition: color 0.5s ease-out;
+}
+.content_1 i, .content_2 i, .content_3 i, .content_4 i {
+   font-size: 65px;
+}
+.content_1:hover {
+   background-color: #AB254C;
+   color: #ffffff;
+}
+
+.content_2:hover {
+   background-color: #923075;
+   color: #ffffff;
+}
+
+.content_3:hover {
+   background-color: #60398C;
+   color: #ffffff;
+}
+
+.content_4:hover {
+   background-color: #323F9F;
+   color: #ffffff;
+}

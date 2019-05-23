@@ -57,6 +57,12 @@ export class AboutUsService {
     .pipe(map(response => response), catchError(error => of(error)));
   }
 
+  // ---------------------------- Chairman Emritus Service --------------------------------
+  // chairman emritus list
+  public chairmanEmritusList(info: any): Observable<any[]> {
+   return this.http.post(apiUrl + 'chairmanEmritus/list', info)
+   .pipe(map(response => response), catchError(error => of(error)));
+  }
   // ---------------------------- Correspondent Service --------------------------------
   // correspondent list
   public correspondentList(info: any): Observable<any[]> {
@@ -170,5 +176,12 @@ export class AboutUsService {
   public organogramList(info: any): Observable<any[]> {
     return this.http.post(apiUrl + 'organogram/list', info)
     .pipe(map(response => response), catchError(error => of(error)));
+  }
+
+   // ---------------------------- count Service --------------------------------
+  // count list
+  public countList(info: any): Observable<any[]> {
+   return this.http.post(apiUrl + 'count/list', info)
+   .pipe(map(response => response), catchError(error => of(error)));
   }
 }

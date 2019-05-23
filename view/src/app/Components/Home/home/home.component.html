@@ -46,7 +46,7 @@
     <div *ngFor="let data of sliderContent">
         <slide>
             <img src="{{data?.imageUrl}}" alt="first slide">
-            <div class="carousel-caption d-none d-md-block">
+            <div *ngIf="data?.title !== null" class="carousel-caption d-none d-md-block">
                 <h3>{{data?.title}}</h3>
                 <p>{{data?.content}}</p>
             </div>
@@ -209,108 +209,118 @@
     </div> -->
 </div>
 
-<div id="apply-aprt" class="pb-30">
-    <div class="container">
-        <div class="apply">
-            <div class="row no-gutters">
-                <div class="col-lg-6">
+<div id="apply-aprt" class="pb-30 fixed-background">
+        <div class="apply container">
+            <div class="row">
+                <!-- <div class="col-lg-6">
                     <div class="admission-cont apply-color-1">
                         <h3>Admission Form 2019</h3>
                         <p [innerHTML]="admissioncontent?.content"></p>
                         <button *ngIf="admissionfileUrl" mat-stroked-button class="link-button" (click)="download(admissionfileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>
 
-                        <!-- <a href="{{admissionfileUrl}}" class="main-btn" download><i class="fa fa-file-pdf-o"></i> Download PDF</a> -->
-                    </div> <!-- apply cont -->
-                </div>
-                <div class="col-lg-6">
-                    <div class="apply-cont apply-color-2">
-                        <h3>Apply for scholarship</h3>
-                        <p>Gravida nibh vel velit auctor aliquetn sollicitudirem sem quibibendum auci elit cons equat ipsutis sem nibh id elituis sed odio sit amet nibh vulputate cursus equat ipsutis.</p>
-                        <a href="#" class="main-btn">Apply Now</a>
-                    </div> <!-- apply cont -->
-                </div> 
-            </div>
-        </div> <!-- row -->
-    </div> <!-- container -->
+                    </div> 
+                </div> -->
+                <div class="col-sm-3">
+                  <div class="content_1">
+                        <i class="fas fa-users"></i>
+                        <h5>Students</h5>
+                        <h6>{{countList?.Students}}</h6>
+                  </div>
+               </div>
+               <div class="col-sm-3">
+                  <div class="content_2">
+                     <i class="fas fa-user-tie"></i>                     
+                     <h5>Faculty</h5>
+                     <h6>{{countList?.Faculty}}</h6>
+                  </div>
+               </div>
+               <div class="col-sm-3">
+                  <div class="content_3">
+                     <i class="fas fa-university"></i>
+                     <h5>Classroom</h5>
+                     <h6>{{countList?.Classroom}}</h6>
+                  </div>
+               </div>
+               <div class="col-sm-3">
+                  <div class="content_4">
+                     <i class="fas fa-flask"></i>
+                     <h5>Laboratories</h5>
+                     <h6>{{countList?.Laboratories}}</h6>
+                  </div>
+               </div>
+            </div> 
+         </div>
+      </div> <!-- row -->
 </div>
 <div id="teachers-part" class="pt-40 pb-50">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-5">
-                  <div class="section-title mt-50">
-                      <!-- <h5>Featured Teachers</h5> -->
-                      <h2>Council</h2>
-                  </div> <!-- section title -->
-                  <div class="teachers-cont">
-                      <!-- <img src="images/about/mahalingam1.jpg" alt="Dr.N.Mahalingam"> -->
-                      <p [innerHTML]="councilcontent?.content"></p>
-                      <a href="about-management.html" class="main-btn mt-55">View More</a>
-                  </div> <!-- teachers cont -->
-              </div>
-              <div class="col-lg-7">
-                  <div class="teachers mt-20">
-                      <div class="row">
-                          <div class="col-sm-6">
-                              <div class="singel-teachers mt-30 text-center">
-                                  <div class="image">
-                                      <img src="{{founderimageUrl}}" alt="Dr.N.Mahalingam">
-                                  </div>
-                                  <div class="cont">
-                                      <h6>Chairman, Emreitusm</h6>
-                                      <span>Arutchelvar Dr. N. Mahalingam, B.Sc., F.I.E.,</span>
-                                  </div>
-                              </div> <!-- singel teachers -->
-                          </div>
-                          <div class="col-sm-6">
-                              <div class="singel-teachers mt-30 text-center">
-                                  <div class="image">
-                                      <img src="{{chairmanimageUrl}}" alt="Teachers">
-                                  </div>
-                                  <div class="cont">
-                                      <h6>Chairman</h6>
-                                      <span>Dr. M. Manickam. M.Sc,MBA.,</span>
-                                  </div>
-                              </div> <!-- singel teachers -->
-                          </div>
-                          <div class="col-sm-4">
-                              <div class="singel-teachers mt-110 text-center">
-                                  <div class="image">
-                                      <img src="{{correspondentimageUrl}}" alt="Teachers">
-                                  </div>
-                                  <div class="cont">
-                                     <h6>Correspondent</h6>
-                                      <span>Shri. M. Harihara Sudhan. B.E., MS.</span>
-                                  </div>
-                              </div> <!-- singel teachers -->
-                          </div>
-                          <div class="col-sm-4">
-                              <div class="singel-teachers mt-110 text-center">
-                                  <div class="image">
-                                      <img src="{{secretaryimageUrl}}" alt="Teachers">
-                                  </div>
-                                  <div class="cont">
-                                      <h6>Secretary</h6>
-                                      <span>Dr. C. Ramaswamy., M.E., Ph.D., F.I.V.</span>
-                                  </div>
-                              </div> <!-- singel teachers -->
-                          </div>
-                           <div class="col-sm-4">
-                              <div class="singel-teachers mt-110 text-center">
-                                  <div class="image">
-                                      <img src="{{principalimageUrl}}" alt="Teachers">
-                                  </div>
-                                  <div class="cont">
-                                      <h6>Principal In- Charge</h6>
-                                      <span>Mr. R.Manivannan., M.E.</span>
-                                  </div>
-                              </div> <!-- singel teachers -->
-                          </div>
-                      </div> <!-- row -->
-                  </div> <!-- teachers -->
-              </div>
-          </div> <!-- row -->
-      </div> <!-- container -->
-  </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-6">
+            <div class="section-title pb-45">
+               <h5>Council</h5> 
+            </div> 
+         </div>
+      </div> 
+   </div>
+   <div class="row" style="margin: auto">
+     
+      <div class="col-sm-4 singel-teachers text-center">
+         <div class="image">
+            <img src="{{founderimageUrl}}" alt="Dr.N.Mahalingam">
+         </div>
+         <div class="cont">
+            <h6>Founder</h6>
+            <span>{{founderdata?.name}} &nbsp; {{founderdata?.degree}}</span>
+         </div>
+      </div>
+      <div class="col-sm-4 singel-teachers text-center">
+            <div class="image">
+               <img src="{{chairmanEmritusimageUrl}}" alt="Teachers">
+            </div>
+            <div class="cont">
+               <h6>Chairman Emeritus</h6>
+               <span>{{chairmanEmritusdata?.name}} &nbsp; {{chairmanEmritusdata?.degree}}</span>
+            </div>
+      </div>
+      <div class="col-sm-4 singel-teachers text-center">
+            <div class="image">
+               <img src="{{chairmanimageUrl}}" alt="Teachers">
+            </div>
+            <div class="cont">
+               <h6>Chairman</h6>
+               <span>{{chairmandata?.name}} &nbsp; {{chairmandata?.degree}}</span>
+            </div>
+      </div>
+      <div class="col-sm-4 singel-teachers text-center">
+            <div class="image">
+               <img src="{{correspondentimageUrl}}" alt="Teachers">
+            </div>
+            <div class="cont">
+               <h6>Correspondent</h6>
+               <span>{{corresdata?.name}} &nbsp; {{corresdata?.degree}}</span>
+            </div>
+      </div> 
+      
+      <div class="col-sm-4 singel-teachers text-center">
+            <div class="image">
+               <img src="{{secretaryimageUrl}}" alt="Teachers">
+            </div>
+            <div class="cont">
+               <h6>Secretary</h6>
+               <span>{{secretarydata?.name}} &nbsp; {{secretarydata?.degree}}</span>
+            </div>
+      </div> 
+      <div class="col-sm-4 singel-teachers text-center">
+            <div class="image">
+               <img src="{{principalimageUrl}}" alt="Teachers">
+            </div>
+            <div class="cont">
+               <h6>Principal In- Charge</h6>
+               <span>{{principaldata?.name}} &nbsp; {{principaldata?.degree}}</span>
+            </div>
+      </div> 
+   </div>
+</div>
 
 
 
@@ -388,7 +398,7 @@
                                         <div class="thum">
                                             <div class="image">
                                                 <div class="testimonial-thum" style="position: relative;">
-                                                    <img src="../../../../assets/images/course/automobile.png" alt="first slide" style="height: 180px !important;">                                            
+                                                    <img src="{{data?.departmentImageUrl[0]}}" alt="first slide" style="height: 180px !important;">                                            
                                                 </div>
                                             </div>
                                         </div>
