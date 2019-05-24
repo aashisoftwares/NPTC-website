@@ -42,6 +42,7 @@ export class DepartmentViewComponent implements OnInit {
    this.departmentId = this.active_route.snapshot.params['deptId'];
    this.academicsService.departmentView({'departmentID': this.departmentId }).subscribe(response => {
       this.aboutdata = response['info'];
+      console.log(this.aboutdata);
       this.splitArray(this.aboutdata.faculty,3);
    });
   }

@@ -18,7 +18,7 @@ export class DepartmentsComponent implements OnInit {
   deptlist: any = [];
   depatmntLoader: Boolean = true;
   departmentlist : any;
-
+  activeStream: any;
   constructor( private academicsService: AcademicsService, private router: Router) {
     this.service();
    }
@@ -31,6 +31,7 @@ export class DepartmentsComponent implements OnInit {
     this.academicsService.streamList(Data).subscribe(response => {
       if (response['status'] === 200) {
         this.streamdata = response['info'];
+        this.changestream(this.streamdata[0], 0);
       } else {
         alert('Something went wrong!. Please refresh the page')
       }
@@ -43,9 +44,10 @@ export class DepartmentsComponent implements OnInit {
       }
     }); 
   }
-  changestream(data) {
+  changestream(data, i) {
     this.deptlist = []; 
     this.depatmntLoader = true;
+    this.activeStream = i;
     this.academicsService.departmentListFilterByStream({streamID: data._id}).subscribe(response => {
       if (response['status'] === 200) {
          this.deptlist = response['info'];

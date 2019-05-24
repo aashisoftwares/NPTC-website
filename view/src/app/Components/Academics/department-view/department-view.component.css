@@ -11,13 +11,16 @@
 }
 .carousel-item img{
     /* background: #000 !important; */
-    height: 350px !important;
+    height: 450px !important;
     display: block !important; 
     width: 100% !important;
 }
 .course-features
 {
     padding: 5px;
+}
+#course-table .tableData{
+   width: 100% !important;
 }
 /* #about
 {
@@ -80,15 +83,60 @@
 .faculty
 {
     padding:10px;
-    background:#395498;
-    margin:15px;    
-    width:100%;
+    background-color:#395498;
+    min-width:115%;
+    -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 4s;
+    -webkit-transition: background-color 0.5s ease-out;
+   -moz-transition: background-color 0.5s ease-out;
+   -o-transition: background-color 0.5s ease-out;
+}
+.parent {
+   opacity: 1;
+}
+.child {
+   opacity: 1;
+}
+.faculty-row {
+   margin: 1%;
 }
 .faculty p
 {
-    font-size:15px; 
-    line-height:28px;   
-    color:#ffffff;
+   font-size:15px; 
+   line-height:15px;   
+   color:#ffffff;
+   -webkit-transition: color 0.5s ease-out;
+   -moz-transition: color 0.5s ease-out;
+   -o-transition: color 0.5s ease-out;
+}
+.faculty span {
+   display: none;
+   font-size:15px; 
+   line-height:15px;   
+   color:#ffffff;
+   -webkit-transition: display 0.5s ease-out;
+   -moz-transition: display 0.5s ease-out;
+   -o-transition: display 0.5s ease-out;
+}
+.faculty:hover {
+   background-color:#ffffff;
+   border: 2px solid #323F9F;
+   /* z-index: 50;
+   width: auto;
+   position: absolute; */
+}
+.faculty:hover p, .faculty:hover span {  
+   color:#323F9F;
+}
+.faculty:hover span {
+   display: block;
+   /* background:#eee; */
+}
+.faculty:hover .parent {
+   opacity: 0.5;
+}
+.faculty:hover + .child {
+   opacity: 1;
 }
 @media (min-width:992px)
 {
@@ -178,3 +226,23 @@
    background: #323E9E; 
  }
 
+ /* width */
+#bottomscroll::-webkit-scrollbar {
+   width: 2px;
+   height: 2px;
+ }
+ 
+ /* Track */
+#bottomscroll::-webkit-scrollbar-track {
+   background: #f1f1f1; 
+ }
+  
+ /* Handle */
+#bottomscroll::-webkit-scrollbar-thumb {
+   background: #C62758; 
+ }
+ 
+ /* Handle on hover */
+#bottomscroll::-webkit-scrollbar-thumb:hover {
+   background: #323E9E; 
+ }

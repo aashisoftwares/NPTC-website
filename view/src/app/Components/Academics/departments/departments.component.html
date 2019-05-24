@@ -6,8 +6,22 @@
                    <h5>Our Departments</h5>
                 </div> <!-- section title -->                    
             </div>
-        </div> <!-- row -->
+        </div>
         <div class="row">
+            <div class="col-md-3" style="height: 630px">
+               <div class="sidenav">
+                  <ul class="facilities-list">
+                     <li *ngFor="let list of streamdata; let i = index"><a [ngClass]="{'active': activeStream === i }" (click)="changestream(list, i)">{{list?.name}}</a></li>
+                  </ul> 
+               </div>
+            </div>
+            <div id="boxscroll" class="col-md-9" style="height: 630px; overflow-y: auto">
+               <div class="grid-container">
+                  <div class="grid-item" *ngFor="let dpt of deptlist" [routerLink]="['/department-view', dpt._id]">{{dpt?.name}}</div>
+               </div>
+            </div>
+         </div>
+        <!-- <div class="row">
             <div class="col-lg-8">
                 <mat-accordion>
                     <div *ngFor="let data of streamdata;">
@@ -42,7 +56,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>  -->
         <!-- <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="courses-grid" role="tabpanel" aria-labelledby="courses-grid-tab">
                 <div class="row">
