@@ -1,5 +1,16 @@
-.mat-tab-label
+/* .mat-tab-label
 {
    min-width: 20% !important;
    width:20% !important;
+} */
+.nav-tabs
+{
+   background: #395891;
+    /* background: #6e7175; */
+}
+.nav-tabs a
+{
+    padding-right: 50px;
+    font-size: 17px;
+    padding:10px 50px;
 }

@@ -7,10 +7,9 @@
 {
     line-height: 31px;    
     border-bottom:1px solid #f5f6f7;
-    /* background-color:#B9285E; */
-    background-image: linear-gradient(to right, #B9285E , #B9285E);
-    transition: background-image 2s transform 2s;
-    -webkit-transition: background-image 2s;
+    background-color: #B9285E;
+    transition: background-color 2s transform 2s;
+    -webkit-transition: background-color 2s;
     /* transition-timing-function: linear; */
     /* -webkit-transition-timing-function: linear; */
 }
@@ -22,9 +21,12 @@
     text-decoration: none;
     padding: 10px 5px 5px 10px;
 }
-.facilities-list li a:hover, .facilities-list li a:active
+.facilities-list li a:hover, .facilities-list li a.active
 {
-    background-image: linear-gradient(to right, #B9285E , #8D2F74);
+   background-color: #FFFFFF;
+   color: #B9285E;
+   border-left: 1px solid #B9285E;
+   cursor: pointer;
 }
 
 .sticky {

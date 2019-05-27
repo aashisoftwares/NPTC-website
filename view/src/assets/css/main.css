@@ -151,6 +151,8 @@ p {
     color: #395498;
     font-weight: normal;
     padding-top: 10px;
+    position: relative;
+
 }
 
 /*===== Preloader Style =====*/
@@ -4041,9 +4043,8 @@ p.form-message.error {
 	color:#a21717;
     font-family: 'Montserrat', sans-serif;
 }
-.nav-tabs
+/* .nav-tabs
 {
-/*    background: #395891;*/
     background: #6e7175;
 }
 .nav-tabs a
@@ -4053,7 +4054,7 @@ p.form-message.error {
     margin-right: 50px;
     font-size: 17px;
     padding:10px 50px;
-}
+} */
 .tab-content
 {
     padding-top: 30px;

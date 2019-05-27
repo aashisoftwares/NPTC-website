@@ -19,6 +19,8 @@ export class ManagementComponent implements OnInit {
    secretaryimageUrl : any;
    principaldata : any;
    principalimageUrl : any;
+   chairmanEmritusdata: any;
+   chairmanEmritusimageUrl: any;
   constructor( private aboutUsService: AboutUsService) {
      this.service();
    }
@@ -67,6 +69,15 @@ export class ManagementComponent implements OnInit {
          if(response['status']===200){
             this.principaldata = response['info']
             this.principalimageUrl = this.principaldata.imageUrl
+         }
+         else{
+            alert('Something went wrong!. Please refresh the page');
+         }
+      });
+      this.aboutUsService.chairmanEmritusList(Data).subscribe(response => {
+         if(response['status']===200){
+            this.chairmanEmritusdata = response['info']
+            this.chairmanEmritusimageUrl = this.chairmanEmritusdata.imageUrl
          }
          else{
             alert('Something went wrong!. Please refresh the page');

@@ -1,92 +1,92 @@
 <div class="management-page pt-60">
   <div class="container">
     <div class="row pb-60">
-        <div class="section-title mt-20">
+        <div class="section-title mt-20 col-lg-12">
             <h5>Nachimuthu Polytechnic College</h5>
-        </div> <!-- section title -->
-        <mat-tab-group>
-            <mat-tab label="Founder"> 
-                <div class="col-lg-12">
-                    <div class="section-title mt-20">                      
-                        <h2>Founder</h2>
-                    </div> <!-- section title -->
-                    <div class="row">
-                      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                        <img src="{{founderimageUrl}}" />
-                      </div>
-                      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+        </div>
+         <div class="mt-20 col-lg-12">
+               <tabset>
+                  <tab heading="Founder" id="tab1">
+                     <h2>Founder</h2>
+                     <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                        <img src="{{founderimageUrl}}" style="height: 300px;"/>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                        <h5>{{founderdata?.name}} &nbsp;<span *ngIf="founderdata?.degree !== null && founderdata?.degree !== ''">{{founderdata?.degree}}</span></h5>
                         <div class="about-cont" [innerHTML]="founderdata?.content">
                         </div>
-                      </div>
-                    </div>
-                </div> 
-            </mat-tab>
-            <mat-tab label="Chairman">
-                <div class="col-lg-12">
-                  <div class="section-title mt-20">                      
-                      <h2>Chairman</h2>
-                  </div> <!-- section title -->
-                  <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                      <img src="{{chairmanimageUrl}}" />
-                    </div>
-                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
-                      <div class="about-cont" [innerHTML]="chairmandata?.content">
-                      </div>
-                    </div>
-                  </div>
-                </div> 
-            </mat-tab>
-            <mat-tab label="Correspondent">
-                <div class="col-lg-12">
-                    <div class="section-title mt-20">                      
-                        <h2>Correspondent</h2>
-                    </div> <!-- section title -->
-                    <div class="row">
-                      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                        <img src="{{correspondentimageUrl}}" />
-                      </div>
-                      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                        </div>
+                     </div>
+                  </tab>
+                  <tab heading="Chairman Emritus">
+                     <h2>Chairman Emritus</h2>
+                     <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                        <img src="{{chairmanEmritusimageUrl}}" style="height: 300px"/>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                           <h5>{{chairmanEmritusdata?.name}} &nbsp;<span *ngIf="chairmanEmritusdata?.degree !== null && chairmanEmritusdata?.degree !== ''">{{chairmanEmritusdata?.degree}}</span></h5>
+                        <div class="about-cont" [innerHTML]="chairmanEmritusdata?.content">
+                        </div>
+                        </div>
+                     </div>
+                  </tab>
+                  <tab heading="Chairman">
+                     <h2>Chairman</h2>
+                     <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                           <img src="{{chairmanimageUrl}}" style="height: 300px"/>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                           <h5>{{chairmandata?.name}} &nbsp;<span *ngIf="chairmandata?.degree !== null && chairmandata?.degree !== ''">{{chairmandata?.degree}}</span></h5>
+                           <div class="about-cont" [innerHTML]="chairmandata?.content">
+                           </div>
+                        </div>
+                     </div>
+                  </tab>
+                  <tab heading="Correspondent">
+                     <h2>Correspondent</h2>
+                     <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                        <img src="{{correspondentimageUrl}}" style="height: 300px"/>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                        <h5>{{correspondentdata?.name}} &nbsp;<span *ngIf="correspondentdata?.degree !== null && correspondentdata?.degree !== ''">{{correspondentdata?.degree}}</span></h5>
                         <div class="about-cont" [innerHTML]="correspondentdata?.content">
                         </div>
-                      </div>
-                    </div>
-                </div> 
-            </mat-tab>
-            <mat-tab label="Secretary"> 
-                <div class="col-lg-12">
-                    <div class="section-title mt-20">                      
-                        <h2>Secretary</h2>
-                    </div> <!-- section title -->
-                    <div class="row">
-                      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                        <img src="{{secretaryimageUrl}}" />
-                      </div>
-                      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                        </div>
+                     </div>
+                  </tab>
+                  <tab heading="Secretary">
+                     <h2>Secretary</h2>
+                     <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                        <img src="{{secretaryimageUrl}}" style="height: 300px"/>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                        <h5>{{secretarydata?.name}} &nbsp; <span *ngIf="secretarydata?.degree !== null && secretarydata?.degree !== ''">{{secretarydata?.degree}}</span></h5>
                         <div class="about-cont" [innerHTML]="secretarydata?.content">
                         </div>
-                      </div>
-                    </div>
-                </div>    
-            </mat-tab>
-            <mat-tab label="Principal"> 
-                <div class="col-lg-12">
-                    <div class="section-title mt-20">                      
-                        <h2>Principal</h2>
-                    </div> <!-- section title -->
-                    <div class="row">
-                      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                        <img src="{{principalimageUrl}}" style="height:300px;" />
-                      </div>
-                      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                        </div>
+                     </div>
+                  </tab>
+                  <tab heading="Principal">
+                     <h2>Principal</h2>
+                     <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                        <img src="{{principalimageUrl}}" style="height: 300px" />
+                        </div>
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                        <h5>{{principaldata?.name}} &nbsp;<span *ngIf="principaldata?.degree !== null && principaldata?.degree !== ''">{{principaldata?.degree}}</span></h5>
                         <div class="about-cont" [innerHTML]="principaldata?.content">
                         </div> 
-                      </div>
-                    </div>
-                </div>   
-        </mat-tab>
-        </mat-tab-group>
+                        </div>
+                     </div>
+                  </tab>
+               </tabset>
+         </div>
+       
     </div>
   </div>
 </div>
-

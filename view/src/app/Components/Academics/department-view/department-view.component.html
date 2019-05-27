@@ -15,7 +15,7 @@
                               <h3>{{aboutdata?.department?.name}}</h3>
                         </div>  
                         <div id="about" *ngIf="toShow === 'about'">
-                              <div *ngIf="aboutdata?.department?.aboutUs && aboutdata?.department?.aboutUs !== null && aboutdata?.department?.aboutUs !== ''" class="row">
+                              <div class="row">
                                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                     <h4>About Us</h4>
                                     <div class="course-features" [innerHTML]="aboutdata?.department?.aboutUs">                                      
@@ -24,30 +24,59 @@
                               </div>
                         </div>   
                         <div id="peos" *ngIf="toShow === 'ppp'">
-                              <div *ngIf="aboutdata?.department?.peo && aboutdata?.department?.peo !== null && aboutdata?.department?.peo !== ''" class="row">
+                              <tabset>
+                                 <tab heading="PEOs" id="tab1">
+                                    <h4>PEOs</h4>
+                                    <div class="row">
+                                       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                          <div class="course-features" [innerHTML]="aboutdata?.department?.peo">                                       
+                                          </div>
+                                       </div>
+                                    </div> 
+                                 </tab>
+                                 <tab heading="PEOs" id="tab1">
+                                    <h4>POs</h4>
+                                    <div class="row">
+                                       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                          <div class="course-features" [innerHTML]="aboutdata?.department?.po">                                       
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </tab>
+                                 <tab heading="PEOs" id="tab1">
+                                    <h4>PSOs</h4>
+                                    <div class="row">
+                                       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                          <div class="course-features" [innerHTML]="aboutdata?.department?.pso">                                       
+                                          </div>
+                                       </div>
+                                    </div> 
+                                 </tab>
+                              </tabset>
+                              <!-- <div class="row">
                                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                     <h4>PEOs</h4>
                                     <div class="course-features" [innerHTML]="aboutdata?.department?.peo">                                       
                                     </div>
                                  </div>
                               </div> 
-                              <div *ngIf="aboutdata?.department?.po && aboutdata?.department?.po !== null && aboutdata?.department?.po !== ''" class="row">
+                              <div class="row">
                                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                     <h4>POs</h4>
                                     <div class="course-features" [innerHTML]="aboutdata?.department?.po">                                       
                                     </div>
                                  </div>
                               </div>
-                              <div *ngIf="aboutdata?.department?.pso && aboutdata?.department?.pso !== null && aboutdata?.department?.pso !== ''" class="row">
+                              <div class="row">
                                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                     <h4>PSOs</h4>
                                     <div class="course-features" [innerHTML]="aboutdata?.department?.pso">                                       
                                     </div>
                                  </div>
-                              </div> 
+                              </div>  -->
                         </div>
                         <div id="courses" *ngIf="toShow === 'course'">
-                              <div *ngIf="aboutdata?.department?.course && aboutdata?.department?.course !== null && aboutdata?.department?.course !== ''" class="row">
+                              <div class="row">
                                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                     <h4>Courses and Regulations</h4>
                                     <div class="course-features" [innerHTML]="aboutdata?.department?.course">                                      
@@ -62,7 +91,22 @@
                                                    </mat-panel-title>              
                                                 </mat-expansion-panel-header> 
                                                 <div id="course-table">
-                                                   <p style="width: 100%" [innerHTML]="data?.semesterDetails"></p>                                      
+                                                   <table style="width: 100%">
+                                                      <thead>
+                                                         <tr>
+                                                            <th>S.no</th>
+                                                            <th>course code</th>
+                                                            <th >course name</th>
+                                                         </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                         <tr *ngFor="let course of data?.semesterDetails; let i = index">
+                                                            <td>{{i+1}}</td>
+                                                            <td>{{course?.courseCode}}</td>
+                                                            <td>{{course?.courseName}}</td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>                                    
                                                 </div>
                                              </mat-expansion-panel>      
                                           </div>               
@@ -144,7 +188,7 @@
                         </div> 
                         
                         <div id="student" *ngIf="toShow === 'student'">
-                              <div *ngIf="aboutdata?.department?.student && aboutdata?.department?.student !== null && aboutdata?.department?.student !== ''" class="row">
+                              <div class="row">
                                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                     <h4>Student</h4>
                                     <div class="course-features" [innerHTML]="aboutdata?.department?.student">                                       
@@ -154,17 +198,42 @@
                         </div>
                   
                         <div id="facilities" *ngIf="toShow === 'facilities'">
-                              <div *ngIf="aboutdata?.department?.facilities && aboutdata?.department?.facilities !== null && aboutdata?.department?.facilities !== ''" class="row">
+                              <div class="row">
                                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                     <h4>Facilities</h4>
                                     <div class="course-features" [innerHTML]="aboutdata?.department?.facilities">                                       
                                     </div>
+                                    <mat-accordion>
+                                       <div *ngFor="let data of aboutdata?.department?.facilitiesDetails;">
+                                          <div> 
+                                             <mat-expansion-panel>
+                                                <mat-expansion-panel-header>
+                                                   <mat-panel-title>
+                                                   {{data?.name}}
+                                                   </mat-panel-title>              
+                                                </mat-expansion-panel-header> 
+                                                <div id="course-table">
+                                                   <div class="row">
+                                                      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                                      <img src="{{data?.imageUrl}}" style="height: 300px;"/>
+                                                      </div>
+                                                      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                                                      <h5>{{data?.name}} &nbsp;<span *ngIf="data?.name !== null && data?.name !== ''">{{data?.name}}</span></h5>
+                                                      <div class="about-cont" [innerHTML]="data?.content">
+                                                      </div>
+                                                      </div>
+                                                   </div>                           
+                                                </div>
+                                             </mat-expansion-panel>      
+                                          </div>               
+                                       </div>                        
+                                    </mat-accordion>  
                                  </div>
                               </div> 
                         </div>
                   
                         <div id="fdp" *ngIf="toShow === 'fdp'">
-                           <div *ngIf="aboutdata?.department?.fdp && aboutdata?.department?.fdp !== null && aboutdata?.department?.fdp !== ''" class="row">
+                           <div class="row">
                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                  <h4>FDP</h4>
                                  <div class="course-features" [innerHTML]="aboutdata?.department?.fdp">                                       
@@ -174,7 +243,7 @@
                         </div>
                   
                         <div id="placements" *ngIf="toShow === 'placements'">
-                              <div *ngIf="aboutdata?.department?.placements && aboutdata?.department?.placements !== null && aboutdata?.department?.placements !== ''" class="row">
+                              <div class="row">
                                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                     <h4>Placements</h4>
                                     <div class="course-features" [innerHTML]="aboutdata?.department?.placements">                                       
@@ -183,7 +252,7 @@
                               </div> 
                         </div>
                         <div id="contact" *ngIf="toShow === 'contact'">
-                              <div *ngIf="aboutdata?.department?.contact && aboutdata?.department?.contact !== null && aboutdata?.department?.contact !== ''" class="row">
+                              <div class="row">
                                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                     <h4>Contact us</h4>
                                     <div class="course-features" [innerHTML]="aboutdata?.department?.contact">                                       
@@ -200,17 +269,17 @@
       <div class="col-md-3" style="height: 630px">
          <div class="sidenav">
             <ul class="facilities-list">
-               <li *ngIf="aboutdata?.department?.aboutUs && aboutdata?.department?.aboutUs !== null && aboutdata?.department?.aboutUs !== ''"><a (click)="changeTab('about')">About us</a></li>
-               <li *ngIf="(aboutdata?.department?.peo && aboutdata?.department?.peo !== null && aboutdata?.department?.peo !== '') || (aboutdata?.department?.po && aboutdata?.department?.po !== null && aboutdata?.department?.po !== '') || (aboutdata?.department?.pso && aboutdata?.department?.pso !== null && aboutdata?.department?.pso !== '')"><a (click)="changeTab('ppp')">PEOs, POs and PSOs</a></li>
-               <li *ngIf="aboutdata?.department?.course && aboutdata?.department?.course !== null && aboutdata?.department?.course !== ''"><a (click)="changeTab('course')">Courses</a></li>
-               <li *ngIf="facultyArray !== null"><a (click)="changeTab('faculty')">Faculty</a></li>
+               <li><a [ngClass]="{'active': toShow === 'about'}" (click)="changeTab('about')">About us</a></li>
+               <li><a [ngClass]="{'active': toShow === 'ppp'}"  (click)="changeTab('ppp')">PEOs, POs and PSOs</a></li>
+               <li><a [ngClass]="{'active': toShow === 'course'}"  (click)="changeTab('course')">Courses</a></li>
+               <li><a [ngClass]="{'active': toShow === 'faculty'}"  (click)="changeTab('faculty')">Faculty</a></li>
                <!-- <li *ngIf="aboutdata?.department?.faculty && aboutdata?.department?.faculty !== null && aboutdata?.department?.faculty !== ''"><a (click)="changeTab('faculty')">Faculty</a></li> -->
-               <li *ngIf="(aboutdata?.department?.valueAddedCourse && aboutdata?.department?.valueAddedCourse !== null && aboutdata?.department?.valueAddedCourse !== '') || (aboutdata?.department?.oneCreditedCourse && aboutdata?.department?.oneCreditedCourse !== null && aboutdata?.department?.oneCreditedCourse !== '')"><a (click)="changeTab('valueAddedCourse')">Value Added Courses / OCC</a></li>
-               <li *ngIf="aboutdata?.department?.student && aboutdata?.department?.student !== null && aboutdata?.department?.student !== ''"><a (click)="changeTab('student')">Student</a></li>
-               <li *ngIf="aboutdata?.department?.facilities && aboutdata?.department?.facilities !== null && aboutdata?.department?.facilities !== ''"><a (click)="changeTab('facilities')">Facilities</a></li>
-               <li *ngIf="aboutdata?.department?.fdp && aboutdata?.department?.fdp !== null && aboutdata?.department?.fdp !== ''"><a (click)="changeTab('fdp')">FDP</a></li>
-               <li *ngIf="aboutdata?.department?.placements && aboutdata?.department?.placements !== null && aboutdata?.department?.placements !== ''" ><a (click)="changeTab('placements')">Placements</a></li>
-               <li *ngIf="aboutdata?.department?.contact && aboutdata?.department?.contact !== null && aboutdata?.department?.contact !== ''"><a (click)="changeTab('contact')">Contact us</a></li>
+               <li><a [ngClass]="{'active': toShow === 'valueAddedCourse'}"  (click)="changeTab('valueAddedCourse')">Value Added Courses / OCC</a></li>
+               <li><a [ngClass]="{'active': toShow === 'student'}"  (click)="changeTab('student')">Student</a></li>
+               <li><a [ngClass]="{'active': toShow === 'facilities'}"  (click)="changeTab('facilities')">Facilities</a></li>
+               <li><a [ngClass]="{'active': toShow === 'fdp'}"  (click)="changeTab('fdp')">FDP</a></li>
+               <li><a [ngClass]="{'active': toShow === 'placements'}"  (click)="changeTab('placements')">Placements</a></li>
+               <li><a [ngClass]="{'active': toShow === 'contact'}"  (click)="changeTab('contact')">Contact us</a></li>
             </ul> 
          </div>
       </div>

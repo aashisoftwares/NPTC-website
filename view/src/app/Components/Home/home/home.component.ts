@@ -63,7 +63,6 @@ export class HomeComponent implements OnInit {
      this.academicsService.departmentList(Data).subscribe(response => {
        if(response['status'] === 200) {
          this.deptlist = response['info'];
-         console.log(this.deptlist);
          this.splitArray(this.deptlist,4);
        } else {
          alert('something went wrong!. please refresh the page')

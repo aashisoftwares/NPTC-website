@@ -3,19 +3,19 @@
       <div class="row" style="height: 670px">
         <div class="col-lg-3 sidebar-nav" style="height: 611px">
             <ul class="facilities-list">
-                <li *ngIf="hosteldata && hosteldata !== null"><a (click)="changeTab('Hostel')">Hostel</a></li>
-                <li *ngIf="librarydata && librarydata !== null"><a (click)="changeTab('Library')">Library</a></li>
-                <li *ngIf="physicaleducationdata && physicaleducationdata !== null"><a (click)="changeTab('PE')">Physical Education</a></li>
-                <li *ngIf="sgsdata && sgsdata !== null"><a (click)="changeTab('SGS')">SGS</a></li>
-                <li *ngIf="nccdata && nccdata !== null"><a (click)="changeTab('NCC')">NCC</a></li>
-                <li *ngIf="nssdata && nssdata !== null"><a (click)="changeTab('NSS')">NSS</a></li>
-                <li *ngIf="iipcdata && iipcdata !== null"><a (click)="changeTab('IIPC')">IIPC</a></li>
-                <li *ngIf="educationdata && educationdata !== null"><a (click)="changeTab('CEC')">Continuing Education centre</a></li>
-                <li *ngIf="rrcdata && rrcdata !== null"><a (click)="changeTab('RRC')">Red Ribbon Club</a></li>
-                <li *ngIf="emdcdata && emdcdata !== null"><a (click)="changeTab('EMDC')">EMDC</a></li>
-                <li *ngIf="istedata && istedata !== null"><a (click)="changeTab('ISTE')">ISTE</a></li>
-                <li *ngIf="yrcdata && yrcdata !== null"><a (click)="changeTab('YRC')">Youth Red Cross</a></li>
-                <li *ngIf="cdtpdata && cdtpdata !== null"><a (click)="changeTab('CDTP')">CDTP</a></li>
+                <li><a [ngClass]="{'active': toShow === 'Hostel' }" (click)="changeTab('Hostel')">Hostel</a></li>
+                <li><a [ngClass]="{'active': toShow === 'Library' }" (click)="changeTab('Library')">Library</a></li>
+                <li><a [ngClass]="{'active': toShow === 'PE' }" (click)="changeTab('PE')">Physical Education</a></li>
+                <li><a [ngClass]="{'active': toShow === 'SGS' }" (click)="changeTab('SGS')">SGS</a></li>
+                <li><a [ngClass]="{'active': toShow === 'NCC' }" (click)="changeTab('NCC')">NCC</a></li>
+                <li><a [ngClass]="{'active': toShow === 'NSS' }" (click)="changeTab('NSS')">NSS</a></li>
+                <li><a [ngClass]="{'active': toShow === 'IIPC' }" (click)="changeTab('IIPC')">IIPC</a></li>
+                <li><a [ngClass]="{'active': toShow === 'CEC' }" (click)="changeTab('CEC')">Continuing Education centre</a></li>
+                <li><a [ngClass]="{'active': toShow === 'RRC' }" (click)="changeTab('RRC')">Red Ribbon Club</a></li>
+                <li><a [ngClass]="{'active': toShow === 'EMDC' }" (click)="changeTab('EMDC')">EMDC</a></li>
+                <li><a [ngClass]="{'active': toShow === 'ISTE' }" (click)="changeTab('ISTE')">ISTE</a></li>
+                <li><a [ngClass]="{'active': toShow === 'YRC' }" (click)="changeTab('YRC')">Youth Red Cross</a></li>
+                <li><a [ngClass]="{'active': toShow === 'CDTP' }" (click)="changeTab('CDTP')">CDTP</a></li>
             </ul>                
         </div>  
           <div id="boxscroll" class="col-lg-9" style="height: 611px; overflow-y: auto; margin-top: 30px">

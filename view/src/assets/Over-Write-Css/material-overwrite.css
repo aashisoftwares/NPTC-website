@@ -170,7 +170,7 @@ a.mat-menu-item:hover{
    fill: currentColor;
    padding: 3px 2px 4px 1px !important;
 }
- .mat-tab-header
+ /* .mat-tab-header
 {
    border: 1px solid #3c3e96;
    margin-bottom: 20px;
@@ -185,8 +185,8 @@ a.mat-menu-item:hover{
 .mat-tab-label
 {
    opacity: 1 !important;
-   width:20% !important;
-} 
+   width: 100% !important;
+}  */
 .mat-checkbox
 {
    margin-left: 34px !important;

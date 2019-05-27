@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {  Router, NavigationStart, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+   loader: Boolean = false;
+  constructor(private router: Router) { }
 
   ngOnInit() {
+   this.loaderToggle();
   }
+
+  loaderToggle() {
+   this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+         this.loader = true;
+      }
+      if (event instanceof NavigationEnd) {
+         this.loader = false;
+      }
+   });
+  }
+
 
 }

@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatMenuModule} from '@angular/material/menu';
-import { MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule, MatIconModule, MatCardModule } from '@angular/material';
+import { MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule, MatIconModule, MatCardModule, MatProgressBarModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FormBuilder, FormControl, FormsModule } from '@angular/forms';
 import { NgxLoadingModule } from 'ngx-loading';
@@ -16,6 +16,7 @@ import { MatFormFieldModule, MatFormFieldControl } from '@angular/material/form-
 import { NgxTimelineModule } from 'ngx-timeline';
 import { FileSaverModule } from 'ngx-filesaver';
 
+import { TabsModule } from 'ngx-bootstrap';
 
 // ---------- Custom Components  ----------------//
 
@@ -105,10 +106,12 @@ import { MilestonesComponent } from './Components/About/milestones/milestones.co
     MatIconModule,
     MatButtonModule,
     BrowserAnimationsModule,
+    MatProgressBarModule,
     MatExpansionModule,
     MatFormFieldModule,
     MatCardModule,
     NgxTimelineModule,
+    TabsModule.forRoot(),
     CarouselModule.forRoot(),
     NgxLoadingModule.forRoot({})
   ],
