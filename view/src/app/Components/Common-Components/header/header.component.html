@@ -1,200 +1,202 @@
 <header id="header-part">
-  <div class="header-top d-none d-lg-block">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-6">
-                  <div class="header-contact text-lg-left text-center">
-                      <ul>
-                          <li><i class="fa fa-phone" style="color:#dbdbdb;"></i> <span>91-4259-236030, 236040, 236050</span></li>
-                      </ul>
+      <div class="header-top d-none d-lg-block">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6">
+                      <div class="header-contact text-lg-left text-center">
+                          <ul>
+                              <li><i class="fa fa-phone" style="color:#dbdbdb;"></i> <span>91-4259-236030, 236040, 236050</span></li>
+                          </ul>
+                      </div>
                   </div>
-              </div>
-              <div class="col-lg-6">
-                  <div class="header-opening-time text-lg-right text-center">
-                      <p><i class="fa fa-envelope-o"></i> principal@nptc.ac.in
-                      <span class="top-link"><a href="#">Staff Login</a>
-                      <a href="#">Student Login</a></span></p>
+                  <div class="col-lg-6">
+                      <div class="header-opening-time text-lg-right text-center">
+                          <p><i class="fa fa-envelope-o"></i> principal@nptc.ac.in
+                          <span class="top-link"><a href="#">Staff Login</a>
+                          <a href="#">Student Login</a></span></p>
+                      </div>
                   </div>
-              </div>
-          </div> <!-- row -->
-      </div> <!-- container -->
-  </div> <!-- header top -->
-  
-  <div class="header-logo-support pt-10 pb-10">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-3 col-md-3">
-                  <div class="logo">
-                      <a href="index.html">
-                          <img src="../../../../../assets/images/logo2.png" alt="NPTC">
-                      </a>
+              </div> <!-- row -->
+          </div> <!-- container -->
+      </div> <!-- header top -->
+      
+      <div class="header-logo-support pt-10 pb-10">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-3 col-md-3">
+                      <div class="logo">
+                          <a href="index.html">
+                              <img src="../../../../../assets/images/logo2.png" alt="NPTC">
+                          </a>
+                      </div>
                   </div>
-              </div>
-               
-              <div class="col-lg-6 col-md-6">
-                  <div class="support-button float-right d-none d-md-block">
-                      <div class="support float-left">
-                        <marquee class="scroll-text">Accredited by APACC (Asia Pacific Accreditation and Certification Commission), Philippines with Gold Level </marquee>
-                      </div>                         
+                   
+                  <div class="col-lg-6 col-md-6">
+                      <div class="support-button float-right d-none d-md-block">
+                          <div class="support float-left">
+                            <marquee class="scroll-text">Accredited by APACC (Asia Pacific Accreditation and Certification Commission), Philippines with Gold Level </marquee>
+                          </div>                         
+                      </div>
                   </div>
-              </div>
-              <div class="col-lg-3 col-md-3">
-                  <div class="logo">
-                      <img src="../../../../../assets/images/apacc-logo.png" alt="NPTC">
+                  <div class="col-lg-3 col-md-3">
+                      <div class="logo">
+                          <img src="../../../../../assets/images/apacc-logo.png" alt="NPTC">
+                      </div>
                   </div>
-              </div>
-          </div> <!-- row -->
-      </div> <!-- container -->
-  </div> <!-- header logo support -->
-  
-  <div class="navigation" id="myHeader">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-9 col-8">
-                <div class="Header_Page">
-                  <div class="Header_Two">
-                      <ul class="Menus">
-                         <!-- home -->
-                         <li class="Menu_List" routerLinkActive="active" >
-                            <span class="Menu_Tree">
-                               <span class="Menu" [routerLink]="['/home']">
-                                  <i class="material-icons">home</i>                                 
-                               </span>                            
-                            </span>
-                         </li>
-                         <!-- About -->
-                          <li class="Menu_List" routerLinkActive="active">
-                            <span class="Menu_Tree">
-                               <span class="Menu">
-                                  <span> &nbsp; ABOUT </span> 
-                               </span>
-                               <ul class="Menu_Tree_View">
-                                  <li class="Menu_Tree_List" routerLinkActive="active" >
-                                     <a [routerLink]="['/about-overview']"> OVERVIEW </a>                                   
-                                  </li>
-                                  <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/vision-mission']"><a> VISION &amp; MISSION </a></li>
-                                  <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/management']"><a> MANAGEMENT </a></li>                                
-                                  <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/nia-institutions']"><a> NIA INSTITUTIONS </a></li>                                
-                                  <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/approvals']"><a> APPROVALS </a></li>                                
-                                  <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/institution-organogram']"><a> INSTITUTION ORGANOGRAM </a></li>                                
-                                  <!--<li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/milestones']"><a> MILESTONES </a></li>                                -->
-                               </ul>
-                            </span>
-                         </li>
-                         <!-- Academics -->
-                         <li class="Menu_List" routerLinkActive="active">
-                            <span class="Menu_Tree">
-                               <span class="Menu">
-                                  <span> &nbsp; ACADEMICS </span> 
-                               </span>
-                               <ul class="Menu_Tree_View">
-                                  <!-- <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/aided-diploma']"><a> AIDED DIPLOMA PROGRAMMES </a></li>
-                                  <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/self-supporting-diploma']" ><a> SELF-SUPPORTING DIPLOMA PROGRAMMES </a></li> 
-                                  <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/post-diploma']" ><a> POST DIPLOMA PROGRAMMES </a></li>  -->
-                                  <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/departments']" ><a> DEPARTMENTS </a></li> 
-                                  <!--<li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/cep']" ><a> CEP </a></li> -->
-                               </ul>
-                            </span>
-                         </li>
-                         <!-- Admissions -->
-                         <li class="Menu_List" routerLinkActive="active">
-                            <span class="Menu_Tree">
-                               <span class="Menu">
-                                  <span> &nbsp; ADMISSIONS </span> 
-                               </span>
-                               <ul class="Menu_Tree_View">
-                                  <li class="Menu_Tree_List" routerLinkActive="active">
-                                     <a [routerLink]="['/courses']"> COURSES OFFERED </a>                                   
-                                  </li>
-                                  <li class="Menu_Tree_List" routerLinkActive="active">
-                                     <a [routerLink]="['/eligibility-criteria']"> ELIGIBILITY  </a>                                   
-                                  </li>
-                                  <li class="Menu_Tree_List" routerLinkActive="active">
-                                      <a [routerLink]="['/student-facilities']"> FACILITIES FOR STUDENTS </a>                                   
-                                  </li>
-                                  <li class="Menu_Tree_List" routerLinkActive="active">
-                                      <a [routerLink]="['/scholarships']">SCHOLARSHIPS </a>                                    
-                                  </li>
-                                  <li class="Menu_Tree_List" routerLinkActive="active">
-                                      <a [routerLink]="['/e-brochure']"> E-BROCHURE </a>
-                                  </li>
-                                  <!--<li class="Menu_Tree_List" routerLinkActive="active">
-                                      <a [routerLink]="['/contact']"> CONTACT US </a>
-                                  </li>-->
-                               </ul>
-                            </span>
-                         </li>                         
-                         <!-- Facilities-->
-                         <li class="Menu_List" routerLinkActive="active" >
-                              <span class="Menu_Tree">
-                                 <span class="Menu">
-                                    <span> &nbsp; LIFE AT NPTC </span> 
-                                </span>                                
-                                <ul class="Menu_Tree_View">
-                                    <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/student']"><a> STUDENT </a></li>
-                                    <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/staff']" ><a> FACULTY &amp; STAFF </a></li> 
-                                    <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/careers']"><a> CAREERS </a></li>
-                                </ul>                          
-                              </span>
-                          </li>
-                          <!-- Examinations-->
-                          <li class="Menu_List" routerLinkActive="active" >
-                              <span class="Menu_Tree">
-                                  <span class="Menu">
-                                          <span [routerLink]="['/examination-view']"> &nbsp; EXAMINATIONS </span>                                 
-                                  </span>                            
-                              </span>
-                          </li>                      
-                          <!-- Placements-->
-                          <li class="Menu_List" routerLinkActive="active">
-                              <span class="Menu_Tree">
-                                  <span class="Menu">
-                                      <span [routerLink]="['/about-placement']"> &nbsp; PLACEMENTS </span> 
+              </div> <!-- row -->
+          </div> <!-- container -->
+      </div> <!-- header logo support -->
+      
+      <div class="navigation" id="myHeader">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-9 col-8">
+                    <div class="Header_Page">
+                      <div class="Header_Two">
+                          <ul class="Menus" [ngClass]="{'responsive': showMenu}">
+                              <li class="Menu_List" routerLinkActive="active" >
+                                 <a (click)="toggleMenu()" ><mat-icon>menu</mat-icon> </a>
+                              </li>
+                             <!-- home -->
+                             <li class="Menu_List" [ngClass]="{'show': showMenu}" routerLinkActive="active" >
+                                <span class="Menu_Tree">
+                                   <span class="Menu" [routerLink]="['/home']">
+                                      <i class="material-icons">home</i>                                 
+                                   </span>                            
+                                </span>
+                             </li>
+                             <!-- About -->
+                              <li class="Menu_List" [ngClass]="{'show': showMenu}" routerLinkActive="active">
+                                <span class="Menu_Tree">
+                                   <span class="Menu">
+                                      <span> &nbsp; ABOUT </span> 
+                                   </span>
+                                   <ul class="Menu_Tree_View">
+                                      <li class="Menu_Tree_List" routerLinkActive="active" >
+                                         <a [routerLink]="['/about-overview']"> OVERVIEW </a>                                   
+                                      </li>
+                                      <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/vision-mission']"><a> VISION &amp; MISSION </a></li>
+                                      <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/management']"><a> MANAGEMENT </a></li>                                
+                                      <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/nia-institutions']"><a> NIA INSTITUTIONS </a></li>                                
+                                      <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/approvals']"><a> APPROVALS </a></li>                                
+                                      <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/institution-organogram']"><a> INSTITUTION ORGANOGRAM </a></li>                                
+                                      <!--<li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/milestones']"><a> MILESTONES </a></li>                                -->
+                                   </ul>
+                                </span>
+                             </li>
+                             <!-- Academics -->
+                             <li class="Menu_List" [ngClass]="{'show': showMenu}" routerLinkActive="active">
+                                <span class="Menu_Tree">
+                                   <span class="Menu">
+                                      <span> &nbsp; ACADEMICS </span> 
+                                   </span>
+                                   <ul class="Menu_Tree_View">
+                                      <!-- <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/aided-diploma']"><a> AIDED DIPLOMA PROGRAMMES </a></li>
+                                      <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/self-supporting-diploma']" ><a> SELF-SUPPORTING DIPLOMA PROGRAMMES </a></li> 
+                                      <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/post-diploma']" ><a> POST DIPLOMA PROGRAMMES </a></li>  -->
+                                      <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/departments']" ><a> DEPARTMENTS </a></li> 
+                                      <!--<li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/cep']" ><a> CEP </a></li> -->
+                                   </ul>
+                                </span>
+                             </li>
+                             <!-- Admissions -->
+                             <li class="Menu_List" [ngClass]="{'show': showMenu}" routerLinkActive="active">
+                                <span class="Menu_Tree">
+                                   <span class="Menu">
+                                      <span> &nbsp; ADMISSIONS </span> 
+                                   </span>
+                                   <ul class="Menu_Tree_View">
+                                      <li class="Menu_Tree_List" routerLinkActive="active">
+                                         <a [routerLink]="['/courses']"> COURSES OFFERED </a>                                   
+                                      </li>
+                                      <li class="Menu_Tree_List" routerLinkActive="active">
+                                         <a [routerLink]="['/eligibility-criteria']"> ELIGIBILITY  </a>                                   
+                                      </li>
+                                      <li class="Menu_Tree_List" routerLinkActive="active">
+                                          <a [routerLink]="['/student-facilities']"> FACILITIES FOR STUDENTS </a>                                   
+                                      </li>
+                                      <li class="Menu_Tree_List" routerLinkActive="active">
+                                          <a [routerLink]="['/scholarships']">SCHOLARSHIPS </a>                                    
+                                      </li>
+                                      <li class="Menu_Tree_List" routerLinkActive="active">
+                                          <a [routerLink]="['/e-brochure']"> E-BROCHURE </a>
+                                      </li>
+                                      <!--<li class="Menu_Tree_List" routerLinkActive="active">
+                                          <a [routerLink]="['/contact']"> CONTACT US </a>
+                                      </li>-->
+                                   </ul>
+                                </span>
+                             </li>                         
+                             <!-- Facilities-->
+                             <li class="Menu_List" [ngClass]="{'show': showMenu}" routerLinkActive="active" >
+                                  <span class="Menu_Tree">
+                                     <span class="Menu">
+                                        <span> &nbsp; LIFE AT NPTC </span> 
+                                    </span>                                
+                                    <ul class="Menu_Tree_View">
+                                        <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/student']"><a> STUDENT </a></li>
+                                        <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/staff']" ><a> FACULTY &amp; STAFF </a></li> 
+                                        <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/careers']"><a> CAREERS </a></li>
+                                    </ul>                          
                                   </span>
-                              </span>
-                          </li>
-                          <!-- GALLERY-->
-                          <li class="Menu_List" routerLinkActive="active" >
-                              <span class="Menu_Tree">
-                                  <span class="Menu">
-                                       <span [routerLink]="['/facilities']"> &nbsp; FACILITIES </span> 
-                                  </span>   
-                                  <!-- <ul class="Menu_Tree_View">
-                                    <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/facilities/Hostel']"><a href="http://206.189.131.244:5000/facilities#Hostel"> HOSTEL </a></li>
-                                    <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/facilities/library']"><a href="http://206.189.131.244:5000/facilities#Library"> LIBRARY </a></li> 
-                                    <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/facilities/PhysicalEducation']"><a href="http://206.189.131.244:5000/facilities#PhysicalEducation"> PHYSICAL EDUCATION </a></li> 
-                                    <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/sgs']"><a href="http://206.189.131.244:5000/facilities#SGS"> SGS </a></li> 
-                                    <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/ncc']"><a href="http://206.189.131.244:5000/facilities#NCC"> NCC </a></li> 
-                                    <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/nss']"><a href="http://206.189.131.244:5000/facilities#NSS"> NSS </a></li> 
-                                    <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/iipc']"><a href="http://206.189.131.244:5000/facilities#IIPC"> IIPC </a></li> 
-                                    <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/education-centre']"><a href="http://206.189.131.244:5000/facilities#Education"> CONTINUING EDUCATION CENTRE </a></li> 
-                                    <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/red-ribbon-club']"><a href="http://206.189.131.244:5000/facilities#RRC"> RED RIBBON CLUB </a></li> 
-                                    <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/emdc']"><a href="http://206.189.131.244:5000/facilities#HostEMDCel"> EMDC </a ></li> 
-                                    <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/iste']"><a href="http://206.189.131.244:5000/facilities#ISTE"> ISTE </a></li> 
-                                    <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/youth-redcross']"><a href="http://206.189.131.244:5000/facilities#YRC"> YOUTH RED CROSS </a></li> 
-                                    <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/cdtp']"><a href="http://206.189.131.244:5000/facilities#CDTP"> CDTP </a></li> 
-                                 </ul>                          -->
-                              </span>
-                          </li>
-                         <!-- <li class="Menu_List" routerLinkActive="active" >
-                            <span class="Menu_Tree">
-                               <span class="Menu" [routerLink]="['/home']"> &nbsp; GALLERY </span>                            
-                            </span>
-                         </li> -->
-                         <li class="Menu_List" routerLinkActive="active" >
-                            <span class="Menu_Tree">
-                               <span class="Menu" [routerLink]="['/contact']"> &nbsp; CONTACT US </span>                            
-                            </span>
-                         </li>
-                      </ul>                   
+                              </li>
+                              <!-- Examinations-->
+                              <li class="Menu_List" [ngClass]="{'show': showMenu}" routerLinkActive="active" >
+                                  <span class="Menu_Tree">
+                                      <span class="Menu">
+                                              <span [routerLink]="['/examination-view']"> &nbsp; EXAMINATIONS </span>                                 
+                                      </span>                            
+                                  </span>
+                              </li>                      
+                              <!-- Placements-->
+                              <li class="Menu_List" [ngClass]="{'show': showMenu}" routerLinkActive="active">
+                                  <span class="Menu_Tree">
+                                      <span class="Menu">
+                                          <span [routerLink]="['/about-placement']"> &nbsp; PLACEMENTS </span> 
+                                      </span>
+                                  </span>
+                              </li>
+                              <!-- GALLERY-->
+                              <li class="Menu_List" [ngClass]="{'show': showMenu}" routerLinkActive="active" >
+                                  <span class="Menu_Tree">
+                                      <span class="Menu">
+                                           <span [routerLink]="['/facilities']"> &nbsp; FACILITIES </span> 
+                                      </span>   
+                                      <!-- <ul class="Menu_Tree_View">
+                                        <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/facilities/Hostel']"><a href="http://206.189.131.244:5000/facilities#Hostel"> HOSTEL </a></li>
+                                        <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/facilities/library']"><a href="http://206.189.131.244:5000/facilities#Library"> LIBRARY </a></li> 
+                                        <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/facilities/PhysicalEducation']"><a href="http://206.189.131.244:5000/facilities#PhysicalEducation"> PHYSICAL EDUCATION </a></li> 
+                                        <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/sgs']"><a href="http://206.189.131.244:5000/facilities#SGS"> SGS </a></li> 
+                                        <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/ncc']"><a href="http://206.189.131.244:5000/facilities#NCC"> NCC </a></li> 
+                                        <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/nss']"><a href="http://206.189.131.244:5000/facilities#NSS"> NSS </a></li> 
+                                        <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/iipc']"><a href="http://206.189.131.244:5000/facilities#IIPC"> IIPC </a></li> 
+                                        <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/education-centre']"><a href="http://206.189.131.244:5000/facilities#Education"> CONTINUING EDUCATION CENTRE </a></li> 
+                                        <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/red-ribbon-club']"><a href="http://206.189.131.244:5000/facilities#RRC"> RED RIBBON CLUB </a></li> 
+                                        <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/emdc']"><a href="http://206.189.131.244:5000/facilities#HostEMDCel"> EMDC </a ></li> 
+                                        <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/iste']"><a href="http://206.189.131.244:5000/facilities#ISTE"> ISTE </a></li> 
+                                        <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/youth-redcross']"><a href="http://206.189.131.244:5000/facilities#YRC"> YOUTH RED CROSS </a></li> 
+                                        <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/cdtp']"><a href="http://206.189.131.244:5000/facilities#CDTP"> CDTP </a></li> 
+                                     </ul>                          -->
+                                  </span>
+                              </li>
+                             <!-- <li class="Menu_List" routerLinkActive="active" >
+                                <span class="Menu_Tree">
+                                   <span class="Menu" [routerLink]="['/home']"> &nbsp; GALLERY </span>                            
+                                </span>
+                             </li> -->
+                             <li class="Menu_List" [ngClass]="{'show': showMenu}" routerLinkActive="active" >
+                                <span class="Menu_Tree">
+                                   <span class="Menu" [routerLink]="['/contact']"> &nbsp; CONTACT US </span>                            
+                                </span>
+                             </li>
+                          </ul>                   
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-          </div> <!-- row -->
-      </div> <!-- container -->
-  </div>
-  <!-- <mat-progress-bar *ngIf="loader" mode="indeterminate"></mat-progress-bar> -->
-</header>
-<p *ngIf="loader">Loading ...</p>
-
-
+              </div> <!-- row -->
+          </div> <!-- container -->
+      </div>
+      <!-- <mat-progress-bar *ngIf="loader" mode="indeterminate"></mat-progress-bar> -->
+    </header>
+    <p *ngIf="loader">Loading ...</p>
+    

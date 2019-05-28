@@ -6,7 +6,7 @@ import {  Router, NavigationStart, NavigationEnd } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+   showMenu: Boolean = false;
    loader: Boolean = false;
   constructor(private router: Router) { }
 
@@ -25,5 +25,7 @@ export class HeaderComponent implements OnInit {
    });
   }
 
-
+  toggleMenu() {
+     this.showMenu = !this.showMenu;
+  }
 }
