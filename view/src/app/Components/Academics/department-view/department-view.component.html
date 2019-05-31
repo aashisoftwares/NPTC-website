@@ -197,6 +197,26 @@
                               </div> 
                         </div>
                   
+                        <div id="MOU" *ngIf="toShow === 'MOU'">
+                              <div class="row">
+                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <h4>MOU</h4>
+                                    <div class="course-features" [innerHTML]="aboutdata?.department?.MOU?.content">                                       
+                                    </div>
+                                 </div>
+                              </div> 
+                        </div>
+
+                        <div id="CEP" *ngIf="toShow === 'CEP'">
+                              <div class="row">
+                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <h4>CEP</h4>
+                                    <div class="course-features" [innerHTML]="aboutdata?.department?.CEP?.content">                                       
+                                    </div>
+                                 </div>
+                              </div> 
+                        </div>
+
                         <div id="facilities" *ngIf="toShow === 'facilities'">
                               <div class="row">
                                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
@@ -272,6 +292,8 @@
                <li><a [ngClass]="{'active': toShow === 'about'}" (click)="changeTab('about')">About us</a></li>
                <li><a [ngClass]="{'active': toShow === 'ppp'}"  (click)="changeTab('ppp')">PEOs, POs and PSOs</a></li>
                <li><a [ngClass]="{'active': toShow === 'course'}"  (click)="changeTab('course')">Courses</a></li>
+               <li *ngIf="aboutdata?.department?.MOU?.show"><a [ngClass]="{'active': toShow === 'MOU'}"  (click)="changeTab('MOU')">MOU</a></li>
+               <li *ngIf="aboutdata?.department?.CEP?.show"><a [ngClass]="{'active': toShow === 'CEP'}"  (click)="changeTab('CEP')">CEP</a></li>
                <li><a [ngClass]="{'active': toShow === 'faculty'}"  (click)="changeTab('faculty')">Faculty</a></li>
                <!-- <li *ngIf="aboutdata?.department?.faculty && aboutdata?.department?.faculty !== null && aboutdata?.department?.faculty !== ''"><a (click)="changeTab('faculty')">Faculty</a></li> -->
                <li><a [ngClass]="{'active': toShow === 'valueAddedCourse'}"  (click)="changeTab('valueAddedCourse')">Value Added Courses / OCC</a></li>
