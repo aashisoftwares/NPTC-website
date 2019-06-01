@@ -7,7 +7,7 @@
                   </div> <!-- section title -->
                   <div class="about-cont" [innerHTML]="data?.content"></div>
                   <div *ngFor="let file of brochurefileUrl; let i=index;" class="row"> 
-                        <button *ngIf="file" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file?.fileUrl)"><i class="fa fa-file-pdf-o"></i> {{(file?.name.length > 10) ? (file?.name | slice: 0:10) + '...' : (file?.name)}}</button>                       
+                        <button *ngIf="file" title="{{file?.name}}" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file?.fileUrl)"><i class="fa fa-file-pdf-o"></i> {{(file?.name.length > 10) ? (file?.name | slice: 0:10) + '...' : (file?.name)}}</button>                       
                      <!-- <a class="col-lg-7 downloadlink" href="{{file}}" target="_blank"><img src="../../../../assets/images//pdf-icon.png" /><span class="download">Click here to download </span></a>                                     -->
                   </div>
             </div> <!-- about cont -->

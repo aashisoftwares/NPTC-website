@@ -24,7 +24,7 @@
                               <div [innerHTML]="syllabusdata?.content"></div> 
                            </div>
                            <div class="col-lg-12">
-                              <button *ngIf="syllabusfileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(syllabusfileUrl)"><i class="fa fa-file-pdf-o"></i> {{(syllabusdata?.fileName.length > 10) ? (syllabusdata?.fileName | slice: 0:10) + '...' : (syllabusdata?.fileName)}}</button>    
+                              <button *ngIf="syllabusfileUrl" title="{{syllabusdata?.fileName}}" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(syllabusfileUrl)"><i class="fa fa-file-pdf-o"></i> {{(syllabusdata?.fileName.length > 10) ? (syllabusdata?.fileName | slice: 0:10) + '...' : (syllabusdata?.fileName)}}</button>    
                            </div>                  
 
                         </div>                                              
@@ -41,7 +41,7 @@
                               <label>{{file?.content}}</label> 
                            </div>
                            <div class="col-lg-6">
-                              <button *ngIf="file.fileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i> {{(file?.fileName.length > 10) ? (file?.fileName | slice: 0:10) + '...' : (file?.fileName)}}</button>                       
+                              <button *ngIf="file.fileUrl" title="{{file?.fileName}}" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i> {{(file?.fileName.length > 10) ? (file?.fileName | slice: 0:10) + '...' : (file?.fileName)}}</button>                       
                            </div>
                            <!-- <a href="{{file.fileUrl}}" target="_blank" class="col-lg-2"><img src="../../../assets/images/pdf-icon.png" /></a>                                     -->                        
                         </div>
@@ -58,7 +58,7 @@
                               <label>{{file?.content}}</label> 
                            </div>
                            <div class="col-lg-6">
-                              <button *ngIf="file.fileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i> {{(file?.fileName.length > 10) ? (file?.fileName | slice: 0:10) + '...' : (file?.fileName)}}</button>                       
+                              <button *ngIf="file.fileUrl" title="{{file?.fileName}}" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i> {{(file?.fileName.length > 10) ? (file?.fileName | slice: 0:10) + '...' : (file?.fileName)}}</button>                       
                            </div>
                            <!-- <a href="{{file.fileUrl}}" target="_blank" class="col-lg-2"><img src="../../../assets/images/pdf-icon.png" /></a>                                     -->
                            <!-- <p class="col-lg-10">{{file?.content}}
@@ -79,7 +79,7 @@
                               <label>{{file?.content}}</label> 
                            </div>
                            <div class="col-lg-6">
-                              <button *ngIf="file.fileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i> {{(file?.fileName.length > 10) ? (file?.fileName | slice: 0:10) + '...' : (file?.fileName)}}</button>                       
+                              <button *ngIf="file.fileUrl" title="{{file?.fileName}}" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i> {{(file?.fileName.length > 10) ? (file?.fileName | slice: 0:10) + '...' : (file?.fileName)}}</button>                       
                            </div>
                            <!-- <a href="{{file.fileUrl}}" target="_blank" class="col-lg-2"><img src="../../../../assets/images/pdf-icon.png" /></a>                                     -->
                            <!-- <p class="col-lg-10"> {{file?.content}}
@@ -100,7 +100,7 @@
                               <label>{{file?.content}}</label> 
                            </div>
                            <div class="col-lg-6">
-                              <button *ngIf="file.fileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i>{{(file?.fileName.length > 10) ? (file?.fileName | slice: 0:10) + '...' : (file?.fileName)}}</button>                       
+                              <button *ngIf="file.fileUrl" title="{{file?.fileName}}" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i>{{(file?.fileName.length > 10) ? (file?.fileName | slice: 0:10) + '...' : (file?.fileName)}}</button>                       
                            </div>
                               <!-- <p class="col-lg-10">{{file?.content}}
                                     <button *ngIf="file.fileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button> 

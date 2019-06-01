@@ -8,10 +8,10 @@
                <div class="about-cont" [innerHTML]="data?.content">                                            
                </div>
                <h5 class="side-title">Achievements</h5>
-               <button *ngIf="achievementsFileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(achievementsFileUrl)"><i class="fa fa-file-pdf-o"></i> {{(data?.achievementsFileName.length > 10) ? (data?.achievementsFileName | slice: 0:10) + '...' : (data?.achievementsFileName)}}</button>                       
+               <button *ngIf="achievementsFileUrl" title="{{data?.achievementsFileName}}" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(achievementsFileUrl)"><i class="fa fa-file-pdf-o"></i> {{(data?.achievementsFileName.length > 10) ? (data?.achievementsFileName | slice: 0:10) + '...' : (data?.achievementsFileName)}}</button>                       
                <!-- <a href="{{achievementsFileUrl}}" target="_blank"><img src="../../../../assets/images/pdf-icon.png" /> Click here to download Achievers List</a> -->
                <h5 class="side-title">University Rank Holders</h5>
-               <button *ngIf="rankHoldersFileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(rankHoldersFileUrl)"><i class="fa fa-file-pdf-o"></i>{{(data?.rankHoldersFileName.length > 10) ? (data?.rankHoldersFileName | slice: 0:10) + '...' : (data?.rankHoldersFileName)}}</button>                       
+               <button *ngIf="rankHoldersFileUrl" title="{{data?.rankHoldersFileName}}" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(rankHoldersFileUrl)"><i class="fa fa-file-pdf-o"></i>{{(data?.rankHoldersFileName.length > 10) ? (data?.rankHoldersFileName | slice: 0:10) + '...' : (data?.rankHoldersFileName)}}</button>                       
                <!-- <a href="{{rankHoldersFileUrl}}" target="_blank"><img src="../../../../assets/images/pdf-icon.png" /> Click here to download Rank Holders list</a> -->
           </div> <!-- about cont -->
          <div class="col-lg-4 mt-50">              

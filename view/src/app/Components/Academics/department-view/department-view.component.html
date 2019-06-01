@@ -118,7 +118,7 @@
                                  </div>
                                  <br>
                                  <span *ngFor="let url of aboutdata?.department?.courseFileUrl">
-                                    <button *ngIf="url" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(url?.fileUrl)"><i class="fa fa-file-pdf-o"></i> {{(url?.courseName.length > 10) ? (url?.courseName | slice: 0:10) + '...' : (url?.courseName)}}</button>
+                                    <button *ngIf="url" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" title="{{url?.courseName}}" (click)="download(url?.fileUrl)"><i class="fa fa-file-pdf-o"></i> {{(url?.courseName.length > 10) ? (url?.courseName | slice: 0:10) + '...' : (url?.courseName)}}</button>
                                  </span>
                               </div>                          
                         </div> 
