@@ -16,7 +16,7 @@
             <div class="row">                        
                <div [innerHTML]="aictedata?.content" class="col-lg-10"></div>                        
                <div *ngIf="aictedata?.fileUrl !== null && aictedata?.fileUrl !== ''" class="col-lg-2 download-style">
-               <button *ngIf="aictefileUrl" mat-stroked-button class="link-tag" (click)="download(aictefileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>
+               <button *ngIf="aictefileUrl" mat-stroked-button class="link-tag" (click)="download(aictefileUrl)"><i class="fa fa-file-pdf-o"></i> {{(aictedata?.fileName.length > 10) ? (aictedata?.fileName | slice: 0:10) + '...' : (aictedata?.fileName)}}</button>
                   <!-- <a href="{{aictefileUrl}}" target="_blank"><img src="../../../../assets/images/pdf-icon.png" /></a>        -->
                </div>
             </div>
@@ -31,7 +31,7 @@
             <div class="row">
                <div [innerHTML]="antiraggingdata?.content" class="col-lg-10"></div> 
                <div *ngIf="antiraggingdata?.fileUrl !== null && antiraggingdata?.fileUrl !== ''" class="col-lg-2">   
-               <button *ngIf="antiraggingfileUrl" mat-stroked-button class="link-tag" (click)="download(antiraggingfileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>
+               <button *ngIf="antiraggingfileUrl" mat-stroked-button class="link-tag" (click)="download(antiraggingfileUrl)"><i class="fa fa-file-pdf-o"></i> {{(antiraggingdata?.fileName.length > 10) ? (antiraggingdata?.fileName | slice: 0:10) + '...' : (antiraggingdata?.fileName)}}</button>
 
                   <!-- <a href="{{antiraggingfileUrl}}" target="_blank"><img src="../../../assets/images/pdf-icon.png" /></a>        -->
                </div>
@@ -47,7 +47,7 @@
             <div class="row">  
                <div [innerHTML]="womenempowermentdata?.content" class="col-lg-10"></div>
                <div *ngIf="womenempowermentdata?.fileUrl !== null && womenempowermentdata?.fileUrl !== ''" class="col-lg-2"> 
-               <button *ngIf="womenempowermentfileUrl" mat-stroked-button class="link-tag" (click)="download(womenempowermentfileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>
+               <button *ngIf="womenempowermentfileUrl" mat-stroked-button class="link-tag" (click)="download(womenempowermentfileUrl)"><i class="fa fa-file-pdf-o"></i> {{(womenempowermentdata?.fileName.length > 10) ? (womenempowermentdata?.fileName | slice: 0:10) + '...' : (womenempowermentdata?.fileName)}}</button>
                   <!-- <a href="{{womenempowermentfileUrl}}" target="_blank"><img src="../../../assets/images/pdf-icon.png" /></a>             -->
                </div>
             </div>
@@ -62,7 +62,7 @@
             <div class="row">  
                <div [innerHTML]="harassmentdata?.content" class="col-lg-10"></div>
                <div *ngIf="harassmentdata?.fileUrl !== null && harassmentdata?.fileUrl !== ''" class="col-lg-2">
-               <button *ngIf="harassmentfileUrl" mat-stroked-button class="link-tag" (click)="download(harassmentfileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>
+               <button *ngIf="harassmentfileUrl" mat-stroked-button class="link-tag" (click)="download(harassmentfileUrl)"><i class="fa fa-file-pdf-o"></i> {{(harassmentdata?.fileName.length > 10) ? (harassmentdata?.fileName | slice: 0:10) + '...' : (harassmentdata?.fileName)}}</button>
                   <!-- <a href="{{harassmentfileUrl}}" target="_blank"><img src="../../../assets/images/pdf-icon.png" /></a> -->
                </div>
             </div>

@@ -17,12 +17,15 @@
                         </mat-panel-title>              
                         </mat-expansion-panel-header>
                         <div class="row" >
-                           <!-- <div class="col-lg-2"> -->
+                           <div class="col-lg-12">
 
                                  <!-- <a href="{{syllabusfileUrl}}" target="_blank"><img src="../../../../assets/images/pdf-icon.png" /></a>                         -->
                            <!-- </div> -->
-                           <div [innerHTML]="syllabusdata?.content" class="col-lg-10"></div>  
-                           <button *ngIf="syllabusfileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(syllabusfileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>                       
+                              <div [innerHTML]="syllabusdata?.content"></div> 
+                           </div>
+                           <div class="col-lg-12">
+                              <button *ngIf="syllabusfileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(syllabusfileUrl)"><i class="fa fa-file-pdf-o"></i> {{(syllabusdata?.fileName.length > 10) ? (syllabusdata?.fileName | slice: 0:10) + '...' : (syllabusdata?.fileName)}}</button>    
+                           </div>                  
 
                         </div>                                              
                     </mat-expansion-panel>
@@ -33,12 +36,14 @@
                             Regulations
                         </mat-panel-title>                                                    
                         </mat-expansion-panel-header>
-                        <div class="row" *ngFor="let file of regulationdata; let i=index;">                              <button *ngIf="syllabusfileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(syllabusfileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>                       
-
-                           <!-- <a href="{{file.fileUrl}}" target="_blank" class="col-lg-2"><img src="../../../assets/images/pdf-icon.png" /></a>                                     -->
-                           <p class="col-lg-10">{{file?.content}}
-                                 <button *ngIf="file.fileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>                       
-                           </p>                         
+                        <div class="row" *ngFor="let file of regulationdata; let i=index;">                     
+                           <div class="col-lg-6">
+                              <label>{{file?.content}}</label> 
+                           </div>
+                           <div class="col-lg-6">
+                              <button *ngIf="file.fileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i> {{(file?.fileName.length > 10) ? (file?.fileName | slice: 0:10) + '...' : (file?.fileName)}}</button>                       
+                           </div>
+                           <!-- <a href="{{file.fileUrl}}" target="_blank" class="col-lg-2"><img src="../../../assets/images/pdf-icon.png" /></a>                                     -->                        
                         </div>
                     </mat-expansion-panel>
                     <mat-expansion-panel (opened)="panelOpenState = true"
@@ -49,12 +54,17 @@
                         </mat-panel-title>                                                    
                         </mat-expansion-panel-header>
                         <div class="row" *ngFor="let file of circulardata; let i=index;">
-
+                           <div class="col-lg-6">
+                              <label>{{file?.content}}</label> 
+                           </div>
+                           <div class="col-lg-6">
+                              <button *ngIf="file.fileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i> {{(file?.fileName.length > 10) ? (file?.fileName | slice: 0:10) + '...' : (file?.fileName)}}</button>                       
+                           </div>
                            <!-- <a href="{{file.fileUrl}}" target="_blank" class="col-lg-2"><img src="../../../assets/images/pdf-icon.png" /></a>                                     -->
-                           <p class="col-lg-10">{{file?.content}}
+                           <!-- <p class="col-lg-10">{{file?.content}}
                                  <button *ngIf="file.fileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>                       
 
-                           </p>
+                           </p> -->
                         </div>
                     </mat-expansion-panel>
                     <mat-expansion-panel (opened)="panelOpenState = true"
@@ -65,12 +75,17 @@
                         </mat-panel-title>                                                    
                         </mat-expansion-panel-header>
                         <div class="row" *ngFor="let file of downloadsdata; let i=index;">
-
+                           <div class="col-lg-6">
+                              <label>{{file?.content}}</label> 
+                           </div>
+                           <div class="col-lg-6">
+                              <button *ngIf="file.fileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i> {{(file?.fileName.length > 10) ? (file?.fileName | slice: 0:10) + '...' : (file?.fileName)}}</button>                       
+                           </div>
                            <!-- <a href="{{file.fileUrl}}" target="_blank" class="col-lg-2"><img src="../../../../assets/images/pdf-icon.png" /></a>                                     -->
-                           <p class="col-lg-10"> {{file?.content}}
+                           <!-- <p class="col-lg-10"> {{file?.content}}
                                  <button *ngIf="file.fileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button>                       
 
-                           </p>
+                           </p> -->
                           </div>
                     </mat-expansion-panel>
                     <mat-expansion-panel (opened)="panelOpenState = true"
@@ -81,10 +96,15 @@
                         </mat-panel-title>                                                    
                         </mat-expansion-panel-header>
                         <div class="row" *ngFor="let file of resultsdata; let i=index;">                      
-
-                              <p class="col-lg-10">{{file?.content}}
+                           <div class="col-lg-6">
+                              <label>{{file?.content}}</label> 
+                           </div>
+                           <div class="col-lg-6">
+                              <button *ngIf="file.fileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i>{{(file?.fileName.length > 10) ? (file?.fileName | slice: 0:10) + '...' : (file?.fileName)}}</button>                       
+                           </div>
+                              <!-- <p class="col-lg-10">{{file?.content}}
                                     <button *ngIf="file.fileUrl" mat-stroked-button class="link-tag" style="width: 150px !important; margin-top: 10px; margin-left: 18px" (click)="download(file.fileUrl)"><i class="fa fa-file-pdf-o"></i> Download PDF</button> 
-                              </p>
+                              </p> -->
                               <!-- <a href="{{file.fileUrl}}" target="_blank" class="col-lg-2"><img src="../../../assets/images/pdf-icon.png" /></a>                                     -->
                           </div>
                     </mat-expansion-panel>
