@@ -15,7 +15,7 @@
                   </ul> 
                </div>
             </div>
-            <div id="boxscroll" class="col-md-9" style="height: 630px; overflow-y: auto">
+            <div id="boxscroll" class="col-md-9" style="height: 630px;">
                <div class="grid-container">
                   <div class="grid-item" *ngFor="let dpt of deptlist" [routerLink]="['/department-view', dpt._id]">{{dpt?.name}}</div>
                </div>

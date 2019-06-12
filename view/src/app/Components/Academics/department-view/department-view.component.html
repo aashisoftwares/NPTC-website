@@ -91,22 +91,47 @@
                                                    </mat-panel-title>              
                                                 </mat-expansion-panel-header> 
                                                 <div id="course-table">
-                                                   <table style="width: 100%">
-                                                      <thead>
-                                                         <tr>
-                                                            <th>S.no</th>
-                                                            <th>course code</th>
-                                                            <th >course name</th>
-                                                         </tr>
-                                                      </thead>
-                                                      <tbody>
-                                                         <tr *ngFor="let course of data?.semesterDetails; let i = index">
-                                                            <td>{{i+1}}</td>
-                                                            <td>{{course?.courseCode}}</td>
-                                                            <td>{{course?.courseName}}</td>
-                                                         </tr>
-                                                      </tbody>
-                                                   </table>                                    
+                                                   <div class="row">
+                                                      <div class="col-md-6">
+                                                         <h5>Theory</h5>
+                                                         <table style="width: 100%">
+                                                            <thead>
+                                                               <tr>
+                                                                  <th>S.no</th>
+                                                                  <th>course code</th>
+                                                                  <th >course name</th>
+                                                               </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                               <tr *ngFor="let course of filterTheory(data?.semesterDetails); let i = index">
+                                                                  <td>{{i+1}}.</td>
+                                                                  <td>{{course?.courseCode}}</td>
+                                                                  <td>{{course?.courseName}}</td>
+                                                               </tr>
+                                                            </tbody>
+                                                         </table>   
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                         <h5>Practical</h5>
+                                                         <table style="width: 100%">
+                                                            <thead>
+                                                               <tr>
+                                                                  <th>S.no</th>
+                                                                  <th>course code</th>
+                                                                  <th >course name</th>
+                                                               </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                               <tr *ngFor="let course of filterPractical(data?.semesterDetails); let i = index">
+                                                                  <td>{{i+1}}.</td>
+                                                                  <td>{{course?.courseCode}}</td>
+                                                                  <td>{{course?.courseName}}</td>
+                                                               </tr>
+                                                            </tbody>
+                                                         </table>   
+                                                      </div>
+                                                   </div>
+                                                                               
                                                 </div>
                                              </mat-expansion-panel>      
                                           </div>               
@@ -132,31 +157,106 @@
                               </div>                          
                         </div>  -->
                         <div id="faculty" *ngIf="toShow === 'faculty'">
-                              <div *ngIf="facultyArray !== null" class="row">
-                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                    <h4>Faculty</h4>
-                                    <div *ngFor="let info of facultyArray">                  
-                                             <div class="row">                                                       
-                                                   <div class="col-lg-4 faculty-row" *ngFor="let data of info">
-                                                      <div class="faculty parent child">
-                                                            <p>{{data?.name}}</p>
-                                                            <p>{{data?.designation}}</p>
-                                                            <p>Experience : {{data?.experience}}</p>
-                                                            <p>Date of Joining : {{data?.dateOfJoining | date: 'dd-MM-yyyy'}}</p>
-                                                            <span id="bottomscroll" style="line-height: normal; overflow: auto;">
-                                                               Area of Specialization : <br><p>{{data?.areaOfSpecialization}}</p>
-                                                            </span>
-                                                      </div>                                                            
-                                                   </div>
-                                                </div>
-                                       </div>  
-                                    <!-- <div class="course-features">
-                                          <carousel>                                                                 
-                                                                            
-                                          </carousel> 
-                                    </div> -->
-                                 </div>
-                              </div>                          
+                           <div *ngIf="facultyATArray.length > 0" class="row">
+                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                 <h5 >Aided - Teaching Faculty</h5>
+                                 <div *ngFor="let info of facultyATArray">                  
+                                       <div class="row">                                                       
+                                             <div class="col-lg-4 faculty-row" *ngFor="let data of info">
+                                                <div class="faculty parent child">
+                                                      <p>{{data?.name}}</p>
+                                                      <p>{{data?.designation}}</p>
+                                                      <p>Experience : {{data?.experience}}</p>
+                                                      <p>Date of Joining : {{data?.dateOfJoining | date: 'dd-MM-yyyy'}}</p>
+                                                      <span id="bottomscroll" style="line-height: normal; overflow: auto;">
+                                                         Area of Specialization : <br><p>{{data?.areaOfSpecialization}}</p>
+                                                      </span>
+                                                </div>                                                            
+                                             </div>
+                                          </div>
+                                    </div>  
+                                 <!-- <div class="course-features">
+                                       <carousel>                                                                 
+                                                                           
+                                       </carousel> 
+                                 </div> -->
+                              </div>
+                           </div>
+                           <div *ngIf="facultySSTArray.length > 0" class="row">
+                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                 <h5>Self Supporting - Teaching Faculty</h5>
+                                 <div *ngFor="let info of facultySSTArray">                  
+                                       <div class="row">                                                       
+                                             <div class="col-lg-4 faculty-row" *ngFor="let data of info">
+                                                <div class="faculty parent child">
+                                                      <p>{{data?.name}}</p>
+                                                      <p>{{data?.designation}}</p>
+                                                      <p>Experience : {{data?.experience}}</p>
+                                                      <p>Date of Joining : {{data?.dateOfJoining | date: 'dd-MM-yyyy'}}</p>
+                                                      <span id="bottomscroll" style="line-height: normal; overflow: auto;">
+                                                         Area of Specialization : <br><p>{{data?.areaOfSpecialization}}</p>
+                                                      </span>
+                                                </div>                                                            
+                                             </div>
+                                          </div>
+                                    </div>  
+                                 <!-- <div class="course-features">
+                                       <carousel>                                                                 
+                                                                           
+                                       </carousel> 
+                                 </div> -->
+                              </div>
+                           </div> 
+                           <div *ngIf="facultyANTArray.length > 0" class="row">
+                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                 <h5>Aided - Non Teaching Faculty</h5>
+                                 <div *ngFor="let info of facultyANTArray">                  
+                                       <div class="row">                                                       
+                                             <div class="col-lg-4 faculty-row" *ngFor="let data of info">
+                                                <div class="faculty parent child">
+                                                      <p>{{data?.name}}</p>
+                                                      <p>{{data?.designation}}</p>
+                                                      <p>Experience : {{data?.experience}}</p>
+                                                      <p>Date of Joining : {{data?.dateOfJoining | date: 'dd-MM-yyyy'}}</p>
+                                                      <span id="bottomscroll" style="line-height: normal; overflow: auto;">
+                                                         Area of Specialization : <br><p>{{data?.areaOfSpecialization}}</p>
+                                                      </span>
+                                                </div>                                                            
+                                             </div>
+                                          </div>
+                                    </div>  
+                                 <!-- <div class="course-features">
+                                       <carousel>                                                                 
+                                                                           
+                                       </carousel> 
+                                 </div> -->
+                              </div>
+                           </div>
+                           <div *ngIf="facultySSNTArray.length > 0" class="row">
+                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                 <h5>Self Supporting - Non Teaching Faculty</h5>
+                                 <div *ngFor="let info of facultySSNTArray">                  
+                                       <div class="row">                                                       
+                                             <div class="col-lg-4 faculty-row" *ngFor="let data of info">
+                                                <div class="faculty parent child">
+                                                      <p>{{data?.name}}</p>
+                                                      <p>{{data?.designation}}</p>
+                                                      <p>Experience : {{data?.experience}}</p>
+                                                      <p>Date of Joining : {{data?.dateOfJoining | date: 'dd-MM-yyyy'}}</p>
+                                                      <span id="bottomscroll" style="line-height: normal; overflow: auto;">
+                                                         Area of Specialization : <br><p>{{data?.areaOfSpecialization}}</p>
+                                                      </span>
+                                                </div>                                                            
+                                             </div>
+                                          </div>
+                                    </div>  
+                                 <!-- <div class="course-features">
+                                       <carousel>                                                                 
+                                                                           
+                                       </carousel> 
+                                 </div> -->
+                              </div>
+                           </div>                      
                         </div> 
                         <div id="valueadded" *ngIf="toShow === 'valueAddedCourse'">
                               <div class="row">

@@ -28,6 +28,16 @@ export class DepartmentViewComponent implements OnInit {
   departmentId : any;
   facultyArray: any = [];
 
+  _facultyATArray: any[] = [];
+  _facultySSTArray: any[] = [];
+  _facultyANTArray: any[] = [];
+  _facultySSNTArray: any[] = [];
+
+  facultyATArray: any[] = [];
+  facultySSTArray: any[] = [];
+  facultyANTArray: any[] = [];
+  facultySSNTArray: any[] = [];
+  
    toShow: any = 'about';
   // URL LINK
   linkUrl = config['LINK_URL'];
@@ -42,18 +52,45 @@ export class DepartmentViewComponent implements OnInit {
    this.departmentId = this.active_route.snapshot.params['deptId'];
    this.academicsService.departmentView({'departmentID': this.departmentId }).subscribe(response => {
       this.aboutdata = response['info'];
-      this.splitArray(this.aboutdata.faculty,3);
+      this._facultyATArray = this.aboutdata.faculty.filter(x => x.category === 'AT');
+      this.splitATArray(this._facultyATArray, 3);
+      this._facultySSTArray = this.aboutdata.faculty.filter(x => x.category === 'SST');
+      this.splitSSTArray(this._facultySSTArray, 3);
+      this._facultyANTArray = this.aboutdata.faculty.filter(x => x.category === 'ANT');
+      this.splitANTArray(this._facultyANTArray, 3);
+      this._facultySSNTArray = this.aboutdata.faculty.filter(x => x.category === 'SSNT');
+      this.splitSSNTArray(this._facultySSNTArray, 3);
    });
   }
   ngOnInit() {
     this.panelOpenState = false;
+    console.log(this.facultySSNTArray.length);
   }
-  splitArray(arrayData,size) {
-   let arrayLength = arrayData.length;
-   for (let i = 0; i < arrayLength; i+=size) {
-      this.facultyArray.push(this.aboutdata.faculty.slice(i, i+size))
+   splitATArray(arrayData,size) {
+      let arrayLength = arrayData.length;
+      for (let i = 0; i < arrayLength; i+=size) {
+         this.facultyATArray.push(this._facultyATArray.slice(i, i+size))
+      }
    }
-  }
+
+   splitSSTArray(arrayData,size) {
+      let arrayLength = arrayData.length;
+      for (let i = 0; i < arrayLength; i+=size) {
+         this.facultySSTArray.push(this._facultySSTArray.slice(i, i+size))
+      }
+   }
+   splitANTArray(arrayData,size) {
+      let arrayLength = arrayData.length;
+      for (let i = 0; i < arrayLength; i+=size) {
+         this.facultyANTArray.push(this._facultyANTArray.slice(i, i+size))
+      }
+   }
+   splitSSNTArray(arrayData,size) {
+      let arrayLength = arrayData.length;
+      for (let i = 0; i < arrayLength; i+=size) {
+         this.facultySSNTArray.push(this._facultySSNTArray.slice(i, i+size))
+      }
+   }
 
   changeTab(value) {
      this.toShow = value;
@@ -65,5 +102,14 @@ export class DepartmentViewComponent implements OnInit {
       }).subscribe(res => {
          this._FileSaverService.save(res.body, "file.pdf");
       });
+   }
+
+   filterTheory(course) {
+      return course.filter(x => x.courseType === 'Theory');
+   }
+
+   
+   filterPractical(course) {
+      return course.filter(x => x.courseType === 'Practical');
    }
 }
